@@ -56,6 +56,24 @@ a:hover {
   background-color: #94c501;
 }
 
+.ko-story-content span[data-effect-id]:not([data-effect-type="invisible"]) {
+    background-color: rgb(82 145 8 / 36%);
+    border-radius: 4px;
+}
+
+.ko-story-content span[data-effect-id]:not([data-effect-type="invisible"]):hover {
+    background-color: rgb(142 255 10);
+    border-radius: 4px;
+}
+
+.ko-story-content blockquote {
+    border-left: 4px solid rgb(82 145 8 / 36%);
+}
+
+.ko-story aside .ko-timeline-segment {
+  background-color: rgb(82 145 8 / 36%) !important;
+}
+
 .ko-story aside .ko-timeline-segment:hover {
   background-color: #94c501 !important;
 }
