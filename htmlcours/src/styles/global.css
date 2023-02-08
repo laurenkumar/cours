@@ -66,6 +66,10 @@ a:hover {
     color: #333 !important;
 }
 
+.ko-anchor:hover {
+    color: #94c501;
+}
+
 .ko-story-content blockquote {
     border-left: 4px solid rgb(82 145 8 / 36%) !important;
 }
