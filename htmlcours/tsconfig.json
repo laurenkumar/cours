@@ -2,8 +2,9 @@
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
+    "checkJs": false,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "resolveJsonModule": false,
     "removeComments": true,
     "preserveConstEnums": true,
     "strict": false,
