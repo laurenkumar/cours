@@ -12,12 +12,8 @@ const Main = (props: IMainProps) => (
   <div>
     {props.meta}
 
+    <div>{props.children}</div>
 
-      <div>{props.children}</div>
-
-      <div>
-        © Copyright {new Date().getFullYear()} {AppConfig.title}.
-      </div>
   </div>
 );
 

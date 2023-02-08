@@ -44,6 +44,10 @@ a:hover {
   @apply my-6;
 }
 
+.ko-player {
+  background-color: #c1ff1626;
+}
+
 .ko-story aside .dfMxwr {
   background-color: #94c501;
 }
