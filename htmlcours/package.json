@@ -18,7 +18,7 @@
     "cypress:headless": "cypress run",
     "e2e": "start-server-and-test dev http://localhost:3000 cypress",
     "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless",
-    "prepare": "npx husky install",
+    "prepare": "cd .. && husky install htmlcours/.husky",
     "postbuild": "next-sitemap"
   },
   "dependencies": {
