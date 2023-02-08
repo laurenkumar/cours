@@ -1,5 +1,6 @@
 import { KodemoPlayer } from '@kodemo/player';
 
+/* tslint:disable */
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
