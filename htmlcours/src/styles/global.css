@@ -49,11 +49,11 @@ a:hover {
 }
 
 .ko-subject-version button:hover {
-  background-color: #94c501;
+  background-color: #94c501 !important;
 }
 
 .ko-story aside .dfMxwr {
-  background-color: #94c501;
+  background-color: #94c501 !important;
 }
 
 .ko-story-content span[data-effect-id]:not([data-effect-type="invisible"]) {
