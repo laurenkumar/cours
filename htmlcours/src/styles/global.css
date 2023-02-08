@@ -48,6 +48,10 @@ a:hover {
   background-color: #c1ff1626 !important;
 }
 
+.ko-subject-version button:hover {
+  background-color: #94c501;
+}
+
 .ko-story aside .dfMxwr {
   background-color: #94c501;
 }
