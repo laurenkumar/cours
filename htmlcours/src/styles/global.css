@@ -62,8 +62,8 @@ a:hover {
 }
 
 .ko-story-content span[data-effect-id]:not([data-effect-type="invisible"]):hover {
-    background-color: rgb(142 255 10) !important;
-    color: #CCC !important;
+    background-color: #94c501 !important;
+    color: #eee !important;
 }
 
 .ko-story-content blockquote {
