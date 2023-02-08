@@ -45,7 +45,7 @@ a:hover {
 }
 
 .ko-player {
-  background-color: #c1ff1626;
+  background-color: #c1ff1626 !important;
 }
 
 .ko-story aside .dfMxwr {
