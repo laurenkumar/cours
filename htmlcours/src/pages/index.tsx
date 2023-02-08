@@ -3,12 +3,7 @@ import { KodemoPlayer } from '@kodemo/player';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
-interface TextOptions {
-    language?: string;
-    story?: string;
-}
-
-const Index = (opts: TextOptions) => {
+const Index = () => {
 
   return (
     <Main
