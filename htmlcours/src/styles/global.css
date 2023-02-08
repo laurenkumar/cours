@@ -44,6 +44,10 @@ a:hover {
   @apply my-6;
 }
 
+.ko-story aside .ko-timeline-segment {
+  background-color: #94c501;
+}
+
 .ko-story aside .ko-timeline-segment:hover {
   background-color: #94c501 !important;
 }
