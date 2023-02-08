@@ -1,5 +1,29 @@
 @tailwind base;
 
+body, html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-color: #c1ff1626;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #abe801 transparent;
+  letter-spacing: 0em;
+}
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #abe801;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+
 a {
   @apply text-blue-700;
 }
@@ -18,4 +42,8 @@ a:hover {
 
 .content ul {
   @apply my-6;
+}
+
+.content aside > div:hover {
+  background-color: #94c501;
 }
