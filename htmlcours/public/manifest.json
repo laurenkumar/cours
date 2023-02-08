@@ -1,0 +1,38 @@
+{
+    "theme_color": "#c1ff16",
+    "background_color": "#c1ff16",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/?source=pwa",
+    "prefer_related_applications": true,
+    "orientation": "portrait",
+    "name": "LK Digital",
+    "short_name": "LK",
+    "description": "LK Digital, agence digitale \u00e0 Vienne sp\u00e9cialis\u00e9e dans la cr\u00e9ation de site web vous propose ses services pour d\u00e9velopper votre projet digital ou vous former.",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
