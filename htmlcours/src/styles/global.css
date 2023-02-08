@@ -45,5 +45,5 @@ a:hover {
 }
 
 .content aside > div:hover {
-  background-color: #94c501;
+  background-color: #94c501 !important;
 }
