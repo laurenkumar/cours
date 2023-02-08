@@ -67,7 +67,7 @@ a:hover {
 }
 
 .ko-anchor:hover {
-    color: #94c501;
+    color: #94c501 !important;
 }
 
 .ko-story-content blockquote {
