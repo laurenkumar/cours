@@ -1,4 +1,7 @@
 /* Initial state */
+html, body {
+  background: white;
+}
 
 #logo,
 section,
