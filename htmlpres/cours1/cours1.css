@@ -1,0 +1,107 @@
+/* Initial state */
+
+#logo,
+section,
+footer {
+  display: none;
+}
+
+#start {
+  display: block;
+}
+
+/* 00 Content */
+
+html.step0 #step1 {
+  display: block;
+}
+
+/* 01 Centering */
+
+html.step1 #step2 {
+  display: block;
+}
+
+/* 02 Font family */
+
+html.step2 #step3 {
+  display: block;
+}
+
+/* 03 Spacing */
+
+html.step3 #step4 {
+  display: block;
+}
+
+/* 04 Color and contrast */
+
+html.step4 #color-contrast {
+  display: block;
+}
+
+/* 05 Balance */
+
+html.step5 #balance {
+  display: block;
+}
+
+/* 06 Primary color */
+
+html.step6 #primary-color {
+  display: block;
+}
+
+/* 07 Secondary colors */
+
+html.step7 #secondary-colors {
+  display: block;
+}
+
+/* 08 Custom font */
+
+html.step8 #custom-font {
+  display: block;
+}
+
+/* 09 Images */
+
+html.step9 #images {
+  display: block;
+}
+
+/* 10 Share */
+
+html.step10 #share,
+html.step10 footer {
+  display: block;
+}
+
+/* Classes */
+
+.animate {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: blink;
+          animation-name: blink;
+}
+
+@-webkit-keyframes blink {
+  from {
+    background-color: lightyellow;
+  }
+
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes blink {
+  from {
+    background-color: lightyellow;
+  }
+
+  to {
+    background-color: transparent;
+  }
+}

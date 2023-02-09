@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Le Web Design en quelques minutes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:url" content="https://formation.lkdigital.ninja">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Le Web Design en quelques minutes">
+  <meta property="og:description" content="Apprendre les bases du web design en quelques minutes avec ce cours interactif.">
+  <meta property="og:image" content="https://formation.lkdigital.ninja/learn-web-design-in-4-minutes.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@dodowebdev">
+  <meta name="twitter:creator" content="@dodowebdev">
+  <meta name="twitter:title" content="Le Web Design en quelques minutes">
+  <meta name="twitter:description" content="Apprendre les bases du web design en quelques minutes avec ce cours interactif.">
+  <meta name="twitter:image" content="https://formation.lkdigital.ninja/learn-web-design-in-4-minutes.png">
+
+  <link rel="stylesheet" type="text/css" href="cours1.css">
+</head>
+<body>
+  <main>
+    <section class="step" data-step="0" id="start" data-href="step1">
+      <h1>Nos aventures</h1>
+      <h2>Photos de nos voyages</h2>
+      <!-- A faire: Ajouter un lien vers la gallerie photos -->
+      <p>Plus de photos dans <a href="galerie.html" targer="_blank">notre galerie.</a></p>
+      <a href="galerie.html" targer="_blank">
+        <img
+        src="https://www.cercledesvoyages.com/wp-content/webp-express/webp-images/uploads/2020/12/pm_8002_1_1219-cqdwbo4iuh-3154.jpg.webp"
+        alt="Plage en Thaïlande"
+        />
+      </a>
+    </section>
+    <section class="step" data-step="1" id="step1" data-href="step2">
+      <h2>Nos pays visités</h2>
+      <h3>Nos pays <em>préférés</em></h3>
+      <ul>
+        <li>Thailande</li>
+        <li>Italie</li>
+        <li>Nouvelle Zélande</li>
+      </ul>
+      <figure>
+        <img
+        src="https://a.cdn-hotels.com/gdcs/production40/d811/5e89ad90-8f10-11e8-b6b0-0242ac110007.jpg?impolicy=fcrop&w=800&h=533&q=medium"
+        alt="Photo de Rome"
+        >
+        <figcaption>Photo de Rome</figcaption>  
+      </figure>
+      <h3>Les pays les moins <strong>appréciés</strong></h3>
+      <ol>
+        <li>Chine</li>
+        <li>USA</li>
+        <li>Autriche</li>
+      </ol>
+      <figure>
+        <img
+        src="https://chine.in/images/2019/df9cd315fc7acedff053f70496e9c2f2.jpg"
+        alt="Photo de Guilin"
+        >
+        <figcaption>Photo de Guilin</figcaption>  
+      </figure>
+    </section>
+    <section class="step" data-step="2" id="step2" data-href="step3">
+      <h2>Formulaire de Voyage</h2>
+      <form>
+        <fieldset>
+          <legend>Préférez vous voyager ou rester à la maison?</legend>
+          <label><input type="radio" id="voyager" name="voyage-maison" value="voyager" checked> Voyager</label>
+          <label><input id="maison" type="radio" name="voyage-maison" value="maison"> Rester à la maison</label>
+        </fieldset>
+        <fieldset>
+          <legend>Quelle sont vos destinations préférées?</legend>
+          <label for="paris"><input type="checkbox" id="paris" value="paris" name="destinations"> Paris</label>
+          <label for="rome"><input type="checkbox" id="rome"  value="rome" name="destinations" checked> Rome</label>
+        </fieldset>
+        <input type="text" name="urlphotovoyage" placeholder="Url d'une photo d'un pays" required/>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+  <footer class="step" data-step="3" id="step3" data-href="step4">
+    <p>Sans Copyright - <a href="https://lkdigital.ninja">LK Digital</a></p>
+  </footer>
+
+
+  <script type="text/javascript">
+    var steps = document.querySelectorAll('.step');
+    var body = document.querySelector('body');
+    var html = document.querySelector('html');
+
+    for (var i=0; i < steps.length; i++) {
+      var element = steps[i];
+      element.onclick = function(event) {
+        var number = this.dataset.step;
+        var target = this.dataset.href;
+        addStep(number, target);
+      }
+    };
+
+
+    function addStep(number, target) {
+      html.className += ' step' + number;
+      if (target !== '') {
+        var id = target.split('#')[0];
+        console.log(document.getElementById(id))
+        document.getElementById(id).className = 'animate';
+      }
+
+    }
+  </script>
+</body>
+</html>
