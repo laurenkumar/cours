@@ -33,6 +33,7 @@
         <img
         src="https://www.cercledesvoyages.com/wp-content/webp-express/webp-images/uploads/2020/12/pm_8002_1_1219-cqdwbo4iuh-3154.jpg.webp"
         alt="Plage en Thaïlande"
+        width="300px"
         />
       </a>
     </section>
@@ -48,6 +49,7 @@
         <img
         src="https://a.cdn-hotels.com/gdcs/production40/d811/5e89ad90-8f10-11e8-b6b0-0242ac110007.jpg?impolicy=fcrop&w=800&h=533&q=medium"
         alt="Photo de Rome"
+        width="300px"
         >
         <figcaption>Photo de Rome</figcaption>  
       </figure>
@@ -61,6 +63,7 @@
         <img
         src="https://chine.in/images/2019/df9cd315fc7acedff053f70496e9c2f2.jpg"
         alt="Photo de Guilin"
+        width="300px"
         >
         <figcaption>Photo de Guilin</figcaption>  
       </figure>
@@ -89,25 +92,32 @@
 
 
   <script type="text/javascript">
-    var steps = document.querySelectorAll('.step');
-    var body = document.querySelector('body');
-    var html = document.querySelector('html');
+    let steps = document.querySelectorAll('.step');
+    let body = document.querySelector('body');
+    let html = document.querySelector('html');
+    let url = new URL(window.location.href);
 
-    for (var i=0; i < steps.length; i++) {
-      var element = steps[i];
-      element.onclick = function(event) {
-        var number = this.dataset.step;
-        var target = this.dataset.href;
-        addStep(number, target);
+    if (url.hash !== '') {
+      let step = url.hash.split('#step')[1];
+      for (let i = 0 ; i < step; i++) {
+          html.className += ' step' + i;
       }
-    };
+    } else {
+      for (let i=0; i < steps.length; i++) {
+        let element = steps[i];
+        element.onclick = function(event) {
+          let number = this.dataset.step;
+          let target = this.dataset.href;
+          addStep(number, target);
+        }
+      };
+    }
 
 
     function addStep(number, target) {
       html.className += ' step' + number;
       if (target !== '') {
-        var id = target.split('#')[0];
-        console.log(document.getElementById(id))
+        let id = target.split('#')[0];
         document.getElementById(id).className = 'animate';
       }
 
