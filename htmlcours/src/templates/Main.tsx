@@ -23,19 +23,13 @@ const Main = (props: IMainProps) => (
           <g id="svgGroup" strokeLinecap="round" fillRule="evenodd" fontSize="5pt" stroke="#000" strokeWidth="0.5mm" fill="none"><path d="M 37.28 0 L 41.8 0 L 31.72 12.12 L 42.12 27.44 L 37.56 27.44 L 29.24 15.12 L 25.36 19.2 L 25.36 27.44 L 21.44 27.44 L 21.44 0 L 25.36 0 L 25.36 14.28 L 37.28 0 Z M 0 0 L 3.92 0 L 3.92 23.88 L 16.52 23.88 L 17.08 27.44 L 0 27.44 L 0 0 Z" vectorEffect="non-scaling-stroke"/></g> 
         </svg>
         </Link>
-        <Link
-          href={`/`}
-          title="Page d'accueil - Formation - LK Digital"
-        >
-          Digital
-        </Link>
       </div>
 
       <div className="menucontent">
         <ul>
           <li className="dropdownmenu">
             <Link
-              href={`https://cours.lkdigital.ninja`}
+              href={`https://formations.lkdigital.ninja/cours`}
               title="Tous nos cours - Formation - LK Digital"
             >
               Cours
@@ -109,6 +103,13 @@ const Main = (props: IMainProps) => (
           </li>
         </ul>
       </div>
+      <Link
+        href="https://formations/lkdigital.ninja/connexion"
+        className="button_login"
+        title="Connexion - LK Digital"
+      >
+        Connexion
+      </Link>
     </nav>
 
     <div>{props.children}</div>

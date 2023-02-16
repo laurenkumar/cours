@@ -41,7 +41,7 @@ body {
 }
 *::-webkit-scrollbar {
   width: 5px;
-  height: 10px;
+  height: 3px;
 }
 *::-webkit-scrollbar-track {
   background: transparent;
@@ -147,10 +147,6 @@ body {
   color: #333;
 }
 
-.ko-subjects {
-  border-top-left-radius: 20px;
-}
-
 @media only screen and (max-width: 700px)
 {
   .ko-pagination {
@@ -176,7 +172,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 28px;
+  padding: 0 0 0 28px;
   background: rgba(193, 255, 22, 0);
   z-index: 1;
   position: sticky;
@@ -198,7 +194,7 @@ body {
   opacity: 0;
   transform-origin: top left;
   transition: .4s ease-out all;
-  box-shadow: 0 0 7px #fff;
+  box-shadow: 0 0 7px #333;
 }
 
 .logo, .menucontent > ul {
@@ -208,7 +204,7 @@ body {
 }
 
 .menucontent {
-  min-width: 30%;
+  min-width: 50%;
 }
 
 .menucontent {
@@ -258,7 +254,7 @@ body {
 }
 
 .menu_subblock_content .button {
-  background: rgb(237 255 190);
+  background: #b6d77c;
   display: inline-block;
   border: none;
   padding: 0.6em 1.2em;
@@ -266,6 +262,24 @@ body {
   color: #333;
   border-radius: 2px;
   transition: all .2s ease-in-out;
+}
+
+.topmenu .button_login {
+  background: #b6d77c;
+  display: flex;
+  justify-content: center;
+  border: none;
+  align-items: center;
+  padding: 0 0.8em;
+  height: 50px;
+  -webkit-appearance: none;
+  color: #333;
+  transition: all .2s ease-in-out;
+}
+
+.topmenu .button_login:hover {
+  background: #94c501;
+  color: #333;
 }
 
 .menu_subblock_content .button:hover {
@@ -279,10 +293,13 @@ body {
     transform: scaleY(1);
     opacity: 1;
   }
+  .ko-subjects {
+    border-top-left-radius: 20px;
+  }
 }
 
 @media only screen and (max-width: 1300px) {
   .topmenu {
-    padding: 0 18.48px;
+    padding: 0 0 0 18.48px;
   }
 }
