@@ -507,7 +507,7 @@ body {
     height: calc(var(--ko-height,100%) - 50px) !important;
   }
   .ko-pagination {
-    left: max(calc(42vw - min(var(--site-max-width),100vw) / 2 + var(--menu-width-offset) + 60px),1rem);
+    left: max(calc(42vw - min(var(--site-max-width),100vw) / 2 + var(--menu-width-offset) + 70px),1rem);
   }
 }
 
