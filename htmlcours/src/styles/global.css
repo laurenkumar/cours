@@ -506,6 +506,9 @@ body {
   .ko-subjects {
     height: calc(var(--ko-height,100%) - 50px) !important;
   }
+  .ko-pagination {
+    left: max(calc(42vw - min(var(--site-max-width),100vw) / 2 + var(--menu-width-offset) + 60px),1rem);
+  }
 }
 
 @media (min-width: 1025px)
