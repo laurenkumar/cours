@@ -287,6 +287,227 @@ body {
   background-color: #94c501;
 }
 
+.side {
+  position: fixed;
+  z-index: 5;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  width: 56px;
+  background: #b6d77c;
+  color: #333;
+  transition: all .2s;
+  overflow: hidden;
+}
+
+.side__program {
+  width: 500px;
+  padding: 12px 12px 40px 0;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.side__program__course {
+  display: flex;
+}
+
+.side__program__course__icon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  padding-top: 4px;
+  text-align: center;
+  margin: 12px 12px 0;
+  border: 2px solid #333;
+  border-radius: 50%;
+}
+
+.side__program__course__icon:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 32px;
+  left: 13px;
+  height: 19px;
+  border: 1px dashed #333;
+}
+
+.dashicons, .dashicons-before:before {
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.side__program__course__title {
+  padding-bottom: 4px;
+  line-height: 1.2;
+  border-bottom: 2px solid #333;
+}
+
+.side__program__course small {
+  font-size: .85em;
+  color: #333;
+}
+
+.side__program__part {
+  display: flex;
+  margin: 30px 0 12px;
+  font-size: .8em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.side__program__part__picto {
+  position: relative;
+  width: 56px;
+  padding: 0 12px;
+  text-align: center;
+}
+
+.side__program__part__picto:before {
+  left: 8px;
+}
+
+.side__program__part__picto:before, .side__program__part__picto:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 2px;
+  background: #333;
+  top: 7px;
+  border-radius: 2px;
+}
+
+.side__program__part__picto:after {
+  right: 8px;
+}
+
+.side__program__part__picto:before, .side__program__part__picto:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 2px;
+  background: #333;
+  top: 7px;
+  border-radius: 2px;
+}
+
+.side__program__part__title {
+  color: #333;
+  font-weight: bold;
+}
+
+.side__program__part__title span {
+  color: #333;
+}
+
+.side__program__chapter {
+  display: flex;
+  margin: 15px 0;
+  font-size: .7em;
+}
+
+.side__program__chapter__num {
+  text-transform: uppercase;
+  width: 32px;
+  margin: 0 12px;
+  padding: 0 4px;
+  background: #1e2127;
+  border-left: 3px solid #abe801;
+  text-align: center;
+  color: white;
+}
+
+.side__program__chapter__text {
+  text-transform: uppercase;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.side__program__lesson {
+  position: relative;
+  padding: 5px 12px 5px 56px;
+  font-weight: 100;
+  font-size: .9em;
+}
+
+.side__program__lesson:before {
+  content: '';
+  position: absolute;
+  left: 21px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
+
+.side__program__lesson a {
+  color: #333;
+  font-weight: 400;
+}
+
+.side__program__lesson--current:before {
+  z-index: 1;
+  border-color: #ffc334;
+  background-color: #d79700;
+  animation-name: pulse;
+  animation-duration: 10s;
+  animation-iteration-count: 5;
+}
+
+.side__program__lesson--current:after {
+  background-color: #ffc334;
+}
+
+.side__program__lesson:after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 26px;
+    width: 2px;
+    height: 18px;
+    background: #333;
+}
+
+@media (min-width: 768px)
+{
+  .side:hover {
+    width: 500px;
+  }
+  .ko-player {
+    width: calc(var(--ko-width,100%) - 56px) !important;
+    left: 56px !important;
+  }
+}
+
+@media (max-width: 767px)
+{
+  .side {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px)
+{
+  .side {
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 701px)
+{
+  .ko-subjects {
+    height: calc(var(--ko-height,100%) - 50px) !important;
+  }
+}
+
 @media (min-width: 1025px)
 {
   .dropdownmenu:hover > .menu_drop {

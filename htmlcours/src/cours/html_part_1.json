@@ -286,10 +286,18 @@
       }
    },
    "documentNav":{
-      "titre":"Apprendre HTML en codant un site de voyage",
-      "h3":[
-         "Apprendre HTML en codant un site de voyage",
-         "Un texte structuré avec les balises de titres hn"
+      "sujet": "HTML",
+      "partie":"Apprendre HTML en codant un site de voyage",
+      "sousparties":[
+         {
+            "titre":"Apprendre HTML en codant un site de voyage",
+            "id": "#apprendre-html-en-codant-un-site-de-voyage"
+         },
+         {
+            "titre":"Les balises HTML",
+            "id": "#les-balises-html"
+
+         }
       ]
    },
    "title":"Untitled",
