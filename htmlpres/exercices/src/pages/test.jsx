@@ -1,4 +1,5 @@
 import { describe, it, expect, run } from 'jest-lite';
+  if (typeof window !== 'undefined') {
   // Liste des tests à valider pour l'exercice
   describe('liste des tests à passer', () => {
     it('Ton élément "h1" doit contenir le texte "Nos aventures".', () => {
@@ -7,7 +8,7 @@ import { describe, it, expect, run } from 'jest-lite';
       expect(textTitres).toContain('Nos aventures')
     })
   })
-
+}
 
   // Fonction pour console.log le résultat des tests.
   // La function run() lit les tests Jest et retourne un Array d'Objet avec le résultat des tests.
