@@ -1,0 +1,101 @@
+@tailwind base;
+
+body, html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: rgb(26, 28, 33);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #abe801 transparent;
+  letter-spacing: 0em;
+}
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #abe801;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+/* code editeur */
+
+.tabs {
+  width: 100%;
+  float: none;
+  color: white;
+  list-style: none;
+  position: relative;
+  text-align: left;
+}
+.tabs li {
+  float: left;
+  display: block;
+}
+.tabs input[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+}
+.tabs label {
+  display: block;
+  padding: 14px 21px;
+  font-size: 12px;
+  font-weight: normal;
+  background: rgb(26, 28, 33);
+  cursor: pointer;
+  position: relative;
+  color: rgba(255, 255, 255,0.5);
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.tabs .tab-content {
+  z-index: 2;
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  font-size: 17px;
+  line-height: 25px;
+  position: absolute;
+  left: 0;
+  background: #1e2127;
+}
+
+.tabs .tab-content section, .tabs .navigateur {
+  height: calc(100vh - 46px) !important;
+}
+.navigateur iframe {
+  width: 100vw;
+  height: calc(100vh - 46px);
+}
+.tabs [id^="tab"]:checked + label {
+  color: white;
+}
+.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+  display: block;
+}
+.button_test {
+  position: absolute;
+  background-color: #b6d77c;
+  z-index: 9;
+  color: white;
+  padding: 10px 0.8em;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+}
