@@ -1,5 +1,3 @@
-  if (typeof window !== 'undefined') {
-
 import { describe, it, expect, run } from 'jest-lite';
     // Liste des tests à valider pour l'exercice
     describe('liste des tests à passer', () => {
@@ -32,4 +30,3 @@ import { describe, it, expect, run } from 'jest-lite';
           ? '🎉 Bravo ! Tu peux passer à la suite.'
           : '🤯 Tu vas y arriver, courage !', tests]);
   }
-}
