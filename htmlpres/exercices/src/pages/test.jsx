@@ -1,4 +1,6 @@
 import { describe, it, expect, run } from 'jest-lite';
+import React, { useEffect } from "react";
+
     // Liste des tests à valider pour l'exercice
     describe('liste des tests à passer', () => {
       it('Ton élément "h1" doit contenir le texte "Nos aventures".', () => {
@@ -11,7 +13,7 @@ import { describe, it, expect, run } from 'jest-lite';
   // Fonction pour console.log le résultat des tests.
   // La function run() lit les tests Jest et retourne un Array d'Objet avec le résultat des tests.
   export const runTests = async () => {
-
+    useEffect(function mount() {
       // Lancer les tests et récupérer les résultats
       const result = await run()
       let tests = [];
@@ -29,4 +31,5 @@ import { describe, it, expect, run } from 'jest-lite';
       return ([isAllGood
           ? '🎉 Bravo ! Tu peux passer à la suite.'
           : '🤯 Tu vas y arriver, courage !', tests]);
+    });
   }
