@@ -15,7 +15,7 @@ import React, { useEffect } from "react";
   export const runTests = async () => {
     useEffect(function mount() {
       // Lancer les tests et récupérer les résultats
-      const result = await run()
+      const result = run();
       let tests = [];
       // Pour chaque test on affiche le bon emoji en fonction de si le test passe ou non
       const results = result.forEach((res) => {
