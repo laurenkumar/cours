@@ -178,7 +178,7 @@ function CodeOnline({subject}) {
         <button className="button_test" id="submit"
           onClick={async (e) => {
             if (typeof window !== 'undefined') {
-            const test = (await import('../pages/test.jsx').then((r) => {
+            const test = (await import('../utils/test.jsx').then((r) => {
                 const result = r.runTests().then(
                   x=> {
                     updateModalMessageRes(x[0]);

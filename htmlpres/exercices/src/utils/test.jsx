@@ -1,4 +1,5 @@
 'use client';
+import ('jest-lite');
 import dynamic from 'next/dynamic';
 const describe = dynamic(
   () => import('jest-lite').then((mod) => mod.describe),
