@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocalStorage } from "../Hooks/LocalStorage";
 import Editor, { Monaco } from "@monaco-editor/react";
-import runTests from '../pages/test.jsx';
 import Modal from '../components/Modal.tsx';
 
 function CodeOnline({subject}) {
