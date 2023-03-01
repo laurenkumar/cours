@@ -1,5 +1,21 @@
-import { describe, it, expect, run } from 'jest-lite';
-
+'use client';
+import dynamic from 'next/dynamic';
+const describe = dynamic(
+  () => import('jest-lite').then((mod) => mod.describe),
+  { ssr: false }
+)
+const it = dynamic(
+  () => import('jest-lite').then((mod) => mod.it),
+  { ssr: false }
+)
+const expect = dynamic(
+  () => import('jest-lite').then((mod) => mod.expect),
+  { ssr: false }
+)
+const run = dynamic(
+  () => import('jest-lite').then((mod) => mod.run),
+  { ssr: false }
+)
 // Liste des tests à valider pour l'exercice
   describe('liste des tests à passer', () => {
     it('Ton élément "h1" doit contenir le texte "Nos aventures".', () => {
