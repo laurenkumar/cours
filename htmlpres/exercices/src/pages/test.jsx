@@ -1,4 +1,4 @@
-const {describe, it, expect, run} = require("jest-lite");
+import { describe, it, expect, run } from 'jest-lite';
 
 // Liste des tests à valider pour l'exercice
 describe('liste des tests à passer', () => {
