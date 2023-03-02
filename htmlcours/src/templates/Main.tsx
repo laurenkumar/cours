@@ -20,7 +20,7 @@ const Main = (props: IMainProps) => (
           title="Page d'accueil - Formation - LK Digital"
         >
         <svg width={50} height={30} viewBox="0 0 50 30">
-          <g id="svgGroup" strokeLinecap="round" fillRule="evenodd" fontSize="5pt" stroke="#000" strokeWidth="0.5mm" fill="none"><path d="M 37.28 0 L 41.8 0 L 31.72 12.12 L 42.12 27.44 L 37.56 27.44 L 29.24 15.12 L 25.36 19.2 L 25.36 27.44 L 21.44 27.44 L 21.44 0 L 25.36 0 L 25.36 14.28 L 37.28 0 Z M 0 0 L 3.92 0 L 3.92 23.88 L 16.52 23.88 L 17.08 27.44 L 0 27.44 L 0 0 Z" vectorEffect="non-scaling-stroke"/></g> 
+          <g id="svgGroup" strokeLinecap="round" fillRule="evenodd" fontSize="5pt" stroke="#fffffe" strokeWidth="0.5mm" fill="none"><path d="M 37.28 0 L 41.8 0 L 31.72 12.12 L 42.12 27.44 L 37.56 27.44 L 29.24 15.12 L 25.36 19.2 L 25.36 27.44 L 21.44 27.44 L 21.44 0 L 25.36 0 L 25.36 14.28 L 37.28 0 Z M 0 0 L 3.92 0 L 3.92 23.88 L 16.52 23.88 L 17.08 27.44 L 0 27.44 L 0 0 Z" vectorEffect="non-scaling-stroke"/></g> 
         </svg>
         </Link>
       </div>

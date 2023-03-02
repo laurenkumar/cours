@@ -3,7 +3,7 @@
 body, html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  background-color: #c1ff1626;
+  background-color: #0f0e17;
 }
 
 body {
@@ -36,7 +36,7 @@ body {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #abe801 transparent;
+  scrollbar-color: #f25f4c transparent;
   letter-spacing: 0em;
 }
 *::-webkit-scrollbar {
@@ -47,7 +47,7 @@ body {
   background: transparent;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #abe801;
+  background-color: #f25f4c;
   border-radius: 20px;
   border: 1px solid transparent;
 }
@@ -68,8 +68,24 @@ input {
   pointer-events: auto !important;
 }
 
+h1, h2, h3 {
+  color: #fffffe;
+}
+
+h1 .ko-anchor, h2 .ko-anchor, h3 .ko-anchor {
+  color: #f25f4c !important;
+}
+
+p {
+  color: #a7a9be;
+}
+
+code {
+  color: #fffffe !important;
+}
+
 .ko-player {
-  background-color: #c1ff1626 !important;
+  background-color: #0f0e17 !important;
   top: 50px !important;
 }
 
@@ -82,29 +98,30 @@ input {
 }
 
 .ko-story-content span[data-effect-id]:not([data-effect-type="invisible"]) {
-  background-color: rgb(82 145 8 / 36%) !important;
+  background-color: #f25f4c !important;
+  color: #fffffe;
   border-radius: 4px !important;
 }
 
 .ko-story-content span[data-effect-id]:not([data-effect-type="invisible"]):hover {
-  background-color: #94c501 !important;
-  color: #333 !important;
+  background-color: #e53170 !important;
+  color: #fffffe !important;
 }
 
 .ko-anchor:hover {
-  color: #94c501 !important;
+  color: #e53170 !important;
 }
 
 .ko-story-content blockquote {
-  border-left: 4px solid rgb(82 145 8 / 36%) !important;
+  border-left: 4px solid #f25f4c !important;
 }
 
 .ko-story aside .ko-timeline-segment {
-  background-color: rgb(82 145 8 / 36%);
+  background-color: #f25f4c;
 }
 
 .ko-story aside .ko-timeline-segment:hover {
-  background-color: #94c501 !important;
+  background-color: #e53170 !important;
 }
 
 .ko-pagination {
@@ -132,23 +149,23 @@ input {
   gap: 0rem;
   font-size: 13px;
   color: rgb(34, 34, 34);
-  background: rgba(255, 255, 255, 0.9);
+  background: #fffffe;
   backdrop-filter: blur(2px);
   flex-shrink: 0;
   transition: box-shadow 0.5s ease 0s;
 }
 
 .ko-pagination .ko-menu button:hover, .ko-pagination .ko-menu button[data-state='open'] {
-  background: rgb(82 145 8 / 36%);
+  background: #ff8906;
 }
 
 .ko-menu .ko-menu-trigger:hover, .ko-menu .ko-menu-trigger[data-state='open'] {
-  background: rgb(82 145 8 / 36%);
+  background: #ff8906;
 }
 
 .ko-menu-content div div[role='menuitem']:focus {
   background-color: rgb(82 145 8 / 36%);
-  color: #333;
+  color: #fffffe;
 }
 
 @media only screen and (max-width: 700px)
@@ -191,14 +208,14 @@ input {
   position: absolute;
   z-index: 10;
   border-radius: 3px;
-  background: #edffbe;
+  background: #0f0e17;
   padding: 20px;
   min-width: 350px;
   transform: scaleY(0);
   opacity: 0;
   transform-origin: top left;
   transition: box-shadow 800ms ease,transform 800ms ease, .4s ease-out all;
-  box-shadow: 0 0 7px #333;
+  box-shadow: 0 0 7px #fffffe;
   border: 1px solid #000;
   -webkit-transition: box-shadow 200ms ease,-webkit-transform 200ms ease;
 }
@@ -218,21 +235,22 @@ input {
 }
 
 .topmenu a {
-  color: #333;
+  color: #fffffe;
   text-decoration: none;
   font-weight: bolder;
 }
 
 .topmenu a:hover, .topmenu svg g:hover {
-  color: #94c501;
-  stroke: #94c501;
+  color: #ff8906;
+  stroke: #ff8906;
 }
 
 .menu_subtitle {
   text-transform: uppercase;
   font-size: 1.1em;
   margin-bottom: 20px;
-  border-bottom: 2px solid #1c2c43;
+  color: #fffffe;
+  border-bottom: 2px solid #fffffe;
 }
 
 .menu_subcours {
@@ -260,18 +278,18 @@ input {
 }
 
 .menu_subblock_content .button {
-  background: #b6d77c;
+  background: #ff8906;
   display: inline-block;
   border: none;
   padding: 0.6em 1.2em;
   -webkit-appearance: none;
-  color: #333;
+  color: #fffffe;
   border-radius: 2px;
   transition: all .2s ease-in-out;
 }
 
 .topmenu .button_login {
-  background: #b6d77c;
+  background: #ff8906;
   display: flex;
   justify-content: center;
   border: none;
@@ -279,17 +297,17 @@ input {
   padding: 0 0.8em;
   height: 50px;
   -webkit-appearance: none;
-  color: #333;
+  color: #0f0e17;
   transition: all .2s ease-in-out;
 }
 
 .topmenu .button_login:hover {
-  background: #94c501;
-  color: #333;
+  background: #f25f4c;
+  color: #2e2f3e;
 }
 
 .menu_subblock_content .button:hover {
-  color: #333;
+  color: #fffffe;
   background-color: #94c501;
 }
 
@@ -300,8 +318,8 @@ input {
   bottom: 0;
   left: 0;
   width: 56px;
-  background: #b6d77c;
-  color: #333;
+  background: #ff8906;
+  color: #0f0e17;
   transition: all .2s;
   overflow: hidden;
 }
@@ -324,7 +342,7 @@ input {
   padding-top: 4px;
   text-align: center;
   margin: 12px 12px 0;
-  border: 2px solid #333;
+  border: 2px solid #2e2f3e;
   border-radius: 50%;
 }
 
@@ -335,7 +353,7 @@ input {
   top: 32px;
   left: 13px;
   height: 19px;
-  border: 1px dashed #333;
+  border: 1px dashed #2e2f3e;
 }
 
 .dashicons, .dashicons-before:before {
@@ -351,12 +369,12 @@ input {
 .side__program__course__title {
   padding-bottom: 4px;
   line-height: 1.2;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid black;
 }
 
 .side__program__course small {
   font-size: .85em;
-  color: #333;
+  color: #2e2f3e;
 }
 
 .side__program__part {
@@ -384,7 +402,7 @@ input {
   display: block;
   width: 10px;
   height: 2px;
-  background: #333;
+  background: #2e2f3e;
   top: 7px;
   border-radius: 2px;
 }
@@ -399,18 +417,18 @@ input {
   display: block;
   width: 10px;
   height: 2px;
-  background: #333;
+  background: #2e2f3e;
   top: 7px;
   border-radius: 2px;
 }
 
 .side__program__part__title {
-  color: #333;
+  color: #0f0e17;
   font-weight: bold;
 }
 
 .side__program__part__title span {
-  color: #333;
+  color: #2e2f3e;
 }
 
 .side__program__chapter {
@@ -425,7 +443,7 @@ input {
   margin: 0 12px;
   padding: 0 4px;
   background: #1e2127;
-  border-left: 3px solid #abe801;
+  border-left: 3px solid #e53170;
   text-align: center;
   color: white;
 }
@@ -433,7 +451,7 @@ input {
 .side__program__chapter__text {
   text-transform: uppercase;
     font-size: 1.2em;
-    color: #333;
+    color: #0f0e17;
 }
 
 .side__program__lesson {
@@ -451,11 +469,11 @@ input {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 2px solid #333;
+  border: 2px solid #2e2f3e;
 }
 
 .side__program__lesson a {
-  color: #333;
+  color: #1C1C21;
   font-weight: 400;
 }
 
@@ -479,7 +497,7 @@ input {
     left: 26px;
     width: 2px;
     height: 18px;
-    background: #333;
+    background: #2e2f3e;
 }
 
 /* code editeur */
