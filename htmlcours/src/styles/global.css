@@ -186,15 +186,17 @@ body {
   text-align: left;
   position: absolute;
   z-index: 10;
-  border-radius: 5px;
+  border-radius: 3px;
   background: #edffbe;
   padding: 20px;
   min-width: 350px;
   transform: scaleY(0);
   opacity: 0;
   transform-origin: top left;
-  transition: .4s ease-out all;
+  transition: box-shadow 800ms ease,transform 800ms ease, .4s ease-out all;
   box-shadow: 0 0 7px #333;
+  border: 1px solid #000;
+  -webkit-transition: box-shadow 200ms ease,-webkit-transform 200ms ease;
 }
 
 .logo, .menucontent > ul {
@@ -476,6 +478,69 @@ body {
     background: #333;
 }
 
+/* code editeur */
+
+.tabs {
+  width: 650px;
+  float: none;
+  color: white;
+  list-style: none;
+  position: relative;
+  margin: 80px 0 0 10px;
+  text-align: left;
+}
+.tabs li {
+  float: left;
+  display: block;
+}
+.tabs input[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+}
+.tabs label {
+  display: block;
+  padding: 14px 21px;
+  border-radius: 2px 2px 0 0;
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+  background: black;
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.tabs label:hover {
+  background: black;
+}
+.tabs .tab-content {
+  z-index: 2;
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  font-size: 17px;
+  line-height: 25px;
+  padding: 25px;
+  position: absolute;
+  top: 53px;
+  left: 0;
+  background: black;
+}
+.tabs [id^="tab"]:checked + label {
+  top: 0;
+  padding-top: 17px;
+  background: black;
+}
+.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+  display: block;
+}
+
+/* **** */
+
 @media (min-width: 768px)
 {
   .side:hover {
@@ -516,6 +581,11 @@ body {
   .dropdownmenu:hover > .menu_drop {
     transform: scaleY(1);
     opacity: 1;
+    -webkit-transform: translate(4px, -4px);
+    -moz-transform: translate(4px, -4px);
+    -ms-transform: translate(4px, -4px);
+    transform: scaleY(1), translate(4px, -4px);
+    box-shadow: -8px 8px 0 currentColor;
   }
   .ko-subjects {
     border-top-left-radius: 20px;
