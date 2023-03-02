@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { KodemoMenu } from '@kodemo/util';
 
 import { AppConfig } from '@/utils/AppConfig';
 

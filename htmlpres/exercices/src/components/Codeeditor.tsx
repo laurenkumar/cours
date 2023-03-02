@@ -12,7 +12,6 @@ function CodeOnline({subject}) {
   const [cssVal, updateCssStrorage] = useLocalStorage("css", cssDefault);
   const [jsVal, updateJsStrorage] = useLocalStorage("js", "");
 
-  const [modalMessageRes, updateModalMessageRes] = useState("");
   const [modalMessageTest, updateModalMessageTest] = useState("");
   const [html, updateHtml] = useState(htmlVal);
   const [css, updateCss] = useState(cssVal);
@@ -181,8 +180,7 @@ function CodeOnline({subject}) {
             const test = (await import('../utils/test.jsx').then((r) => {
                 const result = r.runTests().then(
                   x=> {
-                    updateModalMessageRes(x[0]);
-                    updateModalMessageTest(x[1]);
+                    updateModalMessageTest(x);
                   }
                   ,err=>console.warn("got rejected:",err)
                 );
@@ -192,7 +190,7 @@ function CodeOnline({subject}) {
             setShowModal(true);
         }}
         >Envoyer</button>
-        <Modal reussite={modalMessageRes} test={modalMessageTest} showModal={setShowModal} seeModal={showModal}/>
+        <Modal test={modalMessageTest} showModal={setShowModal} seeModal={showModal}/>
     </div>
   );
 }

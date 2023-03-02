@@ -21,10 +21,10 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "@kodemo/player": "^0.3.2",
-    "@kodemo/util": "^0.3.2",
     "@monaco-editor/react": "^4.4.6",
+    "chai": "^4.3.7",
     "http-cache-semantics": "^4.1.1",
+    "jquery": "^3.6.3",
     "next": "^13.1.2",
     "next-remove-imports": "^1.0.10",
     "next-seo": "^5.15.0",
