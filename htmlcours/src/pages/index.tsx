@@ -15,7 +15,7 @@ const Index = () => {
         />
       }
     >
-      <Link href="/cours" title="cours">Cours</Link>
+      <Link className="text-white" href="/cours" title="cours">Cours</Link>
       <section className="hero">
         <div className="wrapper hero__wrapper">
           <div className="hero__content">
