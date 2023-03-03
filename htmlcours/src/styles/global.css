@@ -76,7 +76,7 @@ h1 .ko-anchor, h2 .ko-anchor, h3 .ko-anchor {
   color: #f25f4c !important;
 }
 
-p {
+p, q {
   color: #a7a9be;
 }
 
