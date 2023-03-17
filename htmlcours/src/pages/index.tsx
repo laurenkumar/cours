@@ -1,11 +1,54 @@
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 /* tslint:disable */
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
+
 import exemple from 'assets/videos/exemple.mp4';
+import curriculum from 'src/cours/curriculum.json';
 
 const Index = () => {
+  const [sidebar, setSidebar] = useState("");
+
+  useEffect(() => {
+    setSidebar(curriculum);
+  }, [sidebar]);
+
+  const SetCurriculum = (curriculum) => {
+    let parties = [];
+    for (const property in curriculum) {
+      parties.push(
+        <>
+          <label key={`tab-multi-${property}`} className="cursor-pointer">
+            <h4 className="md:text-4xl mb-4 mt-6 text-white text-left text-xl font-semibold">
+              <span className="mr-4">
+                {curriculum[property].sujet}
+              </span>
+              {property} : {curriculum[property].titre}
+            </h4>
+          </label>
+        </>
+      );
+      for (const property2 in curriculum[property].sousparties) {
+        parties.push(
+          <div className="inline-grid border p-2 m-1">
+          <p key={property2} className="pt-3 pb-3 font-semibold text-white">
+            {property2}.
+            <Link className="tracking-wider link-cursus" href={`cours/` + curriculum[property].sousparties[property2].id} title={curriculum[property].sousparties[property2].titre} > {curriculum[property].sousparties[property2].titre}</Link>
+          </p>
+          </div>
+        );
+      }
+    }
+    return (
+      <div className="pt-5 tab w-full">
+        {parties}
+      </div>
+    );
+  }
+  
+  const RWD = SetCurriculum(sidebar);
 
   return (
     <Main
@@ -20,7 +63,7 @@ const Index = () => {
         <section className="hero md:h-screen my-auto ml-4 mr-4 md:ml-16 md:mr-16 md:mt-0 mt-16 items-center flex md:flex-row flex-col justify-center">
           <div className="wrapper hero__wrapper">
             <div className="hero__content">
-              <h1 className="md:text-6xl text-left text-xl m-auto">Apprendre à coder facilement depuis chez vous !</h1>
+              <h1 className="md:font-normal md:text-4xl mb-4 text-left font-semibold text-3xl m-auto">Apprendre à coder facilement depuis chez vous !</h1>
               <h2 className="text-left text-xl"><strong>La création de site web, étape par étape.</strong></h2>
             </div>
 
@@ -71,9 +114,9 @@ const Index = () => {
           </div>
         </section>
         <section className="items-center pres-video flex md:flex-row flex-col justify-center bg-white md:h-screen my-auto md:mt-0 md:mb-0 mt-16 mb-16">
-          <div className="ml-4 mr-4 md:ml-14 md:mr-14 md:mt-10 md:mb-10 mb-16 mt-16">
+          <div className="ml-4 mr-4 md:ml-28 md:mr-28 md:mt-10 md:mb-10 mb-16 mt-16">
             <div className="items-center flex md:flex-row flex-col justify-center">
-              <video id="video" width="900" height="600" muted loop playsInline preload="none" autoPlay>
+              <video className="video-responsive w-full md:w-4/6" id="video" width="900" height="600" muted loop playsInline preload="none" autoPlay>
                 <source src="assets/videos/exemple.mp4" type="video/mp4" />
               </video>
               <div className="md:ml-20 md:mt-0 mt-6 max-w-md">
@@ -89,9 +132,9 @@ const Index = () => {
             </div>
           </div>
         </section>
-        <section className="items-center pres-video flex md:flex-row flex-col justify-center md:h-screen my-auto md:mt-0 md:mb-0 mt-16 mb-16">
-          <div className="ml-4 mr-4 md:ml-14 md:mr-14 md:mt-10 md:mb-10 mb-16 mt-16">
-            <div className="items-center flex md:flex-row flex-col justify-center">
+        <section className="items-center pres-video flex md:flex-row flex-col justify-center my-auto md:mt-16 md:mb-16 mt-8 mb-8">
+          <div className="w-full ml-4 mr-4 md:ml-28 md:mr-28 md:mt-16 md:mb-16">
+            <div className="md:ml-0 md:mr-0 mr-4 ml-4 items-center flex md:flex-row flex-col justify-between">
               <h2 className="leading-loose md:text-4xl mb-4 text-white text-left text-xl font-semibold">
                 Apprendre le développement web<br />
                 Développer des projets concrets<br />
@@ -108,19 +151,19 @@ const Index = () => {
           </div>
         </section>
         <section className="items-center pres-video flex md:flex-row flex-col justify-center bg-white md:h-screen my-auto md:mt-0 md:mb-0 mt-16 mb-16">
-          <div className="ml-4 mr-4 md:ml-14 md:mr-14 md:mt-10 md:mb-10 mb-16 mt-16">
+          <div className="w-full md:ml-28 md:mr-28 md:mt-10 md:mb-10 mb-16 mt-16">
             <div>
-              <h2 className="md:text-4xl mb-4 text-white text-left text-xl font-semibold">
+              <h2 className="md:text-4xl mb-4 md:ml-0 ml-4 text-white text-left text-xl font-semibold">
                 Le concept
               </h2>
-              <div className="md:mt-0 mt-6 max-w-5xl">
+              <div className="md:mt-0 mt-6 md:ml-0 ml-4 max-w-5xl">
                 <p>Fort de notre expérience de formateur/mentor chez différents clients tels que <Link href="https://openclassrooms.com/fr" target="_blank" title="Openclassrooms" nofollow="true">OpenClassrooms</Link>, <Link href="https://digital-college.fr/" target="_blank" title="Digital Collège" nofollow="true">Digital Collège</Link> ou même <Link href="https://webtech.institute" target="_blank" title="Webtech" nofollow="true">Webtech</Link>.</p>
                 <p>En présentiel dans votre entreprise ou en distanciel, vous choisissez comment vous former.</p>
               </div>
-              <div className="programme gap-x-6 flex md:flex-row flex-col justify-center mt-6">
+              <div className="programme gap-x-6 flex md:flex-row flex-col justify-between mt-6">
                 <div className="card max-w-md md:w-1/2 pt-6 p-6 md:mb-0 mb-6 min-h-50">
                   <h3 className="text-white text-xl font-semibold text-center mb-4">En E-learning</h3>
-                  <strong className="text-center">Des formations à suivre en ligne (800 euros en 1 fois)</strong>
+                  <strong className="text-center">Des formations à suivre en ligne (800 euros)</strong>
                   <ul className="text-white mt-4 list-disc pl-4">
                       <li>Pédagogie par projet</li>
                       <li>Lire des leçons concises</li>
@@ -150,40 +193,44 @@ const Index = () => {
             </div>
           </div>
         </section>
-        <section className="max-w-screen-xl programme mx-auto items-center pres-video flex md:flex-row flex-col justify-center md:h-screen my-auto md:mt-0 md:mb-0 mt-16 mb-16">
-          <div className="w-full ml-4 mr-4 md:ml-14 md:mr-14 md:mt-10 md:mb-10 mb-16 mt-16">
+        <section className="programme mx-auto items-center pres-video flex md:flex-row flex-col justify-center my-auto md:mt-16 md:mb-16 mt-16 mb-16">
+          <div className="ml-4 mr-4 md:ml-28 md:mr-28 md:mt-16 md:mb-16">
             <div>
-              <h2 className="md:text-4xl mb-4 text-white text-left text-xl font-semibold">
-                Le Programme
+              <h2 className="md:text-4xl mix-blend-difference mb-4 text-white text-left text-xl font-semibold">
+                Le programme
               </h2>
               <div className="shadow-md">
-                <div className="tab w-full overflow-hidden border-t">
+                <div className="tab w-full overflow-hidden">
                    <input className="absolute opacity-0 " id="tab-multi-one" type="checkbox" name="tabs" />
-                   <label className="block p-5 leading-normal cursor-pointer text-white" for="tab-multi-one">Responsive Web Design</label>
-                   <div className="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
-                      <p className="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+
+                   <label className="block pt-5 pb-5 cursor-pointer text-white" htmlFor="tab-multi-one">
+                    <h3 className="absolute">Responsive Web Design</h3>
+                   </label>
+                   <div className="tab-content overflow-scroll border-l-2 w-full leading-normal pl-5">
+                      <strong className="md:text-xs mb-4 mt-6 text-white text-sm font-thin">HTML pour le contenu et CSS pour la mise en page</strong>
+                      {RWD}
                    </div>
                 </div>
-                <div className="tab w-full overflow-hidden border-t">
+                <div className="tab w-full overflow-hidden">
                    <input className="absolute opacity-0" id="tab-multi-two" type="checkbox" name="tabs" />
-                   <label className="block p-5 leading-normal cursor-pointer text-white" for="tab-multi-two">Javascript</label>
-                   <div className="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
-                      <p className="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
-                   </div>
+                   <label className="block pt-5 pb-5 cursor-pointer text-white" htmlFor="tab-multi-two">Javascript</label>
+                   <div className="tab-content overflow-scroll border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                      <p className="p-5">Ca arrive bientôt !</p>
+                    </div> 
                 </div>
-                <div className="tab w-full overflow-hidden border-t">
+                <div className="tab w-full overflow-hidden">
                    <input className="absolute opacity-0" id="tab-multi-three" type="checkbox" name="tabs" />
-                   <label className="block p-5 leading-normal cursor-pointer text-white" for="tab-multi-three">Développement Front-End</label>
-                   <div className="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
-                      <p className="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
-                   </div>
+                   <label className="block pt-5 pb-5 cursor-pointer text-white" htmlFor="tab-multi-three">Développement Front-End</label>
+                   <div className="tab-content overflow-scroll border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                      <p className="p-5">Ca arrive bientôt !</p>
+                    </div> 
                 </div>
-                <div className="tab w-full overflow-hidden border-t">
+                <div className="tab w-full overflow-hidden">
                    <input className="absolute opacity-0" id="tab-multi-four" type="checkbox" name="tabs" />
-                   <label className="block p-5 leading-normal cursor-pointer text-white" for="tab-multi-four">Développement Back-End</label>
-                   <div className="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
-                      <p className="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
-                   </div>
+                   <label className="block pt-5 pb-5 cursor-pointer text-white" htmlFor="tab-multi-four">Développement Back-End</label>
+                   <div className="tab-content overflow-scroll border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                      <p className="p-5">Ca arrive bientôt !</p>
+                    </div> 
                 </div>
              </div>
             </div>

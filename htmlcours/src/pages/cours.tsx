@@ -3,8 +3,6 @@ import { KodemoMenu } from '@kodemo/util';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-import CodeOnline from '../components/Codeeditor';
-
 /* tslint:disable */
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
