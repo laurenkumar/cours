@@ -203,31 +203,31 @@ const Index = () => {
                 <div className="tab w-full overflow-hidden">
                    <input className="absolute opacity-0 " id="tab-multi-one" type="checkbox" name="tabs" />
 
-                   <label className="block pt-5 pb-5 cursor-pointer text-white" htmlFor="tab-multi-one">
-                    <h3 className="absolute">Responsive Web Design</h3>
+                   <label className="block mt-5 mb-5 cursor-pointer text-white" htmlFor="tab-multi-one">
+                    Responsive Web Design
                    </label>
                    <div className="tab-content overflow-scroll border-l-2 w-full leading-normal pl-5">
                       <strong className="md:text-xs mb-4 mt-6 text-white text-sm font-thin">HTML pour le contenu et CSS pour la mise en page</strong>
                       {RWD}
                    </div>
                 </div>
-                <div className="tab w-full overflow-hidden">
+                <div className="tab w-full overflow-hidden border-t-2">
                    <input className="absolute opacity-0" id="tab-multi-two" type="checkbox" name="tabs" />
-                   <label className="block pt-5 pb-5 cursor-pointer text-white" htmlFor="tab-multi-two">Javascript</label>
+                   <label className="block mt-5 mb-5 cursor-pointer text-white" htmlFor="tab-multi-two">Javascript</label>
                    <div className="tab-content overflow-scroll border-l-2 bg-gray-100 border-indigo-500 leading-normal">
                       <p className="p-5">Ca arrive bientôt !</p>
                     </div> 
                 </div>
-                <div className="tab w-full overflow-hidden">
+                <div className="tab w-full overflow-hidden border-t-2">
                    <input className="absolute opacity-0" id="tab-multi-three" type="checkbox" name="tabs" />
-                   <label className="block pt-5 pb-5 cursor-pointer text-white" htmlFor="tab-multi-three">Développement Front-End</label>
+                   <label className="block mt-5 mb-5 cursor-pointer text-white" htmlFor="tab-multi-three">Développement Front-End</label>
                    <div className="tab-content overflow-scroll border-l-2 bg-gray-100 border-indigo-500 leading-normal">
                       <p className="p-5">Ca arrive bientôt !</p>
                     </div> 
                 </div>
-                <div className="tab w-full overflow-hidden">
+                <div className="tab w-full overflow-hidden border-t-2 border-b-2">
                    <input className="absolute opacity-0" id="tab-multi-four" type="checkbox" name="tabs" />
-                   <label className="block pt-5 pb-5 cursor-pointer text-white" htmlFor="tab-multi-four">Développement Back-End</label>
+                   <label className="block mt-5 mb-5 cursor-pointer text-white" htmlFor="tab-multi-four">Développement Back-End</label>
                    <div className="tab-content overflow-scroll border-l-2 bg-gray-100 border-indigo-500 leading-normal">
                       <p className="p-5">Ca arrive bientôt !</p>
                     </div> 

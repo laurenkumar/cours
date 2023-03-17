@@ -710,3 +710,7 @@ code {
 .link-cursus:hover {
   color: #ff8906;
 }
+
+.shadow-md .tab {
+  border-color: #f25f4c;
+}
