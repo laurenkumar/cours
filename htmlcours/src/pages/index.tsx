@@ -135,7 +135,7 @@ const Index = () => {
         <section className="items-center pres-video flex md:flex-row flex-col justify-center my-auto md:mt-16 md:mb-16 mt-8 mb-8">
           <div className="w-full ml-4 mr-4 md:ml-28 md:mr-28 md:mt-16 md:mb-16">
             <div className="md:ml-0 md:mr-0 mr-4 ml-4 items-center flex md:flex-row flex-col justify-between">
-              <h2 className="leading-loose md:text-4xl mb-4 text-white text-left text-xl font-semibold">
+              <h2 className="w-full leading-loose md:text-4xl mb-4 text-white text-left text-xl font-semibold">
                 Apprendre le développement web<br />
                 Développer des projets concrets<br />
                 Obtenir des certifications
