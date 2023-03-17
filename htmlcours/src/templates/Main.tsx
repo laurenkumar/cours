@@ -29,10 +29,10 @@ const Main = (props: IMainProps) => (
         <ul>
           <li className="dropdownmenu">
             <Link
-              href={`https://formations.lkdigital.ninja/cours`}
+              href="/programme"
               title="Tous nos cours - Formation - LK Digital"
             >
-              Cours
+              Programme
             </Link>
             <div className="menu_drop">
               <p className="menu_subtitle">Formations en ligne</p>
@@ -41,27 +41,36 @@ const Main = (props: IMainProps) => (
                   <Link
                     href="/"
                     className="menu_subcours_link"
-                    title="Apprendre HTML: un langage de balisage"
+                    title="Responsive Web Design"
                   >
-                    Apprendre HTML: un langage de balisage
+                    Responsive Web Design
                   </Link>
                 </li> 
                 <li>
                   <Link
                     href="/"
                     className="menu_subcours_link"
-                    title="Apprendre CSS: un langage de mise en page"
+                    title="Javascript"
                   >
-                    Apprendre CSS: un langage de mise en page
+                    Javascript
                   </Link>
                 </li> 
                 <li>
                   <Link
                     href="/"
                     className="menu_subcours_link"
-                    title="Apprendre Javascript: un langage de programmation"
+                    title="Développement Front-End"
                   >
-                    Apprendre Javascript: un langage de programmation
+                    Développement Front-End
+                  </Link>
+                </li>  
+                <li>
+                  <Link
+                    href="/"
+                    className="menu_subcours_link"
+                    title="Développement Back-End"
+                  >
+                    Développement Back-End
                   </Link>
                 </li>    
               </ul>
@@ -85,11 +94,19 @@ const Main = (props: IMainProps) => (
           </li>
           <li>
             <Link
+              href="tarifs"
+              title="Les tarifs - LK Digital"
+            >
+              Tarifs
+            </Link>
+          </li>
+          <li>
+            <Link
               href={`https://lkdigital.ninja/blog`}
               target="_blank"
               title="Le blog - LK Digital"
             >
-              {`Blog`}
+              Blog
             </Link>
           </li>
           <li>
@@ -98,7 +115,7 @@ const Main = (props: IMainProps) => (
               target="_blank"
               title="Contactez nous - LK Digital"
             >
-              {`Contact`}
+              Contact
             </Link>
           </li>
         </ul>

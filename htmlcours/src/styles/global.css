@@ -230,7 +230,6 @@ code {
   text-align: left;
   position: absolute;
   z-index: 10;
-  border-radius: 3px;
   background: #0f0e17;
   padding: 20px;
   min-width: 350px;
@@ -630,7 +629,7 @@ code {
     -moz-transform: translate(4px, -4px);
     -ms-transform: translate(4px, -4px);
     transform: scaleY(1), translate(4px, -4px);
-    box-shadow: -8px 8px 0 currentColor;
+    box-shadow: -8px 8px 5px #f25f4c;
   }
   .ko-subjects {
     border-top-left-radius: 20px;
@@ -713,4 +712,121 @@ code {
 
 .shadow-md .tab {
   border-color: #f25f4c;
+}
+
+/* footer */
+
+footer .container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footerSocial {
+  padding-left: 8.5vw;
+  padding-right: 8.5vw;
+  bottom: 60px;
+  position: absolute;
+}
+
+footer .container > :first-child {
+  min-width: calc(35%);
+}
+
+footer .container > * {
+  flex: 1 1 0%;
+  margin-bottom: 4em;
+}
+
+footer svg path {
+  fill: #fffffe;
+}
+
+footer svg:hover path {
+  fill: #f25f4c;
+}
+
+footer .column {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  margin-bottom: 2em;
+}
+
+.column a {
+  display: inline-block;
+  padding: 0.5em 0px;
+  text-decoration: none;
+  position: relative;
+  font-size: 1em;
+  line-height: 1;
+  color: #fffffe;
+  text-decoration: underline;
+  transition: color 200ms ease-in-out 0s;
+}
+
+.column small {
+  color: #fffffe;
+  font-weight: 400;
+  font-size: 0.875em;
+  line-height: 1.428;
+  letter-spacing: 0px;
+}
+
+footer h4 {
+  color: #f25f4c;
+  font-weight: 400;
+  font-size: 0.875em;
+  line-height: 1.428;
+  letter-spacing: 0px;
+  margin-bottom: 2em;
+}
+
+.opensvg {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  opacity: 0;
+  transform: translate(100%, -50%);
+  transition: transform 500ms cubic-bezier(0.2, 1, 0.2, 1) 0s, opacity 200ms ease-in-out 0s;
+}
+
+.column.social {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-flow: row;
+}
+
+.column.social a {
+  margin-right: 1em;
+  transition: opacity 200ms ease-in-out 0s;
+}
+
+@media (hover: hover)
+{
+  .column a:hover {
+    color: #ff8906;
+  }
+}
+
+@media (max-width: 48em)
+{
+  .container > :first-child {
+    min-width: 100% !important;
+  }
+  .container > * {
+    flex: 1 1 0%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 32em)
+{
+  .container > * {
+    flex: 1 1 0%;
+    min-width: 100%;
+  }
 }
