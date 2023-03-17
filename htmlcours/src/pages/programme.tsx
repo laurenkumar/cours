@@ -75,13 +75,13 @@ const Programme = () => {
                    </label>
                    <div className="tab-content overflow-scroll border-l-2 w-full leading-normal pl-5">
                       <strong className="md:text-xs mb-4 mt-6 text-white text-sm font-thin">HTML pour le contenu et CSS pour la mise en page</strong>
-                      <p className="mt-6 w-1/2">
+                      <p className="mt-6 md:w-1/2">
                         Dans cette certification Responsive Web Design, vous apprendrez les langages que les développeurs utilisent pour créer des pages web : HTML (Hypertext Markup Language) pour le contenu et CSS (Cascading Style Sheets) pour la conception.
                       </p>
-                      <p className="mt-2 w-1/2">
+                      <p className="mt-2 md:w-1/2">
                         Vous commencerez par créer un site de voyages pour apprendre les bases du HTML et du CSS. 
                       </p>
-                      <p className="mt-2 w-1/2">
+                      <p className="mt-2 md:w-1/2">
                         Enfin, vous apprendrez à créer des pages web qui s'adaptent à différentes tailles d'écran en construisant une galerie de photos avec Flexbox et une mise en page d'article de magazine avec CSS Grid.
                       </p>
                       {RWD}
@@ -113,7 +113,7 @@ const Programme = () => {
           </div>
         </section>
 
-        <footer>
+        <footer className="md:ml-2 md:mr-2 ml-4 mr-4">
             <div className="container">
               <div>
                 <Link
@@ -153,8 +153,8 @@ const Programme = () => {
                       ou alors notre 06
                   </Link>
                 </div>
-                <small>
-                  <Link href="/legal" cursor-class="arrow" title="Mentions légales">
+                <small className="text-legal">
+                  <Link href="/legal" className="text-legal" cursor-class="arrow" title="Mentions légales">
                       Legal
                   </Link>
                   &nbsp;©&nbsp;2022

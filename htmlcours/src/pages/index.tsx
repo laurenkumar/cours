@@ -160,7 +160,7 @@ const Index = () => {
                 <p>Fort de notre expérience de formateur/mentor chez différents clients tels que <Link href="https://openclassrooms.com/fr" target="_blank" title="Openclassrooms" nofollow="true">OpenClassrooms</Link>, <Link href="https://digital-college.fr/" target="_blank" title="Digital Collège" nofollow="true">Digital Collège</Link> ou même <Link href="https://webtech.institute" target="_blank" title="Webtech" nofollow="true">Webtech</Link>.</p>
                 <p>En présentiel dans votre entreprise ou en distanciel, vous choisissez comment vous former.</p>
               </div>
-              <div className="programme gap-x-6 flex md:flex-row flex-col justify-between mt-6">
+              <div className="programme md:mr-0 md:ml-0 mr-4 ml-4 gap-x-6 flex md:flex-row flex-col justify-between mt-6">
                 <div className="card max-w-md md:w-1/2 pt-6 p-6 md:mb-0 mb-6 min-h-50">
                   <h3 className="text-white text-xl font-semibold text-center mb-4">En E-learning</h3>
                   <strong className="text-center">Des formations à suivre en ligne (800 euros)</strong>
@@ -237,7 +237,7 @@ const Index = () => {
           </div>
         </section>
 
-        <footer>
+        <footer className="md:ml-2 md:mr-2 ml-4 mr-4">
             <div className="container">
               <div>
                 <Link
@@ -277,8 +277,8 @@ const Index = () => {
                       ou alors notre 06
                   </Link>
                 </div>
-                <small>
-                  <Link href="/legal" cursor-class="arrow" title="Mentions légales">
+                <small className="text-legal">
+                  <Link href="/legal" className="text-legal" cursor-class="arrow" title="Mentions légales">
                       Legal
                   </Link>
                   &nbsp;©&nbsp;2022

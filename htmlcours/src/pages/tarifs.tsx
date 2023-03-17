@@ -69,7 +69,7 @@ const Tarifs = () => {
           </div>
         </section>
 
-        <footer>
+        <footer className="md:ml-2 md:mr-2 ml-4 mr-4">
             <div className="container">
               <div>
                 <Link
@@ -109,8 +109,8 @@ const Tarifs = () => {
                       ou alors notre 06
                   </Link>
                 </div>
-                <small>
-                  <Link href="/legal" cursor-class="arrow" title="Mentions légales">
+                <small className="text-legal">
+                  <Link href="/legal" cursor-class="arrow" className="text-legal" title="Mentions légales">
                       Legal
                   </Link>
                   &nbsp;©&nbsp;2022

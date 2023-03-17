@@ -714,6 +714,10 @@ code {
   border-color: #f25f4c;
 }
 
+.text-legal {
+  color: #f25f4c;
+}
+
 /* footer */
 
 footer .container {
