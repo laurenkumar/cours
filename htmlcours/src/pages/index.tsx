@@ -355,7 +355,7 @@ const Index = () => {
                     lauren_d@outlook.fr
                 </Link>
                 <Link href="sms:0033612801258" cursor-class="arrow" title="Notre numéro de portable">
-                    0612801258
+                    06 12 80 12 58
                 </Link>
               </div>
             </div>
