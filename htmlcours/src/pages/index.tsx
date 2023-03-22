@@ -250,7 +250,7 @@ const Index = () => {
               <h2 className="md:text-4xl mb-4 md:ml-0 ml-4 text-white text-left text-xl font-semibold">
                 Le concept
               </h2>
-              <div className="md:mt-0 mt-6 md:ml-0 ml-4 max-w-5xl">
+              <div className="md:mt-0 mt-6 md:ml-0 ml-4 max-w-4xl">
                 <p>Fort de notre expérience de formateur/mentor chez différents clients tels que <Link href="https://openclassrooms.com/fr" target="_blank" title="Openclassrooms" nofollow="true">OpenClassrooms</Link>, <Link href="https://digital-college.fr/" target="_blank" title="Digital Collège" nofollow="true">Digital Collège</Link> ou même <Link href="https://webtech.institute" target="_blank" title="Webtech" nofollow="true">Webtech</Link>.</p>
                 <p>En présentiel dans votre entreprise ou en distanciel, vous choisissez comment vous former.</p>
               </div>
@@ -335,6 +335,7 @@ const Index = () => {
         >
           <div className="ml-4 mr-4 md:ml-0 md:mr-0 md:mt-16 md:mb-16 mt-16 mb-16">
             <h2 className="md:text-4xl mb-4 text-black text-left text-xl font-semibold">Des questions ? Contactez nous !</h2>
+            <ContactForm />
             <h3 className="mb-6 mt-4 text-black font-semibold">
               Si vous préférez, vous pouvez aussi nous contacter via mail ou nous
               envoyer un sms directement !
