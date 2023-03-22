@@ -250,7 +250,7 @@ const Index = () => {
               <h2 className="md:text-4xl mb-4 md:ml-0 ml-4 text-white text-left text-xl font-semibold">
                 Le concept
               </h2>
-              <div className="md:mt-0 mt-6 md:ml-0 ml-4 max-w-4xl">
+              <div className="md:mt-0 mt-6 md:ml-0 ml-4 max-w-sm md:w-full w-4/5">
                 <p>Fort de notre expérience de formateur/mentor chez différents clients tels que <Link href="https://openclassrooms.com/fr" target="_blank" title="Openclassrooms" nofollow="true">OpenClassrooms</Link>, <Link href="https://digital-college.fr/" target="_blank" title="Digital Collège" nofollow="true">Digital Collège</Link> ou même <Link href="https://webtech.institute" target="_blank" title="Webtech" nofollow="true">Webtech</Link>.</p>
                 <p>En présentiel dans votre entreprise ou en distanciel, vous choisissez comment vous former.</p>
               </div>
