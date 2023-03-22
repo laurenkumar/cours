@@ -44,7 +44,7 @@ const Tarifs = () => {
             </div>
           </div>
           <div
-            className="relative z-20 md:mt-0 mt-10 overflow-hidden pb-12 lg:pt-[120px] lg:pb-[90px]"
+            className="relative z-20 md:mt-0 mt-20 overflow-hidden pb-12 lg:pt-[120px] lg:pb-[90px]"
           >
             <div className="container mx-auto">
               <div className="-mx-4 flex flex-wrap justify-center">
