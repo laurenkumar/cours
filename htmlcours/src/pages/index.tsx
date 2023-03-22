@@ -335,7 +335,6 @@ const Index = () => {
         >
           <div className="ml-4 mr-4 md:ml-0 md:mr-0 md:mt-16 md:mb-16 mt-16 mb-16">
             <h2 className="md:text-4xl mb-4 text-black text-left text-xl font-semibold">Des questions ? Contactez nous !</h2>
-            <ContactForm />
             <h3 className="mb-6 mt-4 text-black font-semibold">
               Si vous préférez, vous pouvez aussi nous contacter via mail ou nous
               envoyer un sms directement !
