@@ -812,7 +812,7 @@ footer h4 {
 /* contact */
 
 .contactform label {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   font-weight: 600;
   color: #fffffe;
@@ -828,7 +828,7 @@ footer h4 {
   padding-right: 0.2rem;
   margin-right: 0.3rem;
   color: #ff8906;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   font-weight: 600;
   border:0px;
   outline:0px;
@@ -848,7 +848,7 @@ footer h4 {
 
 .contactform input {
   height: 3.2rem;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   font-weight: 600;
   min-height: 3.2rem;
   padding: 0rem 0rem;
@@ -867,7 +867,7 @@ footer h4 {
 
 .contactform span {
   background: none;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   color: black;
   font-weight: 600;
 }
