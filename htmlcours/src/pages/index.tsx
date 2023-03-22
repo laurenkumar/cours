@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
 /* tslint:disable */
 import { Meta } from '@/layouts/Meta';
@@ -14,6 +15,99 @@ const Index = () => {
   useEffect(() => {
     setSidebar(curriculum);
   }, [sidebar]);
+
+  function ContactForm() {
+    const [state, handleSubmit] = useForm("mjvlnyrq");//process.env.NEXT_PUBLIC_SIMPLE_FORM_ID
+    if (state.succeeded) {
+      return (
+        <p>Votre message a bien été envoyé, nous vous répondrons rapidement !</p>
+      );
+    }
+    return (
+      <form
+        onSubmit={handleSubmit}
+        className="contactform card w-full pt-10 p-6 mb-6 min-h-50"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.5,
+          delay: 0.5,
+        }}
+        exit={{ opacity: 0, y: 50 }}
+        key="sectionform"
+      >
+        <p className="mb-6">
+          <label htmlFor="name">Bonjour LK Formation, je m&lsquo;appelle </label>
+          <input
+            id="name"
+            type="name"
+            name="name"
+            placeholder="Dorian Laurenceau"
+            required
+          />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
+          .
+        </p>
+        <p>
+          <label htmlFor="objet">Je vous contacte car je voudrais</label>
+          <select name="objet" id="objet" required>
+            <option value="formations" defaultValue>
+              des informations sur les formations.
+            </option>
+            <option value="rendez-vous"> avoir un entretien.</option>
+            <option value="débouchés">connaître les débouchés.</option>
+            <option value="informations">
+              juste plus d'informations.
+            </option>
+            <option value="intra">une formation intra.</option>
+          </select>
+          <ValidationError prefix="Objet" field="objet" errors={state.errors} />
+        </p>
+        <p className="mt-10 mb-6">
+          <label htmlFor="email">Vous pouvez me joindre sur cet email </label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="hello@lkdigital.ninja"
+            required
+          />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
+          .
+        </p>
+        <p className="mb-6">
+          <p className="text-white">J&lsquo;attends avec impatience votre retour.</p>
+        </p>
+        <p className="mb-6">
+          <p>Bonne journée,</p>
+        </p>
+        <label htmlFor="rgpd" className="checkbox mb-10">
+          <input
+            id="rgpd"
+            type="checkbox"
+            name="rgpd"
+            required
+            data-error="accepter les conditions d'utilisation"
+          />
+          <p className="rgpd">
+            En cochant cette case j&lsquo;accepte que LK Digital utilise mes
+            données pour me recontacter.
+          </p>
+        </label>
+        <ValidationError prefix="Rgpd" field="rgpd" errors={state.errors} />
+        <div className="mb-12 text-black">
+          <button
+            type="submit"
+            disabled={state.submitting}
+            className="contactsubmit"
+          >
+            Envoyer
+            <i className="arrow"></i>
+          </button>
+        </div>
+      </form>
+    );
+  }
 
   const SetCurriculum = (curriculum) => {
     let parties = [];
@@ -236,6 +330,37 @@ const Index = () => {
             </div>
           </div>
         </section>
+        <section
+          className="items-center pres-video flex flex-col justify-center bg-white my-auto md:mt-16 md:mb-16 mt-16 mb-16"
+        >
+          <div className="ml-4 mr-4 md:ml-0 md:mr-0 md:mt-16 md:mb-16 mt-16 mb-16">
+            <h2 className="md:text-4xl mb-4 text-black text-left text-xl font-semibold">Des questions ? Contactez nous !</h2>
+            <ContactForm />
+            <h3 className="mb-6 mt-4 text-black font-semibold">
+              Si vous préférez, vous pouvez aussi nous contacter via mail ou nous
+              envoyer un sms directement !
+            </h3>
+            <div className="flex flex-col w-full justify-between 2xl:flex-row">
+              <div className="mb-20 flex flex-col justify-center">
+                <p className="nomargin">1 impasse Saint Laurent</p>
+                <p className="nomargin">38200 Vienne</p>
+              </div>
+              <div className="mb-20 flex flex-col justify-center">
+                <Link
+                  href="mailto:lauren_d@outlook.fr"
+                  cursor-class="arrow"
+                  title="Notre mail"
+                  className="text-dark"
+                >
+                    lauren_d@outlook.fr
+                </Link>
+                <Link href="sms:0033612801258" cursor-class="arrow" title="Notre numéro de portable">
+                    0612801258
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <footer className="md:ml-2 md:mr-2 ml-4 mr-4">
             <div className="container">
@@ -340,8 +465,7 @@ const Index = () => {
                     href="https://facebook.com/lkdigital/"
                     title="Aller sur Facebook"
                     target="_blank"
-                    noreferrer
-                    noopener
+                    rel="noopener noreferrer"
                     cursor-class="arrow"
                   >
                     <svg
