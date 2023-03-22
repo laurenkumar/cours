@@ -341,11 +341,11 @@ const Index = () => {
               envoyer un sms directement !
             </h3>
             <div className="flex flex-col w-full justify-between 2xl:flex-row">
-              <div className="mb-20 flex flex-col justify-center">
+              <div className="flex flex-col justify-center">
                 <p className="nomargin">1 impasse Saint Laurent</p>
                 <p className="nomargin">38200 Vienne</p>
               </div>
-              <div className="mb-20 flex flex-col justify-center">
+              <div className="flex flex-col justify-center">
                 <Link
                   href="mailto:lauren_d@outlook.fr"
                   cursor-class="arrow"
