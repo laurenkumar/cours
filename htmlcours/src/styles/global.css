@@ -312,7 +312,6 @@ code {
 
 .topmenu .button_login, .pres-video .button_login, .hero .button_login {
   background: #ff8906;
-  display: flex;
   justify-content: center;
   border: none;
   align-items: center;
@@ -1043,6 +1042,28 @@ footer h4 {
   .model h1 {
     font-size: 2.8em;
   }
+}
+
+/* *** */
+
+/* navbar */
+
+.menu_resp {
+    opacity: 1;
+    box-shadow: -8px 8px 5px #f25f4c;
+    text-align: left;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    width: 90%;
+    left: 18.48px;
+    background: #0f0e17;
+    padding: 20px;
+    transform: scaleY(1);
+    transform-origin: top left;
+    transition: box-shadow 800ms ease,transform 800ms ease, .4s ease-out all;
+    border: 1px solid #000;
+    -webkit-transition: box-shadow 200ms ease,-webkit-transform 200ms ease;
 }
 
 /* *** */

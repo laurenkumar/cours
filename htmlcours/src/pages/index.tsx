@@ -332,6 +332,7 @@ const Index = () => {
         </section>
         <section
           className="items-center pres-video flex flex-col justify-center bg-white my-auto md:mt-16 md:mb-16 mt-16 mb-16"
+          id="contact"
         >
           <div className="ml-4 mr-4 md:ml-0 md:mr-0 md:mt-16 md:mb-16 mt-16 mb-16">
             <h2 className="md:text-4xl mb-4 text-black text-left text-xl font-semibold">Des questions ? Contactez nous !</h2>
