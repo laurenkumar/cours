@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import Link from 'next/link';
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
 
 export default function Navbar({ fixed }) {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const session = useSession()
+
   return (
     <>
       <nav className="topmenu">
@@ -119,11 +122,11 @@ export default function Navbar({ fixed }) {
               </ul>
             </div>
             <Link
-                href="https://formations/lkdigital.ninja/connexion"
+                href="/connexion"
                 className="hidden lg:flex button_login"
                 title="Connexion - LK Digital"
             >
-                Connexion
+              {!session ? 'Connexion' : session.user.email}
             </Link>
           </div>
           <div className={
@@ -226,11 +229,11 @@ export default function Navbar({ fixed }) {
               </li>
             </ul>
             <Link
-              href="https://formations/lkdigital.ninja/connexion"
+              href="/connexion"
               className="button_login flex items-center justify-center"
               title="Connexion - LK Digital"
             >
-              Connexion
+              {!session ? 'Connexion' : session.user.email}
             </Link>
           </div>
       </nav>

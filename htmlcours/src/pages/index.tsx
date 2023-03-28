@@ -17,7 +17,7 @@ const Index = () => {
   }, [sidebar]);
 
   function ContactForm() {
-    const [state, handleSubmit] = useForm("mjvlnyrq");//process.env.NEXT_PUBLIC_SIMPLE_FORM_ID
+    const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_SIMPLE_FORM_ID);//process.env.NEXT_PUBLIC_SIMPLE_FORM_ID
     if (state.succeeded) {
       return (
         <p>Votre message a bien été envoyé, nous vous répondrons rapidement !</p>
@@ -128,8 +128,9 @@ const Index = () => {
         parties.push(
           <div className="inline-grid border p-2 m-1">
           <p key={property2} className="pt-3 pb-3 font-semibold text-white">
-            {property2}.
-            <Link className="tracking-wider link-cursus" href={`cours/` + curriculum[property].sousparties[property2].id} title={curriculum[property].sousparties[property2].titre} > {curriculum[property].sousparties[property2].titre}</Link>
+            <Link className="tracking-wider link-cursus" href={`cours/` + curriculum[property].sousparties[property2].id} title={curriculum[property].sousparties[property2].titre}>
+              {property2}<span className="hidden">{curriculum[property].sousparties[property2].titre}</span>
+            </Link>  
           </p>
           </div>
         );

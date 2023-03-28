@@ -322,6 +322,18 @@ code {
   transition: all .2s ease-in-out;
 }
 
+.hero .button_login_deco {
+  background: #f25f4c;
+  justify-content: center;
+  border: none;
+  align-items: center;
+  padding: 0 0.8em;
+  height: 50px;
+  -webkit-appearance: none;
+  color: #0f0e17;
+  transition: all .2s ease-in-out;
+}
+
 .topmenu .button_login:hover, .pres-video .button_login:hover, .hero .button_login:hover {
   background: #f25f4c;
   color: #2e2f3e;

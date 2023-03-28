@@ -1,0 +1,43 @@
+{
+  "sign_up": {
+    "email_label": "Adresse mail",
+    "password_label": "Créer un mot de passe",
+    "email_input_placeholder": "Votre adresse e-mail",
+    "password_input_placeholder": "Votre mot de passe",
+    "button_label": "S'inscrire",
+    "loading_button_label": "S'inscrire ...",
+    "social_provider_text": "{{provider}}",
+    "link_text": "Vous n'avez pas encore de compte ? S'inscrire"
+  },
+  "sign_in": {
+    "email_label": "Adresse mail",
+    "password_label": "Créer un mot de passe",
+    "email_input_placeholder": "Votre adresse e-mail",
+    "password_input_placeholder": "Votre mot de passe",
+    "button_label": "Se connecter",
+    "loading_button_label": "Se connecter ...",
+    "social_provider_text": "{{provider}}",
+    "link_text": "Vous avez déjà un compte ? Se connecter"
+  },
+  "magic_link": {
+    "email_input_label": "Adresse mail",
+    "email_input_placeholder": "Votre adresse e-mail",
+    "button_label": "Envoyer un lien magique",
+    "loading_button_label": "Envoi d'un lien magique ...",
+    "link_text": "Envoyer un lien magique par e-mail"
+  },
+  "forgotten_password": {
+    "email_label": "Adresse mail",
+    "password_label": "Votre mot de passe",
+    "email_input_placeholder": "Votre adresse e-mail",
+    "button_label": "Envoyer des instructions pour réinitialiser le mot de passe",
+    "loading_button_label": "Envoie des instructions de réinitialisation ...",
+    "link_text": "Mot de passe oublié?"
+  },
+  "update_password": {
+    "password_label": "Nouveau mot de passe",
+    "password_input_placeholder": "Votre nouveau mot de passe",
+    "button_label": "Mettre à jour le mot de passe",
+    "loading_button_label": "Mise à jour du mot de passe ..."
+  }
+}
