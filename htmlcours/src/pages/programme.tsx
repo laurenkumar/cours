@@ -291,7 +291,7 @@ const Programme = () => {
                 </div>
               </div>
             </div>
-          </footer>
+        </footer>
       </div>
     </Main>
   );

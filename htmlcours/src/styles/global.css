@@ -13,6 +13,12 @@ body {
   --site-header-height: 60px;
   --site-section-rounding: 20px;
   --site-section-inner-rounding: 14px;
+  background-image: radial-gradient(
+    rgba(226 124 34 / 52%) 1px, 
+    transparent 1px
+  );
+  background-position: 50% 50%;
+  background-size: 1rem 1rem;
 }
 
 @media only screen and (max-width: 700px)

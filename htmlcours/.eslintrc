@@ -17,13 +17,13 @@
   "overrides": [
     // Configuration for TypeScript files
     {
-      "files": ["**/*.ts", "**/*.tsx"],
       "plugins": [
         "@typescript-eslint",
         "unused-imports",
         "tailwindcss",
         "simple-import-sort"
       ],
+      "files": ["**/*.ts", "**/*.tsx"],
       "extends": [
         "plugin:tailwindcss/recommended",
         "airbnb-typescript",
