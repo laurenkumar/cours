@@ -11,7 +11,7 @@ import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
 // custom hooks
-import useLocalStorage from '../hooks/LocalStorage'
+import useLocalStorage from '../Hooks/LocalStorage'
 
 // custom components
 import CustomForm from '../components/CustomForm'
