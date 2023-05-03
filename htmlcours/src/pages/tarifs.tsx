@@ -1008,7 +1008,7 @@ const Tarifs = () => {
                   <Link href="https://lkdigital.ninja/services" cursor-classname="arrow" title="Aller voir nos services">
                       Services
                   </Link>
-                  <Link href="https://lkdigital.ninja/blog" cursor-classname="arrow" title="Aller sur notre blog">
+                  <Link href="https://blog.lkdigital.ninja" cursor-classname="arrow" title="Aller sur notre blog">
                       Blog
                   </Link>
                 </div>

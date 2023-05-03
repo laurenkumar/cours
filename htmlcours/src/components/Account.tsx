@@ -71,8 +71,8 @@ export default function Account({ session }: { session: Session }) {
   }
 
   return (
-    <div className="form-widget hero mb-16">
-      <h1 className="md:font-normal md:text-4xl mb-4 text-left font-semibold text-3xl m-auto">Votre profil</h1>
+    <div className="form-widget p-4 w-2/5 hero mb-16">
+      <h1 className="md:font-normal md:text-4xl mb-4 text-left font-semibold text-3xl m-auto">Votre avancée</h1>
       <div className="mt-8 flex md:flex-row flex-col justify-between items-center">
         <label htmlFor="email" className="text-lg text-white mr-4">Email</label>
         <input id="email" type="text" className="p-2 w-4/6" value={session.user.email} disabled />
@@ -97,6 +97,9 @@ export default function Account({ session }: { session: Session }) {
           onChange={(e) => setCourse(e.target.value)}
           disabled
         />
+      </div>
+      <div className="mt-8 flex md:flex-row flex-col justify-between items-center">
+        <label className="text-lg text-white mr-4" htmlFor="course_id">Votre niveau: 100</label>
       </div>
       <div className="flex md:flex-row flex-col justify-between items-center">
         <div className="mt-8">

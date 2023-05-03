@@ -184,7 +184,7 @@ const Programme = () => {
                   <Link href="https://lkdigital.ninja/services" cursor-class="arrow" title="Aller voir nos services">
                       Services
                   </Link>
-                  <Link href="https://lkdigital.ninja/blog" cursor-class="arrow" title="Aller sur notre blog">
+                  <Link href="https://blog.lkdigital.ninja" cursor-class="arrow" title="Aller sur notre blog">
                       Blog
                   </Link>
                 </div>

@@ -104,7 +104,7 @@ export default function Navbar({ fixed }) {
                 </li>
                 <li>
                   <Link
-                    href={`https://lkdigital.ninja/blog`}
+                    href={`https://blog.lkdigital.ninja`}
                     target="_blank"
                     title="Le blog - LK Digital"
                   >
