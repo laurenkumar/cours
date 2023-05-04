@@ -615,6 +615,11 @@ code {
   display: block;
 }
 
+.ko-story-content ul li {
+    list-style: circle;
+    color: white;
+}
+
 /* **** */
 
 @media (min-width: 768px)
