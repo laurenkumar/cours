@@ -9,35 +9,19 @@
             "id":"#apprendre-html-en-codant-un-site-de-voyage"
          },
          {
-            "titre":"Le DOCTYPE d'un document HTML",
-            "id":"#doctype-html"
+            "titre":"Un texte structuré avec les balises de titres hn",
+            "id":"#un-texte-structur-avec-les-balises-de-titres-hn"
          },
          {
-            "titre":"Définir le head et le body",
-            "id":"#head-body"
+            "titre":"Les paragraphes",
+            "id":"#les-paragraphes"
          },
          {
-            "titre":"Votre premier élément HTML",
-            "id":"#element"
-         },
-         {
-            "titre":"Les éléments de titre avec Hn",
-            "id":"#titre-hn"
-         },
-         {
-            "titre":"La balise paragraphe",
-            "id":"#paragraphe"
-         },
-         {
-            "titre":"Les commentaires en HTML",
+            "titre":"Les commentaires",
             "id":"#les-commentaires"
          },
          {
-            "titre":"Définir le head et le body",
-            "id":"#head-body"
-         },
-         {
-            "titre":"L'élément main",
+            "titre":"Le contenu le plus important",
             "id":"#le-contenu-le-plus-important"
          },
          {
@@ -45,35 +29,27 @@
             "id":"#limbrication-et-lindentation"
          },
          {
-            "titre":"Ajouter des images",
-            "id":"#les-images-et-son-lment-img"
-         },
-         {
-            "titre":"Créer un lien (ancre) en HTML",
+            "titre":"Les liens en HTML (ancre)",
             "id":"#les-liens-en-html-ancre"
          },
          {
-            "titre":"Transformer une image en lien",
-            "id":"#transformer-une-image-en-lien"
+            "titre":"L'élément section",
+            "id":"#llment-section"
          },
          {
-            "titre":"Les listes non ordonnées",
-            "id":"#les-listes-non-ordonnes"
-         },
-         {
-            "titre":"Les listes ordonnées",
-            "id":"#les-listes-ordonnes"
+            "titre":"Les listes",
+            "id":"#les-listes"
          },
          {
             "titre":"Les éléments figure et figcaption",
-            "id":"#les-elements-figure-et-figcaption"
+            "id":"#les-lments-figure-et-figcaption"
          },
          {
             "titre":"L'élément strong et em",
             "id":"#llment-strong-et-em"
          },
          {
-            "titre":"Les éléments form et input",
+            "titre":"L'élément form et l'élément input",
             "id":"#llment-form-et-llment-input"
          },
          {
@@ -93,15 +69,11 @@
             "id":"#lattribut-id"
          },
          {
-            "titre":"L'attribut value",
-            "id":"#lattribut-value"
-         },
-         {
             "titre":"L'élément fieldset",
             "id":"#llment-fieldset"
          },
          {
-            "titre":"L'élément legend",
+            "titre":"L'élément Legend",
             "id":"#llment-legend"
          },
          {
@@ -121,16 +93,8 @@
             "id":"#llment-footer"
          },
          {
-            "titre":"L'élément title",
-            "id":"#llment-title"
-         },
-         {
-            "titre":"L'élément html",
-            "id":"#llment-html"
-         },
-         {
-            "titre":"#les-meta",
-            "id":"#les-meta"
+            "titre":"L'élément head et body",
+            "id":"#llment-head-et-body"
          }
       ]
    },

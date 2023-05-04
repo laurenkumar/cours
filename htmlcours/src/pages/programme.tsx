@@ -34,7 +34,14 @@ const Programme = () => {
         parties.push(
           <div className="inline-grid border p-2 m-1">
           <p key={property2} className="pt-3 pb-3 font-semibold text-white">
-            <Link className="tracking-wider link-cursus" href={`cours/` + curriculum[property].sousparties[property2].id} title={curriculum[property].sousparties[property2].titre}>
+            <Link
+              className="tracking-wider link-cursus"
+              href={{
+                pathname: '/cours',
+                query: { json: `ex${parseInt(property2)+1}` },
+              }}
+              title={curriculum[property].sousparties[property2].titre}
+            >
               {property2}<span className="hidden">{curriculum[property].sousparties[property2].titre}</span>
             </Link>
           </p>

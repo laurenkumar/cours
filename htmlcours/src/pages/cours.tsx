@@ -2,19 +2,77 @@ import { KodemoPlayer, Pagination } from '@kodemo/player';
 import { KodemoMenu } from '@kodemo/util';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from "next/router";
 
 /* tslint:disable */
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
-import html_part_1 from 'src/cours/html_part_1.json';
+import curriculum from 'src/cours/curriculum.json';
 
 const Cours = () => {
   const [sidebar, setSidebar] = useState("");
+  const router = useRouter();
+  const {json} = router.query;
+
+  const [course, setCourse] = useState("")
 
   useEffect(() => {
-    setSidebar(html_part_1.documentNav);
-  }, [sidebar]);
+    if(!json) {
+      return;
+    }
+    const load = async () => {
+      const data = await import(`../cours/${json}.json`, { assert: { type: "json" } });
+      setCourse(data.default);
+    }
+    load();
+    setSidebar(curriculum);
+  }, [sidebar, course, json]);
+
+  const SetCurriculum = (curriculum) => {
+    let parties = [];
+    for (const property in curriculum) {
+      parties.push(
+        <>
+          <div className="side__program__part">
+            <div className="side__program__part__picto">
+              ❤️
+            </div>
+            <div className="side__program__part__title">
+              <span>Projet •</span> {curriculum[property].sujet}
+            </div>
+          </div>
+          <div className="side__program__chapter">
+            <div className="side__program__chapter__num">{property}</div>
+            <div className="side__program__chapter__text">{curriculum[property].titre}</div>
+          </div>
+        </>
+      );
+      for (const property2 in curriculum[property].sousparties) {
+        parties.push(
+          <li className="side__program__lesson" key={property2}>
+            <Link
+              href={{
+                pathname: '/cours',
+                query: { json: `ex${parseInt(property2)+1}` },
+              }}
+              title={curriculum[property].sousparties[property2].titre}
+            >
+              {curriculum[property].sousparties[property2].titre}
+            </Link>
+          </li>
+        );
+      }
+    }
+    return (
+      <div>
+        {parties}
+      </div>
+      
+    );
+  }
+  
+  const RWD = SetCurriculum(sidebar);
 
   function Menu() {
     return (
@@ -34,7 +92,7 @@ const Cours = () => {
     );
   }
 
-  function SideNav() {
+  function SideNav(sidebar) {
     return (
       <nav className="side">
         <div className="side__program">
@@ -47,27 +105,9 @@ const Cours = () => {
               Responsive Web Design: créer un site web sur mesure
             </div>
           </div> 
-                <div>
-                  <div className="side__program__part">
-                    <div className="side__program__part__picto">
-                      ❤️
-                    </div>
-                    <div className="side__program__part__title">
-                      <span>Projet •</span> {sidebar.sujet}
-                    </div>
-                  </div>
-                  <div className="side__program__chapter">
-                    <div className="side__program__chapter__num">1A</div>
-                    <div className="side__program__chapter__text">{sidebar.partie}</div>
-                  </div> 
-                  <ul className="side__program__lessons">
-                    {sidebar.sousparties.map((data, idx) => (
-                    <li className="side__program__lesson" key={idx}>
-                      <Link href={data.id} title={data.titre}>{idx+1}. {data.titre}</Link>
-                    </li>
-                    ))}
-                  </ul>
-                </div>
+          <div>
+          {RWD}
+          </div>
           <div className="side__program__part">
             <div className="side__program__part__picto">
               ❤️
@@ -103,8 +143,20 @@ const Cours = () => {
       <KodemoPlayer
         menu={<Menu />}
         keyboardPagination={true} 
-        json={html_part_1}>
+        json={course}>
       </KodemoPlayer>
+      { json &&
+        <Link
+          className="next-exo"
+          href={{
+            pathname: '/cours',
+            query: { json: json === 'ex23' ? "ex1" : `ex${parseInt(json.substring(2)) + 1}` },
+          }}
+          title="Exercice suivant"
+        >
+          Exo suivant
+        </Link>
+      }
     </Main>
   );
 };

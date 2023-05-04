@@ -473,7 +473,7 @@ code {
 
 .side__program__chapter__num {
   text-transform: uppercase;
-  width: 32px;
+  width: fitcontent;
   margin: 0 12px;
   padding: 0 4px;
   background: #1e2127;
@@ -493,6 +493,7 @@ code {
   padding: 5px 12px 5px 56px;
   font-weight: 100;
   font-size: .9em;
+  list-style: none;
 }
 
 .side__program__lesson:before {
@@ -535,6 +536,25 @@ code {
 }
 
 /* code editeur */
+
+.next-exo {
+  position: fixed;
+  left: max(calc(42vw - min(var(--site-max-width),100vw) / 2 + var(--menu-width-offset) + 60px),1rem);
+  transform: translateX(calc(-100% - 3rem));
+  bottom: 1rem;
+  background: white;
+  /* padding: 1ch; */
+  padding: 0 1rem;
+  margin: 0;
+  border-radius: 8px;
+  align-items: center;
+  display: flex;
+  vertical-align: middle;
+  height: 40px;
+  z-index: 100;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
 
 .tabs {
   width: 650px;
@@ -1062,21 +1082,21 @@ footer h4 {
 /* navbar */
 
 .menu_resp {
-    opacity: 1;
-    box-shadow: -8px 8px 5px #f25f4c;
-    text-align: left;
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    width: 90%;
-    left: 18.48px;
-    background: #0f0e17;
-    padding: 20px;
-    transform: scaleY(1);
-    transform-origin: top left;
-    transition: box-shadow 800ms ease,transform 800ms ease, .4s ease-out all;
-    border: 1px solid #000;
-    -webkit-transition: box-shadow 200ms ease,-webkit-transform 200ms ease;
+  opacity: 1;
+  box-shadow: -8px 8px 5px #f25f4c;
+  text-align: left;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  width: 90%;
+  left: 18.48px;
+  background: #0f0e17;
+  padding: 20px;
+  transform: scaleY(1);
+  transform-origin: top left;
+  transition: box-shadow 800ms ease,transform 800ms ease, .4s ease-out all;
+  border: 1px solid #000;
+  -webkit-transition: box-shadow 200ms ease,-webkit-transform 200ms ease;
 }
 
 /* *** */
@@ -1112,9 +1132,9 @@ footer h4 {
   padding: 0.5em;
   border-radius: var(--_radius);
   box-shadow: 0.05em 0.1em 0.9em hsl(var(--accent) / 0.3),
-    0 0 0 -0.1em black, 0 0 0 -0.2em #ff8906;
+  0 0 0 -0.1em black, 0 0 0 -0.2em #ff8906;
   transition: box-shadow var(--_tspeed_fast) var(--_ttype_squish),
-    background-color var(--_tspeed_fast) var(--_ttype_squish);
+  background-color var(--_tspeed_fast) var(--_ttype_squish);
 }
 
 .btn :where(svg, img, span) {
@@ -1129,7 +1149,7 @@ footer h4 {
 .btn:where(:active, :hover) {
   background-color: hsl(var(--accent) / 0.7);
   box-shadow: 0 0 0 hsl(var(--accent) / 0.3), 0 0 0 -0.1em black,
-    0 0 0 -0.2em #ff8906;
+  0 0 0 -0.2em #ff8906;
 }
 
 .btn:focus {
@@ -1138,7 +1158,7 @@ footer h4 {
 
 .btn:focus-visible {
   box-shadow: 0 0 0 hsl(var(--accent) / 0.3), 0 0 0 0.2em black,
-    0 0 0 0.4em hsl(var(--accent) / 0.7);
+  0 0 0 0.4em hsl(var(--accent) / 0.7);
 }
 
 .todo {
@@ -1167,7 +1187,7 @@ footer h4 {
   padding: 0.1em 0.35em;
   background-color: hsl(var(--muted));
   transition: transform var(--_tspeed_fast) var(--_ttype_squish),
-    background-color var(--_tspeed_fast) var(--_ttype_squish);
+  background-color var(--_tspeed_fast) var(--_ttype_squish);
 }
 
 .input {
