@@ -28,7 +28,7 @@ const Index = () => {
         onSubmit={handleSubmit}
         className="contactform card w-full pt-10 p-6 mb-6 min-h-50"
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        whileinview={{ opacity: 1, y: 0 }}
         transition={{
           duration: 0.5,
           delay: 0.5,
