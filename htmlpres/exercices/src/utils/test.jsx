@@ -5,6 +5,7 @@ const { assert } = require('chai');
 export const runTests = async () => {
   let isAllGood = true;
   let tests = [];
+
   try {
     assert($("#exercice").contents().find("h1").length > 0, "L'élement h1 existe");
     assert.isTrue(/Nos(\s)+aventures/gi.test($("#exercice").contents().find("h1").text()), "L'élement h1 contient le texte 'Nos aventures'");
