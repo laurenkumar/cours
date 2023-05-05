@@ -82,7 +82,7 @@ function CodeOnline({subject}) {
             >
               <div
                 id="wrapper"
-                className={isMaximize ? 'bg-white md:w-full h-full w-[98%] absolute !translate-x-0 !left-0 !right-0 md:!top-0 md:!bottom-0 bottom-16 m-auto z-10' : 'bg-white md:w-[30%] w-[98%] h-[320px] absolute right-10 md:top-0 md:bottom-0 bottom-16 m-auto z-10'}
+                className={isMaximize ? 'bg-white md:w-full h-full w-[98%] absolute !translate-x-0 !left-0 !right-0 md:!top-0 md:!bottom-0 bottom-16 m-auto z-10' : 'bg-white md:w-[40%] w-[98%] h-[320px] absolute right-10 md:top-0 md:bottom-0 bottom-16 m-auto z-10'}
               >
                 <div htmlFor="tab2" 
                        role="tab" 
@@ -194,7 +194,7 @@ function CodeOnline({subject}) {
             >
               <div
                 id="wrapper"
-                className={isMaximize ? 'bg-white md:w-full h-full w-[98%] absolute !translate-x-0 !left-0 !right-0 md:!top-0 md:!bottom-0 bottom-16 m-auto z-10' : 'bg-white md:w-[30%] w-[98%] h-[320px] absolute right-10 md:top-0 md:bottom-0 bottom-16 m-auto z-10'}
+                className={isMaximize ? 'bg-white md:w-full h-full w-[98%] absolute !translate-x-0 !left-0 !right-0 md:!top-0 md:!bottom-0 bottom-16 m-auto z-10' : 'bg-white md:w-[40%] w-[98%] h-[320px] absolute right-10 md:top-0 md:bottom-0 bottom-16 m-auto z-10'}
               >
                 <div htmlFor="tab2" 
                        role="tab" 
