@@ -5,12 +5,12 @@ import Editor, { Monaco } from "@monaco-editor/react";
 import { BrowserView, MobileView } from 'react-device-detect';
 import Modal from '../components/Modal.tsx';
 
-function CodeOnline({subject}) {
+function CodeOnline({subject, ex}) {
   const [showModal, setShowModal] = useState(false);
   const [isMaximize, setIsMaximize] = useState(false);
 
   const htmlDefault = ``;
-  const cssDefault = `body {background-color:white;color:black;}`;
+  const cssDefault = ``;
 
   const [htmlVal, updateHtmlStrorage] = useLocalStorage("html", htmlDefault);
   const [cssVal, updateCssStrorage] = useLocalStorage("css", cssDefault);
@@ -23,15 +23,10 @@ function CodeOnline({subject}) {
   let isMouseDown = false;
 
   const srcDoc = `
-      <!DOCTYPE html>
-      <html>
-      <head>
       ${css && `<style>${css}</style>`}
-      </head>
-        <body>${html}
-        ${js && `<script src=""></script>`}
-        </body>
-      </html>`;
+      ${html}
+      ${js && `<script src=""></script>`}
+      `;
 
   useEffect(() => {
     setTimeout(() => {}, 500);
@@ -114,14 +109,14 @@ function CodeOnline({subject}) {
                   </div>
                   <div 
                     id="tab-content2" 
-                    className="text-center navigateur" 
+                    className="h-full text-center navigateur" 
                     role="tabpanel" 
                     aria-labelledby="Navigateur" 
                     aria-hidden="false"
                   >
                     <iframe
                       srcDoc={srcDoc}
-                      className="output-pane"
+                      className="output-pane w-full h-full"
                       id="exercice"
                       allowFullScreen
                     ></iframe> 
@@ -170,7 +165,7 @@ function CodeOnline({subject}) {
                     </label>
                     <div 
                       id="tab-content2" 
-                      className="tab-content navigateur" 
+                      className="h-full tab-content navigateur" 
                       role="tabpanel" 
                       aria-labelledby="Navigateur" 
                       aria-hidden="false"
@@ -284,7 +279,7 @@ function CodeOnline({subject}) {
                 </div>
                 <div 
                   id="tab-content2" 
-                  className="text-center navigateur" 
+                  className="h-full text-center navigateur" 
                   role="tabpanel" 
                   aria-labelledby="Navigateur" 
                   aria-hidden="false"
@@ -340,7 +335,7 @@ function CodeOnline({subject}) {
                     </label>
                     <div 
                       id="tab-content2" 
-                      className="tab-content navigateur" 
+                      className="h-full tab-content navigateur" 
                       role="tabpanel" 
                       aria-labelledby="Navigateur" 
                       aria-hidden="false"
@@ -361,7 +356,7 @@ function CodeOnline({subject}) {
           onClick={async (e) => {
             if (typeof window !== 'undefined') {
             const test = (await import('../utils/test.jsx').then((r) => {
-                const result = r.runTests().then(
+                const result = r.runTests(ex).then(
                   x=> {
                     updateModalMessageTest(x);
                   }
