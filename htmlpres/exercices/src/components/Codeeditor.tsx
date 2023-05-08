@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Draggable from 'react-draggable';
+import { motion } from "framer-motion";
 import { useLocalStorage } from "../Hooks/LocalStorage";
 import Editor, { Monaco } from "@monaco-editor/react";
 import { BrowserView, MobileView } from 'react-device-detect';
@@ -70,16 +70,14 @@ function CodeOnline({subject, ex}) {
                     </div>
                 </li>
               </ul>
-              <Draggable
-                handle=".handle"
-                defaultPosition={{x: 0, y: 0}}
-                position={null}
-                grid={[25, 25]}
-                scale={1}
+              <motion.div drag
+                className={isMaximize ? 'h-screen z-10 relative !translate-x-0' : 'z-10 relative'}
+                dragConstraints={{ left: -550, right: 0, top: 0, bottom: 400 }}
+                dragTransition={{ bounceStiffness: 10, bounceDamping: 10 }}
               >
                 <div
                   id="wrapper"
-                  className={isMaximize ? 'bg-white md:w-full h-full w-[98%] absolute !translate-x-0 !left-0 !right-0 md:!top-0 md:!bottom-0 bottom-16 m-auto z-10' : 'bg-white md:w-[40%] w-[98%] h-[320px] absolute right-10 md:top-0 md:bottom-0 bottom-16 m-auto z-10'}
+                  className={isMaximize ? 'h-screen bg-white md:w-full h-full w-[98%] absolute !translate-x-0 !left-0 !right-0 md:!top-0 md:!bottom-0 bottom-16 m-auto z-10' : 'bg-white md:w-[40%] w-[98%] h-[320px] absolute right-10 md:top-48 md:bottom-0 bottom-16 m-auto z-10'}
                 >
                   <div htmlFor="tab2" 
                          role="tab" 
@@ -122,7 +120,7 @@ function CodeOnline({subject, ex}) {
                     ></iframe> 
                   </div>
                 </div>
-              </Draggable>
+              </motion.div>
             </BrowserView>
             <MobileView>
               <ul className="tabs" role="tablist">
@@ -240,16 +238,13 @@ function CodeOnline({subject, ex}) {
                 </div>
             </li>
             </ul>
-            <Draggable
-              handle=".handle"
-              defaultPosition={{x: 0, y: 0}}
-              position={null}
-              grid={[25, 25]}
-              scale={1}
+            <motion.div drag
+              dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
             >
+          
               <div
                 id="wrapper"
-                className={isMaximize ? 'bg-white md:w-full h-full w-[98%] absolute !translate-x-0 !left-0 !right-0 md:!top-0 md:!bottom-0 bottom-16 m-auto z-10' : 'bg-white md:w-[40%] w-[98%] h-[320px] absolute right-10 md:top-0 md:bottom-0 bottom-16 m-auto z-10'}
+                className={isMaximize ? 'bg-white md:w-full h-screen w-[98%] absolute !translate-x-0 !left-0 !right-0 md:!top-0 md:!bottom-0 bottom-16 m-auto z-10' : 'bg-white md:w-[40%] w-[98%] h-[320px] absolute right-10 md:top-0 md:bottom-0 bottom-16 m-auto z-10'}
               >
                 <div htmlFor="tab2" 
                        role="tab" 
@@ -279,7 +274,7 @@ function CodeOnline({subject, ex}) {
                 </div>
                 <div 
                   id="tab-content2" 
-                  className="h-full text-center navigateur" 
+                  className="text-center navigateur" 
                   role="tabpanel" 
                   aria-labelledby="Navigateur" 
                   aria-hidden="false"
@@ -292,7 +287,7 @@ function CodeOnline({subject, ex}) {
                   ></iframe> 
                 </div>
               </div>
-            </Draggable>
+            </motion.div>
             </BrowserView>
             <MobileView>
               <ul className="tabs" role="tablist">
