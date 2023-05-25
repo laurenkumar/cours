@@ -25,7 +25,6 @@
     "@formspree/react": "^2.4.1",
     "@kodemo/player": "^0.3.2",
     "@kodemo/util": "^0.3.2",
-    "@monaco-editor/react": "^4.4.6",
     "@supabase/auth-helpers-nextjs": "^0.5.6",
     "@supabase/auth-helpers-react": "^0.3.1",
     "@supabase/auth-ui-react": "^0.3.5",

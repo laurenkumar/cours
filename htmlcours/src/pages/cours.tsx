@@ -1,5 +1,4 @@
-import { KodemoPlayer, Pagination } from '@kodemo/player';
-import { KodemoMenu } from '@kodemo/util';
+import { KodemoPlayer } from '@kodemo/player';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from "next/router";
@@ -74,24 +73,6 @@ const Cours = () => {
   
   const RWD = SetCurriculum(sidebar);
 
-  function Menu() {
-    return (
-      <>
-        <div className="ko-pagination">
-          <Arrows />
-        </div>
-      </>
-    );
-  }
-
-  function Arrows() {
-    return (
-      <KodemoMenu.Root>
-          <Pagination />
-      </KodemoMenu.Root>
-    );
-  }
-
   function SideNav(sidebar) {
     return (
       <nav className="side">
@@ -140,10 +121,7 @@ const Cours = () => {
       }
     >
       {sidebar && (<SideNav />)}
-      <KodemoPlayer
-        menu={<Menu />}
-        keyboardPagination={true} 
-        json={course}>
+      <KodemoPlayer json={course} >
       </KodemoPlayer>
       { json &&
         <Link
