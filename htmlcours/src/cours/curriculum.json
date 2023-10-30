@@ -99,7 +99,62 @@
       ]
    },
    "Projet 2":{
-      "sujet": "html",
-      "titre": "Apprendre l'accessibilité en codant un menu de restaurant"
+      "sujet": "css",
+      "titre": "Apprendre CSS en continuant notre site de voyage",
+      "id":"#apprendre-css-en-continuant-notre-site-de-voyage",
+      "sousparties":[
+         {
+            "titre":"Apprendre CSS en continuant notre site de voyage",
+            "id":"#apprendre-css-en-continuant-notre-site-de-voyage"
+         },
+         {
+            "titre":"CSS: Des propriétés et des valeurs",
+            "id":"#css-des-proprits-et-des-valeurs"
+         },
+         {
+            "titre":"CSS: Les sélecteurs de type",
+            "id":"#css-les-slecteurs-de-type"
+         },
+         {
+            "titre":"CSS: Le regroupement de sélecteurs",
+            "id":"#css-le-regroupement-de-slcteurs"
+         },
+         {
+            "titre":"CSS: Le fichier style.css",
+            "id":"#css-le-fichier-stylecss"
+         },
+         {
+            "titre":"CSS: La balise link",
+            "id":"#css-la-balise-link"
+         },
+         {
+            "titre":"CSS: Le début du responsive design",
+            "id":"#css-le-dbut-du-responsive-design"
+         },
+         {
+            "titre":"CSS: La propriété background-color",
+            "id":"#css-la-proprit-background-color"
+         },
+         {
+            "titre":"L'élément div",
+            "id":"#llment-div"
+         },
+         {
+            "titre":"CSS: La propriété width",
+            "id":"#css-la-proprit-width"
+         },
+         {
+            "titre":"CSS: Les commentaires",
+            "id":"#css-les-commentaires"
+         },
+         {
+            "titre":"CSS: Changer la couleur de fond n2",
+            "id":"#css-changer-la-couleur-de-fond-n2"
+         },
+         {
+            "titre":"CSS: Les pourcentages",
+            "id":"#css-les-pourcentages"
+         },
+      ]
    }
 }

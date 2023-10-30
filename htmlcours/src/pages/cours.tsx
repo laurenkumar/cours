@@ -23,6 +23,7 @@ const Cours = () => {
     const load = async () => {
       const data = await import(`../cours/${json}.json`, { assert: { type: "json" } });
       setCourse(data.default);
+      console.log("json ::: ", json)
     }
     load();
     setSidebar(curriculum);
@@ -53,7 +54,7 @@ const Cours = () => {
             <Link
               href={{
                 pathname: '/cours',
-                query: { json: `ex${parseInt(property2)+1}` },
+                query: { json: `ex${(curriculum[property].sujet).substring(0,1)}${parseInt(property2)+1}` },
               }}
               title={curriculum[property].sousparties[property2].titre}
             >
@@ -128,7 +129,7 @@ const Cours = () => {
           className="next-exo"
           href={{
             pathname: '/cours',
-            query: { json: json === 'ex23' ? "ex1" : `ex${parseInt(json.substring(2)) + 1}` },
+            query: { json: json === 'exh23' ? "exc1" : `ex${json.substring(2,3)}${parseInt(json.substring(3)) + 1}` },
           }}
           title="Exercice suivant"
         >
