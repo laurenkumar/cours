@@ -124,7 +124,7 @@ export const runTests = async (ex) => {
     
     tests = [isAllGood
   ? '🎉 Bravo ! Tu peux passer à la suite.'
-  : '🤯 Tu vas y arriver, courage !', "L'élement h3 contient un em avec le texte 'préférés'", "L'élement h3 contient un strong le texte 'appréciés'"];
+  : '🤯 Tu vas y arriver, courage !', "L'élement h3 contient un em avec le texte 'préférés'", "L'élement h3 contient un strong avec le texte 'appréciés'"];
     return tests;
   }
 
@@ -256,6 +256,121 @@ export const runTests = async (ex) => {
     return tests;
   }
 
+  function exc1() {
+    assert($("#exercice").contents().find("head style").length > 0, "L'élement style existe");
+  
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "L'élement style se trouve dans le head"];
+    return tests;
+  }
+
+  function exc2() {
+    const text = $("#exercice").contents().find("head style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/h1{text-align:center;}?/gi.test(text));
+  
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "L'élement h1 est centré"];
+    return tests;
+  }
+
+  function exc3() {
+    const text = $("#exercice").contents().find("head style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/h2{text-align:center;}?/gi.test(text));
+    assert.isTrue(/p{text-align:center;}?/gi.test(text));
+  
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "Les élements h2 et p sont centrés"];
+    return tests;
+  }
+
+  function exc4() {
+    const text = $("#exercice").contents().find("head style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/h1,h2,p{text-align:center;}?/gi.test(text));
+  
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "Les sélecteurs sont regroupés pour les centrer"];
+    return tests;
+  }
+
+  function exc5() {
+    const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/h1,h2,p{text-align:center;}?/gi.test(text));
+  
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "Les éléments h1 h2 et p sont centrés"];
+    return tests;
+  }
+
+  function exc6() {
+    const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/h1,h2,p{text-align:center;}?/gi.test(text));
+    assert($("#exercice").contents().find("head link").attr('rel') === "stylesheet");
+    assert($("#exercice").contents().find("head link").attr('href') === "style.css");
+
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "Les éléments h1 h2 et p sont centrés", "La balise link et ses attributs sont bien présents"];
+    return tests;
+  }
+
+  function exc7() {
+    assert($("#exercice").contents().find("head").children('meta').eq(1).attr('name') === "viewport");
+    assert($("#exercice").contents().find("head").children('meta').eq(1).attr('content') === "width=device-width, initial-scale=1.0");
+
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "L'élément meta et ses attributs name et content sont présents"];
+    return tests;
+  }
+
+  function exc8() {
+    const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/body{background-color:lightcyan;}?/gi.test(text));
+  
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "La couleur de fond du body a bien changé"];
+    return tests;
+  }
+
+  function exc9() {
+    assert($("#exercice").contents().find("div").attr('id') === "voyage");
+    assert($("#exercice").contents().find("div main").length > 0, "L'élement main est dans l'élément div");
+    assert($("#exercice").contents().find("div footer").length > 0, "L'élement main est dans l'élément div");
+  
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "L'élément div a le bon attribut id et contient le main ainsi que le footer"];
+    return tests;
+  }
+
+  function exc10() {
+    const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/#voyage{width:300px;}?/gi.test(text));
+  
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "La div voyage a une largeur de 300px"];
+    return tests;
+  }
+
+  function exc11() {
+    const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/\/\*\s*Toutvabiensepasser?\s*\*\//i.test(text));
+  
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "Le commentaire CSS a bien été ajouté"];
+    return tests;
+  }
+
+  function exc12() {
+    const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/#voyage{width:300px;background-color:coral;}?/gi.test(text));
+  
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "La div a changé de couleur de fond"];
+    return tests;
+  }
+
+  function exc13() {
+    const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/#voyage{width:80%;background-color:coral;}?/gi.test(text));
+  
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "La div prend maintenant 80% de la largeur du body"];
+    return tests;
+  }
+
+  function exc14() {
+    const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/#voyage{width:80%;background-color:coral;margin-left:auto;margin-right:auto;}?/gi.test(text));
+  
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "La div est centrée horizontalement"];
+    return tests;
+  }
+
   try {
     switch (ex) {
       case 'ex1':
@@ -325,6 +440,48 @@ export const runTests = async (ex) => {
         break;
       case 'ex23':
         return ex23()
+        break;
+      case 'exc1':
+        return exc1()
+        break;
+      case 'exc2':
+        return exc2()
+        break;
+      case 'exc3':
+        return exc3()
+        break;
+      case 'exc4':
+        return exc4()
+        break;
+      case 'exc5':
+        return exc5()
+        break;
+      case 'exc6':
+        return exc6()
+        break;
+      case 'exc7':
+        return exc7()
+        break;
+      case 'exc8':
+        return exc8()
+        break;
+      case 'exc9':
+        return exc9()
+        break;
+      case 'exc10':
+        return exc10()
+        break;
+      case 'exc11':
+        return exc11()
+        break;
+      case 'exc12':
+        return exc12()
+        break;
+      case 'exc13':
+        return exc13()
+        break;
+      case 'exc14':
+        return exc14()
         break;
       default:
         console.log(`Sorry, we are out of exercices.`);
