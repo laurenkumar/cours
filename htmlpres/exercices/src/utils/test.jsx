@@ -371,6 +371,15 @@ export const runTests = async (ex) => {
     return tests;
   }
 
+  function exc15() {
+    const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/\.voyage{width:80%;background-color:coral;margin-left:auto;margin-right:auto;}?/gi.test(text));
+    assert($("#exercice").contents().find("div").attr('class') === "voyage");
+    
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "La div a une classe voyage et le selecteur #voyage est transformé en .voyage"];
+    return tests;
+  }
+
   try {
     switch (ex) {
       case 'ex1':
@@ -482,6 +491,9 @@ export const runTests = async (ex) => {
         break;
       case 'exc14':
         return exc14()
+        break;
+      case 'exc15':
+        return exc15()
         break;
       default:
         console.log(`Sorry, we are out of exercices.`);
