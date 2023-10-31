@@ -380,6 +380,22 @@ export const runTests = async (ex) => {
     return tests;
   }
 
+  function exc16() {
+    const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
+    assert.isTrue(/body{background-color:lightcyan;background-image:url\('voyage\.jpg'\);}?/gi.test(text));
+    
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "Le body a une image de fond"];
+    return tests;
+  }
+
+  function exc17() {
+    const text = $("#exercice").contents().find("style").text();
+    assert.isTrue(/\.voyage\sform\s\{\s*([\s\S]*?text-align: center;[\s\S]*?)\s*\}?/gi.test(text));
+    
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "Le formulaire présent dans l'élément div.voyage est centré"];
+    return tests;
+  }
+
   try {
     switch (ex) {
       case 'ex1':
@@ -494,6 +510,15 @@ export const runTests = async (ex) => {
         break;
       case 'exc15':
         return exc15()
+        break;
+      case 'exc16':
+        return exc16()
+        break;
+      case 'exc17':
+        return exc17()
+        break;
+      case 'exc18':
+        return exc18()
         break;
       default:
         console.log(`Sorry, we are out of exercices.`);
