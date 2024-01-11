@@ -396,6 +396,22 @@ export const runTests = async (ex) => {
     return tests;
   }
 
+  function exc18() {
+    const text = $("#exercice").contents().find("style").text();
+    const regex = /\.voyage\s*\{[\s\S]*?width:\s*80%;[\s\S]*?background-color:\s*coral;[\s\S]*?margin-left:\s*auto;[\s\S]*?margin-right:\s*auto;[\s\S]*?padding-top:\s*20px;[\s\S]*?padding-right:\s*20px;[\s\S]*?padding-bottom:\s*20px;[\s\S]*?padding-left:\s*20px;[\s\S]*?\}/i;
+    assert.isTrue(regex.test(text));
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "Un padding de 20px autour de 'élément div.voyage est présent"];
+    return tests;
+  }
+
+  function exc19() {
+    const text = $("#exercice").contents().find("style").text();
+    const regex = /\.voyage\s*\{[\s\S]*?width:\s*80%;[\s\S]*?background-color:\s*coral;[\s\S]*?margin-left:\s*auto;[\s\S]*?margin-right:\s*auto;[\s\S]*?padding-top:\s*20px;[\s\S]*?padding-right:\s*20px;[\s\S]*?padding-bottom:\s*20px;[\s\S]*?padding-left:\s*20px;[\s\S]*?\}/i;
+    assert.isTrue(regex.test(text));
+    tests = ['🎉 Bravo ! Tu peux passer à la suite.', "Un padding de 20px autour de 'élément div.voyage est présent"];
+    return tests;
+  }
+
   try {
     switch (ex) {
       case 'ex1':
@@ -519,6 +535,9 @@ export const runTests = async (ex) => {
         break;
       case 'exc18':
         return exc18()
+        break;
+      case 'exc19':
+        return exc19()
         break;
       default:
         console.log(`Sorry, we are out of exercices.`);
