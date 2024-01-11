@@ -346,8 +346,8 @@ function CodeOnline({subject, ex}) {
                       </div>
                   </li>
                   <li>
-                    <input type="radio" name="tabs" id="tab2" />
-                    <label htmlFor="tab2" 
+                    <input type="radio" name="tabs" id="tab3" />
+                    <label htmlFor="tab3" 
                            role="tab" 
                            aria-selected="true" 
                            aria-controls="panel2" 
@@ -355,7 +355,7 @@ function CodeOnline({subject, ex}) {
                       Navigateur
                     </label>
                     <div 
-                      id="tab-content2" 
+                      id="tab-content3" 
                       className="h-full tab-content navigateur" 
                       role="tabpanel" 
                       aria-labelledby="Navigateur" 
