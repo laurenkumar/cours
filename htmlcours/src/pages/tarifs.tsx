@@ -360,7 +360,7 @@ const Tarifs = () => {
                     <p
                       className="text-body-color mb-8 border-b border-[#F2F2F2] pb-8 text-base"
                     >
-                      Perfect for using in a Professional website or a client project.
+                      La totalité des cours et exercices.
                     </p>
                     <div className="mb-7">
                       <p className="text-body-color mb-1 text-base leading-loose">
