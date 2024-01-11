@@ -154,6 +154,26 @@
          {
             "titre":"CSS: Les pourcentages",
             "id":"#css-les-pourcentages"
+         },
+         {
+            "titre":"CSS: Les marges",
+            "id":"#css-les-marges"
+         },
+         {
+            "titre":"CSS: Les classes",
+            "id":"#css-les-classes"
+         },
+         {
+            "titre":"CSS: La propriété background-image",
+            "id":"#css-la-proprit-background-image"
+         },
+         {
+            "titre":"CSS: La suite des sélecteurs",
+            "id":"#css-la-suite-des-slecteurs"
+         },
+         {
+            "titre":"CSS: Le padding",
+            "id":"#css-le-padding"
          }
       ]
    }

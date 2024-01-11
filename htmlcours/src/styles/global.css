@@ -347,7 +347,7 @@ code {
 
 .side {
   position: fixed;
-  z-index: 5;
+  z-index: -1;
   top: 50px;
   bottom: 0;
   left: 0;
@@ -356,6 +356,10 @@ code {
   color: #0f0e17;
   transition: all .2s;
   overflow: hidden;
+}
+
+.side:hover {
+  z-index: 5;
 }
 
 .side__program {
