@@ -172,6 +172,7 @@ function CodeOnline({subject, ex}) {
                         srcDoc={srcDoc}
                         className="output-pane h-full w-full"
                         id="exercice"
+                        width="100%"
                         allowFullScreen
                       ></iframe> 
                     </div>
@@ -365,6 +366,7 @@ function CodeOnline({subject, ex}) {
                         srcDoc={srcDoc}
                         className="output-pane"
                         id="exercice"
+                        width="100%"
                         allowFullScreen
                       ></iframe> 
                     </div>
