@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLocalStorage } from "../Hooks/LocalStorage";
 import Editor, { Monaco } from "@monaco-editor/react";
+import Modal from '../components/Modal.tsx';
 
 function CodeOnline({subject, ex}) {
+  const [showModal, setShowModal] = useState(false);
   const [isMaximize, setIsMaximize] = useState(false);
 
   const htmlDefault = ``;
@@ -36,62 +38,62 @@ function CodeOnline({subject, ex}) {
     <div>
         { subject === "html" ?
           <>
-              <ul className="tabs" role="tablist">
-                <li>
-                    <input type="radio" name="tabs" id="tab1" defaultChecked />
-                    <label htmlFor="tab1" 
-                           role="tab" 
-                           aria-selected="true" 
-                           aria-controls="panel1" 
-                           tabIndex="0">
-                      index.html
-                    </label>
-                    <div 
-                      id="tab-content1" 
-                      className="tab-content" 
-                      role="tabpanel" 
-                      aria-labelledby="index.html" 
-                      aria-hidden="false"
-                    >
-                      <Editor
-                        height="90vh"
-                        defaultLanguage="html"
-                        onChange={(evn) => updateHtml(evn)}
-                        defaultValue={html}
-                        value={html}
-                        selectOnLineNumbers="true"
-                        cursorStyle="line"
-                        theme="vs-dark"
-                      />
-                    </div>
+            <ul className="tabs" role="tablist">
+              <li>
+                  <input type="radio" name="tabs" id="tab1" defaultChecked />
+                  <label htmlFor="tab1" 
+                         role="tab" 
+                         aria-selected="true" 
+                         aria-controls="panel1" 
+                         tabIndex="0">
+                    index.html
+                  </label>
+                  <div 
+                    id="tab-content1" 
+                    className="tab-content" 
+                    role="tabpanel" 
+                    aria-labelledby="index.html" 
+                    aria-hidden="false"
+                  >
+                    <Editor
+                      height="90vh"
+                      defaultLanguage="html"
+                      onChange={(evn) => updateHtml(evn)}
+                      defaultValue={html}
+                      value={html}
+                      selectOnLineNumbers="true"
+                      cursorStyle="line"
+                      theme="vs-dark"
+                    />
+                  </div>
+              </li>
+              <li>
+                  <input type="radio" name="tabs" id="tab2" />
+                  <label htmlFor="tab2" 
+                         role="tab" 
+                         aria-selected="true" 
+                         aria-controls="panel2" 
+                         tabIndex="0">
+                    Navigateur
+                  </label>
+                  <div 
+                    id="tab-content2" 
+                    className="h-full tab-content navigateur" 
+                    role="tabpanel" 
+                    aria-labelledby="Navigateur" 
+                    aria-hidden="false"
+                  >
+                    <iframe
+                      srcDoc={srcDoc}
+                      className="output-pane h-full w-full"
+                      id="exercice"
+                      width="100%"
+                      height="100%"
+                      allowFullScreen
+                    ></iframe> 
+                  </div>
                 </li>
-                <li>
-                    <input type="radio" name="tabs" id="tab2" />
-                    <label htmlFor="tab2" 
-                           role="tab" 
-                           aria-selected="true" 
-                           aria-controls="panel2" 
-                           tabIndex="0">
-                      Navigateur
-                    </label>
-                    <div 
-                      id="tab-content2" 
-                      className="h-full tab-content navigateur" 
-                      role="tabpanel" 
-                      aria-labelledby="Navigateur" 
-                      aria-hidden="false"
-                    >
-                      <iframe
-                        srcDoc={srcDoc}
-                        className="output-pane h-full w-full"
-                        id="exercice"
-                        width="100%"
-                        height="100%"
-                        allowFullScreen
-                      ></iframe> 
-                    </div>
-                  </li>
-              </ul>
+            </ul>
           </>
         :
           <>
