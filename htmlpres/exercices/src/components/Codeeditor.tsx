@@ -320,6 +320,32 @@ function CodeOnline({subject, ex}) {
                       </div>
                   </li>
                   <li>
+                      <input type="radio" name="tabs" id="tab2" />
+                      <label htmlFor="tab2"
+                             role="tab" 
+                             aria-selected="false" 
+                             aria-controls="panel2" 
+                             tabIndex="0">style.css</label>
+                      <div id="tab-content2" 
+                           className="tab-content navigateur"
+                           role="tabpanel" 
+                           aria-labelledby="style.css" 
+                           aria-hidden="true">
+                        <Editor
+                          height="90vh"
+                          defaultLanguage="css"
+                          onChange={(evn) =>
+                            updateCss(evn)
+                          }
+                          defaultValue={css}
+                          value={css}
+                          selectOnLineNumbers="true"
+                          cursorStyle="line"
+                          theme="vs-dark"
+                        />
+                      </div>
+                  </li>
+                  <li>
                     <input type="radio" name="tabs" id="tab2" />
                     <label htmlFor="tab2" 
                            role="tab" 
