@@ -4,12 +4,16 @@ import { useEffect, useState } from 'react';
 /* tslint:disable */
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
 
 import exemple from 'assets/videos/exemple.mp4';
 import curriculum from 'src/cours/curriculum.json';
 
+const FREE_EXERCISES = ['exh1', 'exh2', 'exh3', 'exc1', 'exc2', 'exc3'];
+
 const Programme = () => {
   const [sidebar, setSidebar] = useState("");
+  const session = useSession();
 
   useEffect(() => {
     setSidebar(curriculum);
@@ -31,14 +35,17 @@ const Programme = () => {
         </>
       );
       for (const property2 in curriculum[property].sousparties) {
+        const exerciseId = curriculum[property].sousparties[property2].ex;
+        const isFree = FREE_EXERCISES.includes(exerciseId);
+        const linkClass = isFree || session ? "link-cursus-free" : "link-cursus";
         parties.push(
-          <div className="inline-grid border p-2 m-1">
-          <p key={property2} className="pt-3 pb-3 font-semibold text-white">
+          <div key={exerciseId} className={`inline-grid border p-2 m-1 ${isFree || session ? 'bg-[#f25f4c]' : ''}`}>
+          <p className="pt-3 pb-3 font-semibold text-white">
             <Link
-              className="tracking-wider link-cursus"
+              className={`tracking-wider ${linkClass}`}
               href={{
                 pathname: '/cours',
-                query: { json: `ex${parseInt(property2)+1}` },
+                query: { json: exerciseId },
               }}
               title={curriculum[property].sousparties[property2].titre}
             >
@@ -204,7 +211,8 @@ const Programme = () => {
                     cursor-class="arrow"
                     title="Aller Github"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    noreferrer="true"
+                    noopener="true"
                   >
                       <svg
                         width="20"
@@ -224,8 +232,8 @@ const Programme = () => {
                     href="https://facebook.com/lkdigital/"
                     title="Aller sur Facebook"
                     target="_blank"
-                    noreferrer
-                    noopener
+                    noreferrer="true"
+                    noopener="true"
                     cursor-class="arrow"
                   >
                     <svg

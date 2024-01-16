@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
 
 /* tslint:disable */
 import { Meta } from '@/layouts/Meta';
@@ -9,8 +10,11 @@ import { Main } from '@/templates/Main';
 import exemple from 'assets/videos/exemple.mp4';
 import curriculum from 'src/cours/curriculum.json';
 
+const FREE_EXERCISES = ['exh1', 'exh2', 'exh3', 'exc1', 'exc2', 'exc3'];
+
 const Index = () => {
   const [sidebar, setSidebar] = useState("");
+  const session = useSession();
 
   useEffect(() => {
     setSidebar(curriculum);
@@ -125,19 +129,22 @@ const Index = () => {
         </>
       );
       for (const property2 in curriculum[property].sousparties) {
+        const exerciseId = curriculum[property].sousparties[property2].ex;
+        const isFree = FREE_EXERCISES.includes(exerciseId);
+        const linkClass = isFree || session ? "link-cursus-free" : "link-cursus";
         parties.push(
-          <div className="inline-grid border p-2 m-1">
-          <p key={property2} className="pt-3 pb-3 font-semibold text-white">
+          <div key={exerciseId} className={`inline-grid border p-2 m-1 ${isFree || session ? 'bg-[#f25f4c]' : ''}`}>
+          <p className="pt-3 pb-3 font-semibold text-white">
             <Link
-              className="tracking-wider link-cursus"
+              className={`tracking-wider ${linkClass}`}
               href={{
                 pathname: '/cours',
-                query: { json: `ex${parseInt(property2)+1}` },
+                query: { json: exerciseId },
               }}
               title={curriculum[property].sousparties[property2].titre}
             >
               {property2}<span className="hidden">{curriculum[property].sousparties[property2].titre}</span>
-            </Link>  
+            </Link>
           </p>
           </div>
         );
@@ -265,7 +272,7 @@ const Index = () => {
               <div className="programme md:mr-0 md:ml-0 mr-4 ml-4 gap-x-6 flex md:flex-row flex-col justify-between mt-6">
                 <div className="card max-w-md md:w-1/2 pt-6 p-6 md:mb-0 mb-6 min-h-50">
                   <h3 className="text-white text-xl font-semibold text-center mb-4">En E-learning</h3>
-                  <strong className="text-center">Des formations à suivre en ligne (800 euros)</strong>
+                  <strong className="text-center">Des formations à suivre en ligne (à partir de 20 euros par mois)</strong>
                   <ul className="text-white mt-4 list-disc pl-4">
                       <li>Pédagogie par projet</li>
                       <li>Lire des leçons concises</li>

@@ -2,6 +2,7 @@ import { KodemoPlayer } from '@kodemo/player';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from "next/router";
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
 
 /* tslint:disable */
 import { Meta } from '@/layouts/Meta';
@@ -9,25 +10,33 @@ import { Main } from '@/templates/Main';
 
 import curriculum from 'src/cours/curriculum.json';
 
+const FREE_EXERCISES = ['exc1', 'exc2', 'exc3', 'exh1', 'exh2', 'exh3'];
+
 const Cours = () => {
   const [sidebar, setSidebar] = useState("");
   const router = useRouter();
   const {json} = router.query;
+  const session = useSession();
 
   const [course, setCourse] = useState("")
+
+  const [isAccessible, setIsAccessible] = useState(true);
+  const isExerciseFree = (exercise) => {
+    return FREE_EXERCISES.includes(exercise);
+  }
 
   useEffect(() => {
     if(!json) {
       return;
     }
     const load = async () => {
-      const data = await import(`../cours/${json}.json`, { assert: { type: "json" } });
+    const data = await import(`../cours/${json}.json`, { assert: { type: "json" } });
       setCourse(data.default);
-      console.log("json ::: ", json)
     }
     load();
     setSidebar(curriculum);
-  }, [sidebar, course, json]);
+    setIsAccessible(isExerciseFree(json));
+  }, [course, sidebar, json]);
 
   const SetCurriculum = (curriculum) => {
     let parties = [];
@@ -121,21 +130,43 @@ const Cours = () => {
         />
       }
     >
-      {sidebar && (<SideNav />)}
-      <KodemoPlayer json={course} >
-      </KodemoPlayer>
-      { json &&
-        <Link
-          className="next-exo"
-          href={{
-            pathname: '/cours',
-            query: { json: json === 'exh23' ? "exc1" : `ex${json.substring(2,3)}${parseInt(json.substring(3)) + 1}` },
-          }}
-          title="Exercice suivant"
-        >
-          Exo suivant
-        </Link>
-      }
+      {isAccessible || session ? (
+        <>
+          {sidebar && (<SideNav />)}
+          <KodemoPlayer json={course} >
+          </KodemoPlayer>
+          { json &&
+            <Link
+              className="next-exo"
+              href={{
+                pathname: '/cours',
+                query: { json: json === 'exh23' ? "exc1" : `ex${json.substring(2,3)}${parseInt(json.substring(3)) + 1}` },
+              }}
+              title="Exercice suivant"
+            >
+              Exo suivant
+            </Link>
+          }
+        </>
+      ) : (
+        <section className="hero my-auto ml-4 mr-4 md:ml-16 md:mr-16 mt-20 mb-20 flex md:flex-row flex-col">
+          <div className="wrapper hero__wrapper">
+            <div className="hero__content">
+              <h1 className="md:font-normal md:text-5xl mb-4 text-left font-semibold text-4xl m-auto">Vous devez vous inscrire pour accéder à cette leçon.</h1>
+              <p>Seuls les trois premiers exercices des deux premiers projets sont gratuits.</p>
+              <div className="mt-12">
+                <Link
+                  href="/connexion"
+                  className="button_login !p-4 font-semibold"
+                  title="Inscrivez vous - LK Digital"
+                >
+                  Inscrivez vous
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
     </Main>
   );
 };

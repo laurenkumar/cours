@@ -6,95 +6,118 @@
       "sousparties":[
          {
             "titre":"Apprendre HTML en codant un site de voyage",
-            "id":"#apprendre-html-en-codant-un-site-de-voyage"
+            "id":"#apprendre-html-en-codant-un-site-de-voyage",
+            "ex": "exh1"
          },
          {
             "titre":"Un texte structuré avec les balises de titres hn",
-            "id":"#un-texte-structur-avec-les-balises-de-titres-hn"
+            "id":"#un-texte-structur-avec-les-balises-de-titres-hn",
+            "ex": "exh2"
          },
          {
             "titre":"Les paragraphes",
-            "id":"#les-paragraphes"
+            "id":"#les-paragraphes",
+            "ex": "exh3"
          },
          {
             "titre":"Les commentaires",
-            "id":"#les-commentaires"
+            "id":"#les-commentaires",
+            "ex": "exh4"
          },
          {
             "titre":"Le contenu le plus important",
-            "id":"#le-contenu-le-plus-important"
+            "id":"#le-contenu-le-plus-important",
+            "ex": "exh5"
          },
          {
             "titre":"L'imbrication et l'indentation",
-            "id":"#limbrication-et-lindentation"
+            "id":"#limbrication-et-lindentation",
+            "ex": "exh6"
          },
          {
             "titre":"Les liens en HTML (ancre)",
-            "id":"#les-liens-en-html-ancre"
+            "id":"#les-liens-en-html-ancre",
+            "ex": "exh7"
          },
          {
             "titre":"L'élément section",
-            "id":"#llment-section"
+            "id":"#llment-section",
+            "ex": "exh8"
          },
          {
             "titre":"Les listes",
-            "id":"#les-listes"
+            "id":"#les-listes",
+            "ex": "exh9"
          },
          {
             "titre":"Les éléments figure et figcaption",
-            "id":"#les-lments-figure-et-figcaption"
+            "id":"#les-lments-figure-et-figcaption",
+            "ex": "exh10"
          },
          {
             "titre":"L'élément strong et em",
-            "id":"#llment-strong-et-em"
+            "id":"#llment-strong-et-em",
+            "ex": "exh11"
          },
          {
             "titre":"L'élément form et l'élément input",
-            "id":"#llment-form-et-llment-input"
+            "id":"#llment-form-et-llment-input",
+            "ex": "exh12"
          },
          {
             "titre":"L'élément button",
-            "id":"#llment-button"
+            "id":"#llment-button",
+            "ex": "exh13"
          },
          {
             "titre":"Les input de type radio",
-            "id":"#les-input-de-type-radio"
+            "id":"#les-input-de-type-radio",
+            "ex": "exh14"
          },
          {
             "titre":"L'élément label",
-            "id":"#llment-label"
+            "id":"#llment-label",
+            "ex": "exh15"
          },
          {
             "titre":"L'attribut id",
-            "id":"#lattribut-id"
+            "id":"#lattribut-id",
+            "ex": "exh16"
          },
          {
             "titre":"L'élément fieldset",
-            "id":"#llment-fieldset"
+            "id":"#llment-fieldset",
+            "ex": "exh17"
          },
          {
             "titre":"L'élément Legend",
-            "id":"#llment-legend"
+            "id":"#llment-legend",
+            "ex": "exh18"
          },
          {
             "titre":"Les input de type checkbox",
-            "id":"#les-input-de-type-checkbox"
+            "id":"#les-input-de-type-checkbox",
+            "ex": "exh19"
          },
          {
             "titre":"L'attribut for",
-            "id":"#lattribut-for"
+            "id":"#lattribut-for",
+            "ex": "exh20"
          },
          {
             "titre":"L'attribut checked",
-            "id":"#lattribut-checked"
+            "id":"#lattribut-checked",
+            "ex": "exh21"
          },
          {
             "titre":"L'élément footer",
-            "id":"#llment-footer"
+            "id":"#llment-footer",
+            "ex": "exh22"
          },
          {
             "titre":"L'élément head et body",
-            "id":"#llment-head-et-body"
+            "id":"#llment-head-et-body",
+            "ex": "exh23"
          }
       ]
    },
@@ -105,75 +128,93 @@
       "sousparties":[
          {
             "titre":"Apprendre CSS en continuant notre site de voyage",
-            "id":"#apprendre-css-en-continuant-notre-site-de-voyage"
+            "id":"#apprendre-css-en-continuant-notre-site-de-voyage",
+            "ex": "exc1"
          },
          {
             "titre":"CSS: Des propriétés et des valeurs",
-            "id":"#css-des-proprits-et-des-valeurs"
+            "id":"#css-des-proprits-et-des-valeurs",
+            "ex": "exc2"
          },
          {
             "titre":"CSS: Les sélecteurs de type",
-            "id":"#css-les-slecteurs-de-type"
+            "id":"#css-les-slecteurs-de-type",
+            "ex": "exc3"
          },
          {
             "titre":"CSS: Le regroupement de sélecteurs",
-            "id":"#css-le-regroupement-de-slcteurs"
+            "id":"#css-le-regroupement-de-slcteurs",
+            "ex": "exc4"
          },
          {
             "titre":"CSS: Le fichier style.css",
-            "id":"#css-le-fichier-stylecss"
+            "id":"#css-le-fichier-stylecss",
+            "ex": "exc5"
          },
          {
             "titre":"CSS: La balise link",
-            "id":"#css-la-balise-link"
+            "id":"#css-la-balise-link",
+            "ex": "exc6"
          },
          {
             "titre":"CSS: Le début du responsive design",
-            "id":"#css-le-dbut-du-responsive-design"
+            "id":"#css-le-dbut-du-responsive-design",
+            "ex": "exc7"
          },
          {
             "titre":"CSS: La propriété background-color",
-            "id":"#css-la-proprit-background-color"
+            "id":"#css-la-proprit-background-color",
+            "ex": "exc8"
          },
          {
             "titre":"L'élément div",
-            "id":"#llment-div"
+            "id":"#llment-div",
+            "ex": "exc9"
          },
          {
             "titre":"CSS: La propriété width",
-            "id":"#css-la-proprit-width"
+            "id":"#css-la-proprit-width",
+            "ex": "exc10"
          },
          {
             "titre":"CSS: Les commentaires",
-            "id":"#css-les-commentaires"
+            "id":"#css-les-commentaires",
+            "ex": "exc11"
          },
          {
             "titre":"CSS: Changer la couleur de fond n2",
-            "id":"#css-changer-la-couleur-de-fond-n2"
+            "id":"#css-changer-la-couleur-de-fond-n2",
+            "ex": "exc12"
          },
          {
             "titre":"CSS: Les pourcentages",
-            "id":"#css-les-pourcentages"
+            "id":"#css-les-pourcentages",
+            "ex": "exc13"
          },
          {
             "titre":"CSS: Les marges",
-            "id":"#css-les-marges"
+            "id":"#css-les-marges",
+            "ex": "exc14"
          },
          {
             "titre":"CSS: Les classes",
-            "id":"#css-les-classes"
+            "id":"#css-les-classes",
+            "ex": "exc15"
          },
          {
             "titre":"CSS: La propriété background-image",
-            "id":"#css-la-proprit-background-image"
+            "id":"#css-la-proprit-background-image",
+            "ex": "exc16"
          },
          {
             "titre":"CSS: La suite des sélecteurs",
-            "id":"#css-la-suite-des-slecteurs"
+            "id":"#css-la-suite-des-slecteurs",
+            "ex": "exc17"
          },
          {
             "titre":"CSS: Le padding",
-            "id":"#css-le-padding"
+            "id":"#css-le-padding",
+            "ex": "exc18"
          }
       ]
    }
