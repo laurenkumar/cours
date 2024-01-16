@@ -29,14 +29,16 @@ const Cours = () => {
     if(!json) {
       return;
     }
-    const load = async () => {
-    const data = await import(`../cours/${json}.json`, { assert: { type: "json" } });
-      setCourse(data.default);
-    }
-    load();
-    setSidebar(curriculum);
     setIsAccessible(isExerciseFree(json));
-  }, [course, sidebar, json]);
+    if (isAccessible === true || session) {
+      const load = async () => {
+      const data = await import(`../cours/${json}.json`, { assert: { type: "json" } });
+        setCourse(data.default);
+      }
+      load();
+      setSidebar(curriculum);
+    }
+  }, [json]);
 
   const SetCurriculum = (curriculum) => {
     let parties = [];
