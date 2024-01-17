@@ -57,7 +57,7 @@ const Tarifs = () => {
                       Mentorat
                     </span>
                     <h2 className="text-dark mb-5 text-[42px] font-bold">
-                      900€ / <span className="text-xs">Payable en 4 fois sans frais</span>
+                      80€ / <span className="text-xs">Par mois</span>
                     </h2>
                     <p
                       className="text-body-color mb-8 border-b border-[#F2F2F2] pb-8 text-base"

@@ -1,11 +1,12 @@
 import { Auth } from '@supabase/auth-ui-react'
 import Link from 'next/link';
 import Image from 'next/image';
-import { ThemeSupa } from '@supabase/auth-ui-shared'
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
-import Account from '../components/Account'
-import * as fr from '../utils/fr.json'
-import { useState, useEffect } from 'react'
+import { ThemeSupa } from '@supabase/auth-ui-shared';
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+import Account from '../components/Account';
+import * as fr from '../utils/fr.json';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
@@ -35,6 +36,7 @@ const Connexion = () => {
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
   const [editedTask, setEditedTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
+  const [hasPaid, setHasPaid] = useState(false);
 
   const addTask = (task) => {
     setTasks(prevState => [...prevState, task])
@@ -73,9 +75,21 @@ const Connexion = () => {
   }
 
   useEffect(() =>
-  {        
-      document.body.classList.add("profile");
-  });
+  {      
+    const checkSubscriptionStatus = async () => {
+      if (session) {
+        const { data: subscription, error } = await supabase
+          .from('subscriptions')
+          .select('status')
+          .eq('user_id', session.user.id)
+          .single();
+        setHasPaid(subscription && subscription.status === 'active');
+      }
+    };
+
+    checkSubscriptionStatus();  
+    document.body.classList.add("profile");
+  }, [session]);
 
   return (
     <Main
@@ -133,6 +147,21 @@ const Connexion = () => {
                 toggleTask={toggleTask}
                 enterEditMode={enterEditMode}
               />
+            )}
+
+            {!hasPaid && (
+              <div className="subscription-prompt hero mt-10">
+                    <p>Pour accéder aux autres cours vous devriez sélectionner un plan.</p>
+                    <div className="mt-12">
+                      <Link
+                        href="/tarifs"
+                        className="button flex align-center primary text-center block button_login font-semibold"
+                        title="S'abonner - LK Digital"
+                      >
+                        S'abonner
+                      </Link>
+                    </div>
+              </div>
             )}
           </div>
         </>

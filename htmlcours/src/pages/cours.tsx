@@ -16,7 +16,7 @@ const Cours = () => {
   const [sidebar, setSidebar] = useState("");
   const router = useRouter();
   const {json} = router.query;
-  const session = useSession();
+  const {session} = useSession();
 
   const [course, setCourse] = useState("")
 
