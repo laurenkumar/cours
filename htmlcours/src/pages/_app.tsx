@@ -4,6 +4,7 @@ import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { SessionContextProvider, Session } from '@supabase/auth-helpers-react'
 
 import type { AppProps } from 'next/app';
+import React from 'react';
 
 const MyApp = ({ Component, pageProps }: AppProps<{
   initialSession: Session,

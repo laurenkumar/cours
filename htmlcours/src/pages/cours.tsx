@@ -2,23 +2,22 @@ import { KodemoPlayer } from '@kodemo/player';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from "next/router";
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 
 /* tslint:disable */
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
 import curriculum from 'src/cours/curriculum.json';
+import React from 'react';
 
 const FREE_EXERCISES = ['exc1', 'exc2', 'exc3', 'exh1', 'exh2', 'exh3'];
 
-const Cours = () => {
+const Cours = ({ course }) => {
   const [sidebar, setSidebar] = useState("");
   const router = useRouter();
   const {json} = router.query;
-  const {session} = useSession();
-
-  const [course, setCourse] = useState("")
+  const session = useSession();
 
   const [isAccessible, setIsAccessible] = useState(true);
   const isExerciseFree = (exercise) => {
@@ -31,11 +30,6 @@ const Cours = () => {
     }
     setIsAccessible(isExerciseFree(json));
     if (isAccessible === true || session) {
-      const load = async () => {
-      const data = await import(`../cours/${json}.json`, { assert: { type: "json" } });
-        setCourse(data.default);
-      }
-      load();
       setSidebar(curriculum);
     }
   }, [json]);
@@ -172,5 +166,26 @@ const Cours = () => {
     </Main>
   );
 };
+
+export async function getServerSideProps(context) {
+  const { json } = context.query;
+
+  let course = null;
+  try {
+    if (json) {
+      course = await import(`../cours/${json}.json`, { assert: { type: "json" } });
+      course = course.default;
+    }
+  } catch (error) {
+    console.error('Erreur lors du chargement du fichier JSON', error);
+    // Gérer l'erreur si nécessaire
+  }
+
+  return {
+    props: {
+      course,
+    },
+  };
+}
 
 export default Cours;
