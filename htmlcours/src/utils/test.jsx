@@ -16,17 +16,17 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("h1").length > 0, "L'élement h1 existe");
-      assert.isTrue(/Nos(\s)+aventures/gi.test($("#exercice").contents().find("h1").text()), "L'élement h1 contient le texte 'Nos aventures'");
-      
+      assert($("#exercice").contents().find("h1").length > 0, "L'élement h1 doit exister");
+      assert.isTrue(/Nos(\s)+aventures/gi.test($("#exercice").contents().find("h1").text()), "L'élement h1 doit contenir le texte 'Nos aventures'");
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élément h1 existe.",
-      "L'élément contient le texte 'Nos aventures'."
+      "L'élément h1 doit exister.",
+      "L'élément doit contenir le texte 'Nos aventures'."
       ]);  
   }
 
@@ -34,17 +34,17 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("h2").length > 0, "L'élement h2 existe");
-      assert.isTrue(/Photos(\s)+de(\s)+nos(\s)voyages/gi.test($("#exercice").contents().find("h2").text()), "L'élement h2 contient le texte 'Photos de nos voyages'");
-      
+      assert($("#exercice").contents().find("h2").length > 0, "L'élement h2 doit exister");
+      assert.isTrue(/Photos(\s)+de(\s)+nos(\s)voyages/gi.test($("#exercice").contents().find("h2").text()), "L'élement h2 doit contenir le texte 'Photos de nos voyages'");
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élément h2 existe.",
-      "L'élément contient le texte 'Photos de nos voyages'."
+      "L'élément h2 doit exister.",
+      "L'élément doit contenir le texte 'Photos de nos voyages'."
       ]);  
   }
 
@@ -52,16 +52,16 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("p").length > 0, "L'élement p existe");
-      assert.isTrue(/Plus de photos dans notre galerie./gi.test($("#exercice").contents().find("p").text()), "L'élement p contient le texte 'Plus de photos dans notre galerie.'");
+      assert($("#exercice").contents().find("p").length > 0, "L'élement p doit exister");
+      assert.isTrue(/Plus de photos dans notre galerie./gi.test($("#exercice").contents().find("p").text()), "L'élement p doit contenir le texte 'Plus de photos dans notre galerie.'");
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élément p existe.", 
-      "L'élément contient le texte 'Plus de photos dans notre galerie.'."
+      "L'élément p doit exister.", 
+      "L'élément doit contenir le texte 'Plus de photos dans notre galerie.'."
       ]);
   }
 
@@ -70,14 +70,14 @@ export const runTests = async (ex) => {
 
     try {
       const html = document.querySelector("#exercice")
-      assert(html.srcdoc.match(/<!--\s*A faire: Ajouter un lien vers la galerie photos\s*-->/i), "Le commentaire contient le texte 'A faire: Ajouter un lien vers la galerie photos'");
+      assert(html.srcdoc.match(/<!--\s*A faire: Ajouter un lien vers la galerie photos\s*-->/i), "Le commentaire doit contenir le texte 'A faire: Ajouter un lien vers la galerie photos'");
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "Le commentaire existe.", "L'élément contient le texte 'A faire: Ajouter un lien vers la galerie photos'."
+      "Le commentaire doit exister.", "L'élément doit contenir le texte 'A faire: Ajouter un lien vers la galerie photos'."
       ]);
 
   }
@@ -86,17 +86,17 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("main").length > 0, "L'élement main existe");
-      assert($("#exercice").contents().find("main h1").length > 0, "L'élement h1 est bien dans le main");
-      assert($("#exercice").contents().find("main h2").length > 0, "L'élement h2 est bien dans le main");
-      assert($("#exercice").contents().find("main p").length > 0, "L'élement p est bien dans le main");
+      assert($("#exercice").contents().find("main").length > 0, "L'élement main doit exister");
+      assert($("#exercice").contents().find("main h1").length > 0, "L'élement h1 doit se retrouver dans le main");
+      assert($("#exercice").contents().find("main h2").length > 0, "L'élement h2 doit se retrouver dans le main");
+      assert($("#exercice").contents().find("main p").length > 0, "L'élement p doit se retrouver dans le main");
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élément main existe.", "L'élement h1 est bien dans le main", "L'élement h2 est bien dans le main", "L'élement p est bien dans le main"
+      "L'élément main doit exister.", "L'élement h1 doit se retrouver dans le main", "L'élement h2 doit se retrouver dans le main", "L'élement p doit se retrouver dans le main"
       ]);
   }
 
@@ -104,16 +104,16 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("img").length > 0, "L'élement img existe");
+      assert($("#exercice").contents().find("img").length > 0, "L'élement img doit exister");
       assert($("#exercice").contents().find("img").attr('src') === "thailande.jpg")
       assert($("#exercice").contents().find("img").attr('alt') === "Plage en Thaïlande")
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élément img existe.", "L'attribut src de l'image est 'thailande.jpg'", "Le texte alternatif de l'image est 'Plage en Thailande'"
+      "L'élément img doit exister.", "L'attribut src de l'image doit être 'thailande.jpg'", "Le texte alternatif de l'image doit être 'Plage en Thailande'"
       ]);
   }
 
@@ -122,18 +122,18 @@ export const runTests = async (ex) => {
 
     try {
       assert($("#exercice").contents().find("p a").length > 0, "L'élement a se trouve dans le p");
-      assert($("#exercice").contents().find("p a").attr('target') === "_blank", "L'élement a un attribut target='_blank'");
-      assert.isTrue(/notre galerie/gi.test($("#exercice").contents().find("p a").text()), "L'élement a se trouvant dans le paragraphe contient le texte 'notre galerie'");
+      assert($("#exercice").contents().find("p a").attr('target') === "_blank", "L'élement doit avoir un attribut target='_blank'");
+      assert.isTrue(/notre galerie/gi.test($("#exercice").contents().find("p a").text()), "L'élement a se trouvant dans le paragraphe doit contenir le texte 'notre galerie'");
       assert($("#exercice").contents().find("a img").length > 0, "L'image se trouve dans le lien")
-      assert($("#exercice").contents().find("a").attr('target') === "_blank", "L'élément a un attribut target='_blank'");
-      assert($("#exercice").contents().find("a").attr('href') === "https://google.fr", "L'élément a un attribut href='https://google.fr'");
+      assert($("#exercice").contents().find("a").attr('target') === "_blank", "L'élément doit avoir un attribut target='_blank'");
+      assert($("#exercice").contents().find("a").attr('href') === "https://google.fr", "L'élément doit avoir un attribut href='https://google.fr'");
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "Les deux éléments a existent.", "Les deux liens redirigent sur google.", "Leurs attribut target est '_blank'", "Le premier lien se trouve dans le paragraphet et englobe le texte 'notre galerie'", "Le deuxième lien englobe l'image"
+      "Les deux éléments a doivent exister.", "Les deux liens doivent rediriger sur google.", "Leurs attribut target doit être '_blank'", "Le premier lien doit se trouver dans le paragraphet et englober le texte 'notre galerie'", "Le deuxième lien doit englober l'image"
       ]);
   }
 
@@ -142,17 +142,17 @@ export const runTests = async (ex) => {
 
     try {
       assert($("#exercice").contents().find("main section").length > 0, "L'élement section se trouve dans le main");
-      assert($("#exercice").contents().find("main section h1").length > 0, "L'élement h1 est bien dans la section");
-      assert($("#exercice").contents().find("main section h2").length > 0, "L'élement h2 est bien dans la section");
-      assert($("#exercice").contents().find("main section p").length > 0, "L'élement p est bien dans la section");
-      assert($("#exercice").contents().find("main section a").length > 0, "L'élement a est bien dans la section");
+      assert($("#exercice").contents().find("main section h1").length > 0, "L'élement h1 doit se retrouver dans la section");
+      assert($("#exercice").contents().find("main section h2").length > 0, "L'élement h2 doit se retrouver dans la section");
+      assert($("#exercice").contents().find("main section p").length > 0, "L'élement p doit se retrouver dans la section");
+      assert($("#exercice").contents().find("main section a").length > 0, "L'élement a doit se retrouver dans la section");
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élément section existe.", "L'élement h1 est bien dans la section", "L'élement h2 est bien dans la section", "L'élement p est bien dans la section", "L'élement a est bien dans la section"
+      "L'élément section doit exister.", "L'élement h1 doit se retrouver dans la section", "L'élement h2 doit se retrouver dans la section", "L'élement p doit se retrouver dans la section", "L'élement a doit se retrouver dans la section"
       ]);
   }
 
@@ -160,21 +160,21 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find('main').children("section").eq(1).length > 0, "Un deuxième élément section est ajouté");
-      assert.isTrue(/Nos pays visités/gi.test($("#exercice").contents().find("section h2").text()), "L'élement h2 contient le texte 'Nos pays visités'");
-      assert.isTrue(/Nos pays préférés/gi.test($("#exercice").contents().find("section h2 + h3").text()), "L'élement h3 contient le texte 'Nos pays préférés'");
-      assert($("#exercice").contents().find("main section ul").length > 0, "L'élement ul est bien dans la section");
-      assert($("#exercice").contents().find('main section ul').children("li").eq(2).length > 0, "L'élement ul contient 3 li");
-      assert.isTrue(/Les pays les moins appréciés/gi.test($("#exercice").contents().find("section ul + h3").text()), "L'élement h3 contient le texte 'Les pays les moins appréciés'");
-      assert($("#exercice").contents().find("main section ol").length > 0, "L'élement ol est bien dans la section");
-      assert($("#exercice").contents().find('main section ol').children("li").eq(2).length > 0, "L'élement ol contient 3 li");
+      assert($("#exercice").contents().find('main').children("section").eq(1).length > 0, "Un deuxième élément section doit être ajouté");
+      assert.isTrue(/Nos pays visités/gi.test($("#exercice").contents().find("section h2").text()), "L'élement h2 doit contenir le texte 'Nos pays visités'");
+      assert.isTrue(/Nos pays préférés/gi.test($("#exercice").contents().find("section h2 + h3").text()), "L'élement h3 doit contenir le texte 'Nos pays préférés'");
+      assert($("#exercice").contents().find("main section ul").length > 0, "L'élement ul doit se retrouver dans la section");
+      assert($("#exercice").contents().find('main section ul').children("li").eq(2).length > 0, "L'élement ul doit contenir 3 li");
+      assert.isTrue(/Les pays les moins appréciés/gi.test($("#exercice").contents().find("section ul + h3").text()), "L'élement h3 doit contenir le texte 'Les pays les moins appréciés'");
+      assert($("#exercice").contents().find("main section ol").length > 0, "L'élement ol doit se retrouver dans la section");
+      assert($("#exercice").contents().find('main section ol').children("li").eq(2).length > 0, "L'élement ol doit contenir 3 li");
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "Un deuxième élément section est ajouté.", "L'élement h2 contient le texte 'Nos pays visités'", "L'élement h3 contient le texte 'Nos pays préférés'", "L'élement ul est bien dans la section", "L'élement h3 contient le texte 'Les pays les moins appréciés'", "L'élement ul et ol contiennent 3 li"
+      "Un deuxième élément section doit être ajouté.", "L'élement h2 doit contenir le texte 'Nos pays visités'", "L'élement h3 doit contenir le texte 'Nos pays préférés'", "L'élement ul doit se retrouver dans la section", "L'élement h3 doit contenir le texte 'Les pays les moins appréciés'", "L'élement ul et ol doivent contenir 3 li"
       ]);
   }
 
@@ -182,20 +182,20 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("main section ul + figure").length > 0, "L'élement figure est bien ajouté en dessous de la liste non ordonnée");
-      assert($("#exercice").contents().find("main section ul + figure figcaption").length > 0, "L'élement figcaption est bien ajouté dans l'élément figure en dessous de la liste non ordonnée");
-      assert($("#exercice").contents().find("main section ul + figure img").length > 0, "L'élement img est bien ajouté dans l'élément figure en dessous de la liste non ordonnée");
-      assert($("#exercice").contents().find("main section ol + figure").length > 0, "L'élement figure est bien ajouté en dessous de la liste ordonnée");
-      assert($("#exercice").contents().find("main section ol + figure figcaption").length > 0, "L'élement figcaption est bien ajouté dans l'élément figure en dessous de la liste ordonnée");
-      assert($("#exercice").contents().find("main section ol + figure img").length > 0, "L'élement img est bien ajouté dans l'élément figure en dessous de la liste ordonnée");
-      
+      assert($("#exercice").contents().find("main section ul + figure").length > 0, "L'élement figure doit être ajouté en dessous de la liste non ordonnée");
+      assert($("#exercice").contents().find("main section ul + figure figcaption").length > 0, "L'élement figcaption doit être ajouté dans l'élément figure en dessous de la liste non ordonnée");
+      assert($("#exercice").contents().find("main section ul + figure img").length > 0, "L'élement img doit être ajouté dans l'élément figure en dessous de la liste non ordonnée");
+      assert($("#exercice").contents().find("main section ol + figure").length > 0, "L'élement figure doit être ajouté en dessous de la liste ordonnée");
+      assert($("#exercice").contents().find("main section ol + figure figcaption").length > 0, "L'élement figcaption doit être ajouté dans l'élément figure en dessous de la liste ordonnée");
+      assert($("#exercice").contents().find("main section ol + figure img").length > 0, "L'élement img doit être ajouté dans l'élément figure en dessous de la liste ordonnée");
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élement figure est bien ajouté en dessous de la liste non ordonnée", "L'élement figcaption est bien ajouté dans l'élément figure en dessous de la liste non ordonnée", "L'élement img est bien ajouté dans l'élément figure en dessous de la liste non ordonnée", "L'élement figure est bien ajouté en dessous de la liste ordonnée", "L'élement figcaption est bien ajouté dans l'élément figure en dessous de la liste ordonnée", "L'élement img est bien ajouté dans l'élément figure en dessous de la liste ordonnée"
+      "L'élement figure doit être ajouté en dessous de la liste non ordonnée", "L'élement figcaption doit être ajouté dans l'élément figure en dessous de la liste non ordonnée", "L'élement img doit être ajouté dans l'élément figure en dessous de la liste non ordonnée", "L'élement figure doit être ajouté en dessous de la liste ordonnée", "L'élement figcaption doit être ajouté dans l'élément figure en dessous de la liste ordonnée", "L'élement img doit être ajouté dans l'élément figure en dessous de la liste ordonnée"
       ]);
   }
 
@@ -203,16 +203,16 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert.isTrue(/préférés/gi.test($("#exercice").contents().find("section h2 + h3 em").text()), "L'élement h3 contient un em avec le texte 'préférés'");
-      assert.isTrue(/appréciés/gi.test($("#exercice").contents().find("section figure + h3 strong").text()), "L'élement h3 contient un strong le texte 'appréciés'");
-      
+      assert.isTrue(/préférés/gi.test($("#exercice").contents().find("section h2 + h3 em").text()), "L'élement h3 doit contenir un em avec le texte 'préférés'");
+      assert.isTrue(/appréciés/gi.test($("#exercice").contents().find("section figure + h3 strong").text()), "L'élement h3 doit contenir un strong le texte 'appréciés'");
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élement h3 contient un em avec le texte 'préférés'", "L'élement h3 contient un strong avec le texte 'appréciés'"
+      "L'élement h3 doit contenir un em avec le texte 'préférés'", "L'élement h3 doit contenir un strong avec le texte 'appréciés'"
       ]);
   }
 
@@ -220,21 +220,21 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find('main').children("section").eq(2).length > 0, "Une troisième section est ajouté");
-      assert.isTrue(/Formulaire de Voyage/gi.test($("#exercice").contents().find("section h2").text()), "L'élement h2 contient le texte 'Formulaire de Voyage'");
-      assert($("#exercice").contents().find("main section form").length > 0, "L'élement form est bien dans la section");
-      assert($("#exercice").contents().find('main section form input').length > 0, "L'élement form contient un input");
-      assert($("#exercice").contents().find("main section input").attr('type') === "text", "L'élément a un attribut target='_blank'");
-      assert($("#exercice").contents().find("main section input").attr('name') === "urlphotovoyage", "L'élément a un attribut target='_blank'");
-      assert($("#exercice").contents().find("main section input").attr('placeholder') === "Url d'une photo d'un pays", "L'élément a un attribut target='_blank'");
+      assert($("#exercice").contents().find('main').children("section").eq(2).length > 0, "Une troisième section doit être ajouté");
+      assert.isTrue(/Formulaire de Voyage/gi.test($("#exercice").contents().find("section h2").text()), "L'élement h2 doit contenir le texte 'Formulaire de Voyage'");
+      assert($("#exercice").contents().find("main section form").length > 0, "L'élement form doit se retrouver dans la section");
+      assert($("#exercice").contents().find('main section form input').length > 0, "L'élement form doit contenir un input");
+      assert($("#exercice").contents().find("main section input").attr('type') === "text", "L'élément doit avoir un attribut target='_blank'");
+      assert($("#exercice").contents().find("main section input").attr('name') === "urlphotovoyage", "L'élément doit avoir un attribut target='_blank'");
+      assert($("#exercice").contents().find("main section input").attr('placeholder') === "Url d'une photo d'un pays", "L'élément doit avoir un attribut target='_blank'");
 
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "Un troisième élément section est ajouté.", "L'élement h2 contient le texte 'Formulaire de Voyage'", "L'élement form contient un input", "L'input possède les bons attributs"
+      "Un troisième élément section doit être ajouté.", "L'élement h2 doit contenir le texte 'Formulaire de Voyage'", "L'élement form doit contenir un input", "L'input possède les bons attributs"
       ]);
   }
 
@@ -249,9 +249,9 @@ export const runTests = async (ex) => {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élement button contient le texte 'Submit'", "L'élément button a un attribut type='submit'"
+      "L'élement button doit contenir le texte 'Submit'", "L'élément button doit avoir un attribut type='submit'"
       ]);
   }
 
@@ -268,9 +268,9 @@ export const runTests = async (ex) => {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "Les deux éléments ont le type radio", "Les deux input possèdent le name 'voyage-maison"
+      "Les deux éléments doivent avoir le type radio", "Les deux input possèdent le name 'voyage-maison"
       ]);
   }
 
@@ -288,9 +288,9 @@ export const runTests = async (ex) => {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "Les deux label contiennent des élèments input", "Les deux label contiennent les textes suivants 'Voyager' et 'Rester à la maison'"
+      "Les deux label doivent contenir des élèments input", "Les deux label doivent contenir les textes suivants 'Voyager' et 'Rester à la maison'"
       ]);
   }
 
@@ -307,9 +307,9 @@ export const runTests = async (ex) => {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "Les deux éléments ont la bonne value et les bons ids"
+      "Les deux éléments doivent avoir la bonne value et les bons ids"
       ]);
   }
 
@@ -324,7 +324,7 @@ export const runTests = async (ex) => {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "L'élément fieldset englobent les deux labels"
       ]);
@@ -341,9 +341,9 @@ export const runTests = async (ex) => {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élément legend contient le texte 'Préférez vous voyager ou rester à la maison?' et se trouve dans le fieldset"
+      "L'élément legend doit contenir le texte 'Préférez vous voyager ou rester à la maison?' et se trouve dans le fieldset"
       ]);
   }
 
@@ -369,9 +369,9 @@ export const runTests = async (ex) => {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élément legend contient le texte 'Quelles sont vos destinations préférées?' et se trouve dans le deuxième fieldset", "Deux labels sont ajoutés avec des input et leurs attributs"
+      "L'élément legend doit contenir le texte 'Quelles sont vos destinations préférées?' et se trouve dans le deuxième fieldset", "Deux labels sont ajoutés avec des input et leurs attributs"
       ]);
   }
 
@@ -383,12 +383,12 @@ export const runTests = async (ex) => {
       assert($("#exercice").contents().find("form fieldset + fieldset label").attr('for') === "paris");
       assert($("#exercice").contents().find("form fieldset + fieldset label + label").attr('for') === "rome");
       assert($("#exercice").contents().find("form fieldset + fieldset label + label input").attr('name') === "destinations");
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "Ajouter un attribut for aux deux labels englobant les inputs de type checkbox avec les textes respectifs suivants 'paris' et 'rome'.", "Sur les deux inputs, ajouter le name 'destinations'"
       ]);
@@ -400,12 +400,12 @@ export const runTests = async (ex) => {
     try {
       assert($("#exercice").contents().find("#voyager").attr('checked'));
       assert($("#exercice").contents().find("#rome").attr('checked'));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "L'input radio 'Voyager' est coché.", "L'input checkbox 'Rome' est coché."
       ]);
@@ -419,14 +419,14 @@ export const runTests = async (ex) => {
       assert.isTrue(/Sans Copyright - LK Digital/gi.test($("#exercice").contents().find("main + footer p").text()));
       assert($("#exercice").contents().find("main + footer p a").length > 0);
       assert($("#exercice").contents().find("main + footer p a").attr('href') === "https://lkdigital.ninja");
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élément footer est présent", "Le footer contient un paragraphe 'Sans copyright - LK Digital'", "Un lien englobe le texte 'LK Digital'"
+      "L'élément footer est présent", "Le footer doit contenir un paragraphe 'Sans copyright - LK Digital'", "Un lien englobe le texte 'LK Digital'"
       ]);
   }
 
@@ -446,7 +446,7 @@ export const runTests = async (ex) => {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "L'élément html englobe le body et le head", "Le title 'Nos aventures' est présent", "Le meta charset utf-8 est présent"
       ]);
@@ -456,13 +456,13 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("head style").length > 0, "L'élement style existe");
-      
+      assert($("#exercice").contents().find("head style").length > 0, "L'élement style doit exister");
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "L'élement style se trouve dans le head"
       ]);
@@ -474,12 +474,12 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("head style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/h1{text-align:center;}?/gi.test(text));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "L'élement h1 est centré"
       ]);
@@ -492,12 +492,12 @@ export const runTests = async (ex) => {
       const text = $("#exercice").contents().find("head style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/h2{text-align:center;}?/gi.test(text));
       assert.isTrue(/p{text-align:center;}?/gi.test(text));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "Les élements h2 et p sont centrés"
       ]);
@@ -509,12 +509,12 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("head style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/h1,h2,p{text-align:center;}?/gi.test(text));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "Les sélecteurs sont regroupés pour les centrer"
       ]);
@@ -526,12 +526,12 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/h1,h2,p{text-align:center;}?/gi.test(text));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "Les éléments h1 h2 et p sont centrés"
       ]);
@@ -550,7 +550,7 @@ export const runTests = async (ex) => {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "Les éléments h1 h2 et p sont centrés", "La balise link et ses attributs sont bien présents"
       ]);
@@ -567,7 +567,7 @@ export const runTests = async (ex) => {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "L'élément meta et ses attributs name et content sont présents"
       ]);
@@ -579,12 +579,12 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/body{background-color:lightcyan;}?/gi.test(text));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "La couleur de fond du body a bien changé"
       ]);
@@ -597,14 +597,14 @@ export const runTests = async (ex) => {
       assert($("#exercice").contents().find("div").attr('id') === "voyage");
       assert($("#exercice").contents().find("div main").length > 0, "L'élement main est dans l'élément div");
       assert($("#exercice").contents().find("div footer").length > 0, "L'élement main est dans l'élément div");
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
-      "L'élément div a le bon attribut id et contient le main ainsi que le footer"
+      "L'élément div a le bon attribut id et doit contenir le main ainsi que le footer"
       ]);
   }
 
@@ -614,12 +614,12 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/#voyage{width:300px;}?/gi.test(text));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "La div voyage a une largeur de 300px"
       ]);
@@ -631,12 +631,12 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/\/\*\s*Toutvabiensepasser?\s*\*\//i.test(text));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "Le commentaire CSS a bien été ajouté"
       ]);
@@ -648,12 +648,12 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/#voyage{width:300px;background-color:coral;}?/gi.test(text));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "La div a changé de couleur de fond"
       ]);
@@ -665,12 +665,12 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/#voyage{width:80%;background-color:coral;}?/gi.test(text));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "La div prend maintenant 80% de la largeur du body"
       ]);
@@ -682,12 +682,12 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/#voyage{width:80%;background-color:coral;margin-left:auto;margin-right:auto;}?/gi.test(text));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "La div est centrée horizontalement"
       ]);
@@ -700,12 +700,12 @@ export const runTests = async (ex) => {
       const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/\.voyage{width:80%;background-color:coral;margin-left:auto;margin-right:auto;}?/gi.test(text));
       assert($("#exercice").contents().find("div").attr('class') === "voyage");
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "La div a une classe voyage et le selecteur #voyage est transformé en .voyage"
       ]);
@@ -717,12 +717,12 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/body{background-color:lightcyan;background-image:url\('voyage\.jpg'\);}?/gi.test(text));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "Le body a une image de fond"
       ]);
@@ -734,12 +734,12 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("style").text();
       assert.isTrue(/\.voyage\sform\s\{\s*([\s\S]*?text-align: center;[\s\S]*?)\s*\}?/gi.test(text));
-      
+
     } catch (error) {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "Le formulaire présent dans l'élément div.voyage est centré"
       ]);
@@ -756,7 +756,7 @@ export const runTests = async (ex) => {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "Un padding de 20px autour de 'élément div.voyage est présent"
       ]);
@@ -773,7 +773,7 @@ export const runTests = async (ex) => {
       console.error(error);
       isAllGood = false;
     }
-    
+
     return createTestMessages(isAllGood, [
       "Un padding de 20px autour de 'élément div.voyage est présent"
       ]);
