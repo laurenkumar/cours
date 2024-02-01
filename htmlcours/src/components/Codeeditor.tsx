@@ -27,6 +27,7 @@ function CodeOnline({subject, ex}) {
       `;
 
   useEffect(() => {
+    setTimeout(() => {}, 500);
     updateHtmlStrorage(html);
     updateCssStrorage(css);
     updateJsStrorage(js);
