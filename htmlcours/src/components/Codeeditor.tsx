@@ -88,6 +88,7 @@ function CodeOnline({subject, ex}) {
                       width="100%"
                       height="100%"
                       allowFullScreen
+                      sandbox="allow-same-origin allow-scripts"
                     ></iframe> 
                   </div>
                 </li>
@@ -172,7 +173,8 @@ function CodeOnline({subject, ex}) {
                     id="exercice"
                     width="100%"
                     height="100%"
-                    allowFullScreen
+                   allowFullScreen
+
                   ></iframe> 
                 </div>
               </li>

@@ -3,6 +3,7 @@ import $ from "jquery"
 const { assert } = require('chai');
 
 export const runTests = async (ex) => {
+  const $exercice = $("#exercice").contents();
 
   function createTestMessages(isAllGood, messages) {
     const baseMessage = isAllGood
@@ -16,8 +17,8 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("h1").length > 0, "L'élement h1 doit exister");
-      assert.isTrue(/Nos(\s)+aventures/gi.test($("#exercice").contents().find("h1").text()), "L'élement h1 doit contenir le texte 'Nos aventures'");
+      assert($exercice.find("h1").length > 0, "L'élement h1 doit exister");
+      assert.isTrue(/Nos(\s)+aventures/gi.test($exercice.find("h1").text()), "L'élement h1 doit contenir le texte 'Nos aventures'");
 
     } catch (error) {
       console.error(error);
@@ -34,8 +35,8 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("h2").length > 0, "L'élement h2 doit exister");
-      assert.isTrue(/Photos(\s)+de(\s)+nos(\s)voyages/gi.test($("#exercice").contents().find("h2").text()), "L'élement h2 doit contenir le texte 'Photos de nos voyages'");
+      assert($exercice.find("h2").length > 0, "L'élement h2 doit exister");
+      assert.isTrue(/Photos(\s)+de(\s)+nos(\s)voyages/gi.test($exercice.find("h2").text()), "L'élement h2 doit contenir le texte 'Photos de nos voyages'");
 
     } catch (error) {
       console.error(error);
@@ -52,8 +53,8 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("p").length > 0, "L'élement p doit exister");
-      assert.isTrue(/Plus de photos dans notre galerie./gi.test($("#exercice").contents().find("p").text()), "L'élement p doit contenir le texte 'Plus de photos dans notre galerie.'");
+      assert($exercice.find("p").length > 0, "L'élement p doit exister");
+      assert.isTrue(/Plus de photos dans notre galerie./gi.test($exercice.find("p").text()), "L'élement p doit contenir le texte 'Plus de photos dans notre galerie.'");
     } catch (error) {
       console.error(error);
       isAllGood = false;
@@ -86,10 +87,10 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("main").length > 0, "L'élement main doit exister");
-      assert($("#exercice").contents().find("main h1").length > 0, "L'élement h1 doit se retrouver dans le main");
-      assert($("#exercice").contents().find("main h2").length > 0, "L'élement h2 doit se retrouver dans le main");
-      assert($("#exercice").contents().find("main p").length > 0, "L'élement p doit se retrouver dans le main");
+      assert($exercice.find("main").length > 0, "L'élement main doit exister");
+      assert($exercice.find("main h1").length > 0, "L'élement h1 doit se retrouver dans le main");
+      assert($exercice.find("main h2").length > 0, "L'élement h2 doit se retrouver dans le main");
+      assert($exercice.find("main p").length > 0, "L'élement p doit se retrouver dans le main");
     } catch (error) {
       console.error(error);
       isAllGood = false;
@@ -104,9 +105,9 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("img").length > 0, "L'élement img doit exister");
-      assert($("#exercice").contents().find("img").attr('src') === "thailande.jpg")
-      assert($("#exercice").contents().find("img").attr('alt') === "Plage en Thaïlande")
+      assert($exercice.find("img").length > 0, "L'élement img doit exister");
+      assert($exercice.find("img").attr('src') === "thailande.jpg")
+      assert($exercice.find("img").attr('alt') === "Plage en Thaïlande")
     } catch (error) {
       console.error(error);
       isAllGood = false;
@@ -121,12 +122,12 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("p a").length > 0, "L'élement a se trouve dans le p");
-      assert($("#exercice").contents().find("p a").attr('target') === "_blank", "L'élement doit avoir un attribut target='_blank'");
-      assert.isTrue(/notre galerie/gi.test($("#exercice").contents().find("p a").text()), "L'élement a se trouvant dans le paragraphe doit contenir le texte 'notre galerie'");
-      assert($("#exercice").contents().find("a img").length > 0, "L'image se trouve dans le lien")
-      assert($("#exercice").contents().find("a").attr('target') === "_blank", "L'élément doit avoir un attribut target='_blank'");
-      assert($("#exercice").contents().find("a").attr('href') === "https://google.fr", "L'élément doit avoir un attribut href='https://google.fr'");
+      assert($exercice.find("p a").length > 0, "L'élement a se trouve dans le p");
+      assert($exercice.find("p a").attr('target') === "_blank", "L'élement doit avoir un attribut target='_blank'");
+      assert.isTrue(/notre galerie/gi.test($exercice.find("p a").text()), "L'élement a se trouvant dans le paragraphe doit contenir le texte 'notre galerie'");
+      assert($exercice.find("a img").length > 0, "L'image se trouve dans le lien")
+      assert($exercice.find("a").attr('target') === "_blank", "L'élément doit avoir un attribut target='_blank'");
+      assert($exercice.find("a").attr('href') === "https://google.fr", "L'élément doit avoir un attribut href='https://google.fr'");
     } catch (error) {
       console.error(error);
       isAllGood = false;
@@ -141,11 +142,11 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("main section").length > 0, "L'élement section se trouve dans le main");
-      assert($("#exercice").contents().find("main section h1").length > 0, "L'élement h1 doit se retrouver dans la section");
-      assert($("#exercice").contents().find("main section h2").length > 0, "L'élement h2 doit se retrouver dans la section");
-      assert($("#exercice").contents().find("main section p").length > 0, "L'élement p doit se retrouver dans la section");
-      assert($("#exercice").contents().find("main section a").length > 0, "L'élement a doit se retrouver dans la section");
+      assert($exercice.find("main section").length > 0, "L'élement section se trouve dans le main");
+      assert($exercice.find("main section h1").length > 0, "L'élement h1 doit se retrouver dans la section");
+      assert($exercice.find("main section h2").length > 0, "L'élement h2 doit se retrouver dans la section");
+      assert($exercice.find("main section p").length > 0, "L'élement p doit se retrouver dans la section");
+      assert($exercice.find("main section a").length > 0, "L'élement a doit se retrouver dans la section");
     } catch (error) {
       console.error(error);
       isAllGood = false;
@@ -160,14 +161,14 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find('main').children("section").eq(1).length > 0, "Un deuxième élément section doit être ajouté");
-      assert.isTrue(/Nos pays visités/gi.test($("#exercice").contents().find("section h2").text()), "L'élement h2 doit contenir le texte 'Nos pays visités'");
-      assert.isTrue(/Nos pays préférés/gi.test($("#exercice").contents().find("section h2 + h3").text()), "L'élement h3 doit contenir le texte 'Nos pays préférés'");
-      assert($("#exercice").contents().find("main section ul").length > 0, "L'élement ul doit se retrouver dans la section");
-      assert($("#exercice").contents().find('main section ul').children("li").eq(2).length > 0, "L'élement ul doit contenir 3 li");
-      assert.isTrue(/Les pays les moins appréciés/gi.test($("#exercice").contents().find("section ul + h3").text()), "L'élement h3 doit contenir le texte 'Les pays les moins appréciés'");
-      assert($("#exercice").contents().find("main section ol").length > 0, "L'élement ol doit se retrouver dans la section");
-      assert($("#exercice").contents().find('main section ol').children("li").eq(2).length > 0, "L'élement ol doit contenir 3 li");
+      assert($exercice.find('main').children("section").eq(1).length > 0, "Un deuxième élément section doit être ajouté");
+      assert.isTrue(/Nos pays visités/gi.test($exercice.find("section h2").text()), "L'élement h2 doit contenir le texte 'Nos pays visités'");
+      assert.isTrue(/Nos pays préférés/gi.test($exercice.find("section h2 + h3").text()), "L'élement h3 doit contenir le texte 'Nos pays préférés'");
+      assert($exercice.find("main section ul").length > 0, "L'élement ul doit se retrouver dans la section");
+      assert($exercice.find('main section ul').children("li").eq(2).length > 0, "L'élement ul doit contenir 3 li");
+      assert.isTrue(/Les pays les moins appréciés/gi.test($exercice.find("section ul + h3").text()), "L'élement h3 doit contenir le texte 'Les pays les moins appréciés'");
+      assert($exercice.find("main section ol").length > 0, "L'élement ol doit se retrouver dans la section");
+      assert($exercice.find('main section ol').children("li").eq(2).length > 0, "L'élement ol doit contenir 3 li");
     } catch (error) {
       console.error(error);
       isAllGood = false;
@@ -182,12 +183,12 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("main section ul + figure").length > 0, "L'élement figure doit être ajouté en dessous de la liste non ordonnée");
-      assert($("#exercice").contents().find("main section ul + figure figcaption").length > 0, "L'élement figcaption doit être ajouté dans l'élément figure en dessous de la liste non ordonnée");
-      assert($("#exercice").contents().find("main section ul + figure img").length > 0, "L'élement img doit être ajouté dans l'élément figure en dessous de la liste non ordonnée");
-      assert($("#exercice").contents().find("main section ol + figure").length > 0, "L'élement figure doit être ajouté en dessous de la liste ordonnée");
-      assert($("#exercice").contents().find("main section ol + figure figcaption").length > 0, "L'élement figcaption doit être ajouté dans l'élément figure en dessous de la liste ordonnée");
-      assert($("#exercice").contents().find("main section ol + figure img").length > 0, "L'élement img doit être ajouté dans l'élément figure en dessous de la liste ordonnée");
+      assert($exercice.find("main section ul + figure").length > 0, "L'élement figure doit être ajouté en dessous de la liste non ordonnée");
+      assert($exercice.find("main section ul + figure figcaption").length > 0, "L'élement figcaption doit être ajouté dans l'élément figure en dessous de la liste non ordonnée");
+      assert($exercice.find("main section ul + figure img").length > 0, "L'élement img doit être ajouté dans l'élément figure en dessous de la liste non ordonnée");
+      assert($exercice.find("main section ol + figure").length > 0, "L'élement figure doit être ajouté en dessous de la liste ordonnée");
+      assert($exercice.find("main section ol + figure figcaption").length > 0, "L'élement figcaption doit être ajouté dans l'élément figure en dessous de la liste ordonnée");
+      assert($exercice.find("main section ol + figure img").length > 0, "L'élement img doit être ajouté dans l'élément figure en dessous de la liste ordonnée");
 
     } catch (error) {
       console.error(error);
@@ -203,8 +204,8 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert.isTrue(/préférés/gi.test($("#exercice").contents().find("section h2 + h3 em").text()), "L'élement h3 doit contenir un em avec le texte 'préférés'");
-      assert.isTrue(/appréciés/gi.test($("#exercice").contents().find("section figure + h3 strong").text()), "L'élement h3 doit contenir un strong le texte 'appréciés'");
+      assert.isTrue(/préférés/gi.test($exercice.find("section h2 + h3 em").text()), "L'élement h3 doit contenir un em avec le texte 'préférés'");
+      assert.isTrue(/appréciés/gi.test($exercice.find("section figure + h3 strong").text()), "L'élement h3 doit contenir un strong le texte 'appréciés'");
 
     } catch (error) {
       console.error(error);
@@ -220,13 +221,13 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find('main').children("section").eq(2).length > 0, "Une troisième section doit être ajouté");
-      assert.isTrue(/Formulaire de Voyage/gi.test($("#exercice").contents().find("section h2").text()), "L'élement h2 doit contenir le texte 'Formulaire de Voyage'");
-      assert($("#exercice").contents().find("main section form").length > 0, "L'élement form doit se retrouver dans la section");
-      assert($("#exercice").contents().find('main section form input').length > 0, "L'élement form doit contenir un input");
-      assert($("#exercice").contents().find("main section input").attr('type') === "text", "L'élément doit avoir un attribut target='_blank'");
-      assert($("#exercice").contents().find("main section input").attr('name') === "urlphotovoyage", "L'élément doit avoir un attribut target='_blank'");
-      assert($("#exercice").contents().find("main section input").attr('placeholder') === "Url d'une photo d'un pays", "L'élément doit avoir un attribut target='_blank'");
+      assert($exercice.find('main').children("section").eq(2).length > 0, "Une troisième section doit être ajouté");
+      assert.isTrue(/Formulaire de Voyage/gi.test($exercice.find("section h2").text()), "L'élement h2 doit contenir le texte 'Formulaire de Voyage'");
+      assert($exercice.find("main section form").length > 0, "L'élement form doit se retrouver dans la section");
+      assert($exercice.find('main section form input').length > 0, "L'élement form doit contenir un input");
+      assert($exercice.find("main section input").attr('type') === "text", "L'élément doit avoir un attribut target='_blank'");
+      assert($exercice.find("main section input").attr('name') === "urlphotovoyage", "L'élément doit avoir un attribut target='_blank'");
+      assert($exercice.find("main section input").attr('placeholder') === "Url d'une photo d'un pays", "L'élément doit avoir un attribut target='_blank'");
 
     } catch (error) {
       console.error(error);
@@ -242,8 +243,8 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert.isTrue(/Submit/gi.test($("#exercice").contents().find("form input + button").text()));
-      assert($("#exercice").contents().find("form input + button").attr('type') === "submit");
+      assert.isTrue(/Submit/gi.test($exercice.find("form input + button").text()));
+      assert($exercice.find("form input + button").attr('type') === "submit");
 
     } catch (error) {
       console.error(error);
@@ -259,10 +260,10 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("form input").attr('type') === "radio");
-      assert($("#exercice").contents().find("form input").attr('name') === "voyage-maison");
-      assert($("#exercice").contents().find("form input + input").attr('name') === "voyage-maison");
-      assert($("#exercice").contents().find("form input + input").attr('type') === "radio");
+      assert($exercice.find("form input").attr('type') === "radio");
+      assert($exercice.find("form input").attr('name') === "voyage-maison");
+      assert($exercice.find("form input + input").attr('name') === "voyage-maison");
+      assert($exercice.find("form input + input").attr('type') === "radio");
 
     } catch (error) {
       console.error(error);
@@ -278,11 +279,11 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("form label").eq(1).length > 0);
-      assert($("#exercice").contents().find("form label input").length > 0);
-      assert($("#exercice").contents().find("form label + label input").length > 0);
-      assert.isTrue(/Voyager/gi.test($("#exercice").contents().find("form label").text()));
-      assert.isTrue(/Rester à la maison/gi.test($("#exercice").contents().find("form label + label").text()));
+      assert($exercice.find("form label").eq(1).length > 0);
+      assert($exercice.find("form label input").length > 0);
+      assert($exercice.find("form label + label input").length > 0);
+      assert.isTrue(/Voyager/gi.test($exercice.find("form label").text()));
+      assert.isTrue(/Rester à la maison/gi.test($exercice.find("form label + label").text()));
 
     } catch (error) {
       console.error(error);
@@ -298,10 +299,10 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("form label input").attr('id') === "voyager");
-      assert($("#exercice").contents().find("form label input").attr('value') === "voyager");
-      assert($("#exercice").contents().find("form label + label input").attr('id') === "maison");
-      assert($("#exercice").contents().find("form label + label input").attr('value') === "maison");
+      assert($exercice.find("form label input").attr('id') === "voyager");
+      assert($exercice.find("form label input").attr('value') === "voyager");
+      assert($exercice.find("form label + label input").attr('id') === "maison");
+      assert($exercice.find("form label + label input").attr('value') === "maison");
 
     } catch (error) {
       console.error(error);
@@ -317,8 +318,8 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("form fieldset").children("label").eq(1).length > 0);
-      assert($("#exercice").contents().find("form fieldset").length > 0);
+      assert($exercice.find("form fieldset").children("label").eq(1).length > 0);
+      assert($exercice.find("form fieldset").length > 0);
 
     } catch (error) {
       console.error(error);
@@ -334,8 +335,8 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("form fieldset legend").length > 0);
-      assert.isTrue(/Préférez vous voyager ou rester à la maison?/gi.test($("#exercice").contents().find("form fieldset legend").text()));
+      assert($exercice.find("form fieldset legend").length > 0);
+      assert.isTrue(/Préférez vous voyager ou rester à la maison?/gi.test($exercice.find("form fieldset legend").text()));
 
     } catch (error) {
       console.error(error);
@@ -351,19 +352,19 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("form fieldset + fieldset").length > 0);
-      assert.isTrue(/Quelles sont vos destinations préférées?/gi.test($("#exercice").contents().find("form fieldset + fieldset legend").text()));
-      assert($("#exercice").contents().find("form fieldset + fieldset label").eq(1).length > 0);
-      assert.isTrue(/Paris/gi.test($("#exercice").contents().find("form fieldset + fieldset label").text()));
-      assert($("#exercice").contents().find("form fieldset + fieldset label input").length > 0);
-      assert.isTrue(/Rome/gi.test($("#exercice").contents().find("form fieldset + fieldset label").text()));
-      assert($("#exercice").contents().find("form fieldset + fieldset label + label input").length > 0);
-      assert($("#exercice").contents().find("form fieldset + fieldset label input").attr('id') === "paris");
-      assert($("#exercice").contents().find("form fieldset + fieldset label input").attr('value') === "paris");
-      assert($("#exercice").contents().find("form fieldset + fieldset label input").attr('type') === "checkbox");
-      assert($("#exercice").contents().find("form fieldset + fieldset label + label input").attr('id') === "rome");
-      assert($("#exercice").contents().find("form fieldset + fieldset label + label input").attr('value') === "rome");
-      assert($("#exercice").contents().find("form fieldset + fieldset label + label input").attr('type') === "checkbox");
+      assert($exercice.find("form fieldset + fieldset").length > 0);
+      assert.isTrue(/Quelles sont vos destinations préférées?/gi.test($exercice.find("form fieldset + fieldset legend").text()));
+      assert($exercice.find("form fieldset + fieldset label").eq(1).length > 0);
+      assert.isTrue(/Paris/gi.test($exercice.find("form fieldset + fieldset label").text()));
+      assert($exercice.find("form fieldset + fieldset label input").length > 0);
+      assert.isTrue(/Rome/gi.test($exercice.find("form fieldset + fieldset label").text()));
+      assert($exercice.find("form fieldset + fieldset label + label input").length > 0);
+      assert($exercice.find("form fieldset + fieldset label input").attr('id') === "paris");
+      assert($exercice.find("form fieldset + fieldset label input").attr('value') === "paris");
+      assert($exercice.find("form fieldset + fieldset label input").attr('type') === "checkbox");
+      assert($exercice.find("form fieldset + fieldset label + label input").attr('id') === "rome");
+      assert($exercice.find("form fieldset + fieldset label + label input").attr('value') === "rome");
+      assert($exercice.find("form fieldset + fieldset label + label input").attr('type') === "checkbox");
 
     } catch (error) {
       console.error(error);
@@ -379,10 +380,10 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("form fieldset + fieldset label input").attr('name') === "destinations");
-      assert($("#exercice").contents().find("form fieldset + fieldset label").attr('for') === "paris");
-      assert($("#exercice").contents().find("form fieldset + fieldset label + label").attr('for') === "rome");
-      assert($("#exercice").contents().find("form fieldset + fieldset label + label input").attr('name') === "destinations");
+      assert($exercice.find("form fieldset + fieldset label input").attr('name') === "destinations");
+      assert($exercice.find("form fieldset + fieldset label").attr('for') === "paris");
+      assert($exercice.find("form fieldset + fieldset label + label").attr('for') === "rome");
+      assert($exercice.find("form fieldset + fieldset label + label input").attr('name') === "destinations");
 
     } catch (error) {
       console.error(error);
@@ -398,8 +399,8 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("#voyager").attr('checked'));
-      assert($("#exercice").contents().find("#rome").attr('checked'));
+      assert($exercice.find("#voyager").attr('checked'));
+      assert($exercice.find("#rome").attr('checked'));
 
     } catch (error) {
       console.error(error);
@@ -415,10 +416,10 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("main + footer"));
-      assert.isTrue(/Sans Copyright - LK Digital/gi.test($("#exercice").contents().find("main + footer p").text()));
-      assert($("#exercice").contents().find("main + footer p a").length > 0);
-      assert($("#exercice").contents().find("main + footer p a").attr('href') === "https://lkdigital.ninja");
+      assert($exercice.find("main + footer"));
+      assert.isTrue(/Sans Copyright - LK Digital/gi.test($exercice.find("main + footer p").text()));
+      assert($exercice.find("main + footer p a").length > 0);
+      assert($exercice.find("main + footer p a").attr('href') === "https://lkdigital.ninja");
 
     } catch (error) {
       console.error(error);
@@ -434,13 +435,13 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("body main"));
-      assert($("#exercice").contents().find("body footer"));
-      assert($("#exercice").contents().find("head + body"));
-      assert.isTrue(/Nos aventures/gi.test($("#exercice").contents().find("head title").text()));
-      assert($("#exercice").contents().find("head meta").attr('charset') === "utf-8");
-      assert($("#exercice").contents().find("html head"));
-      assert($("#exercice").contents().find("html body"));
+      assert($exercice.find("body main"));
+      assert($exercice.find("body footer"));
+      assert($exercice.find("head + body"));
+      assert.isTrue(/Nos aventures/gi.test($exercice.find("head title").text()));
+      assert($exercice.find("head meta").attr('charset') === "utf-8");
+      assert($exercice.find("html head"));
+      assert($exercice.find("html body"));
 
     } catch (error) {
       console.error(error);
@@ -456,7 +457,7 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("head style").length > 0, "L'élement style doit exister");
+      assert($exercice.find("head style").length > 0, "L'élement style doit exister");
 
     } catch (error) {
       console.error(error);
@@ -543,8 +544,8 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/h1,h2,p{text-align:center;}?/gi.test(text));
-      assert($("#exercice").contents().find("head link").attr('rel') === "stylesheet");
-      assert($("#exercice").contents().find("head link").attr('href') === "style.css");
+      assert($exercice.find("head link").attr('rel') === "stylesheet");
+      assert($exercice.find("head link").attr('href') === "style.css");
 
     } catch (error) {
       console.error(error);
@@ -560,8 +561,8 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("head").children('meta').eq(1).attr('name') === "viewport");
-      assert($("#exercice").contents().find("head").children('meta').eq(1).attr('content') === "width=device-width, initial-scale=1.0");
+      assert($exercice.find("head").children('meta').eq(1).attr('name') === "viewport");
+      assert($exercice.find("head").children('meta').eq(1).attr('content') === "width=device-width, initial-scale=1.0");
 
     } catch (error) {
       console.error(error);
@@ -594,9 +595,9 @@ export const runTests = async (ex) => {
     let isAllGood = true;
 
     try {
-      assert($("#exercice").contents().find("div").attr('id') === "voyage");
-      assert($("#exercice").contents().find("div main").length > 0, "L'élement main est dans l'élément div");
-      assert($("#exercice").contents().find("div footer").length > 0, "L'élement main est dans l'élément div");
+      assert($exercice.find("div").attr('id') === "voyage");
+      assert($exercice.find("div main").length > 0, "L'élement main est dans l'élément div");
+      assert($exercice.find("div footer").length > 0, "L'élement main est dans l'élément div");
 
     } catch (error) {
       console.error(error);
@@ -699,7 +700,7 @@ export const runTests = async (ex) => {
     try {
       const text = $("#exercice").contents().find("style").text().replace(/[\n\r\s\t]+/g,'');
       assert.isTrue(/\.voyage{width:80%;background-color:coral;margin-left:auto;margin-right:auto;}?/gi.test(text));
-      assert($("#exercice").contents().find("div").attr('class') === "voyage");
+      assert($exercice.find("div").attr('class') === "voyage");
 
     } catch (error) {
       console.error(error);
