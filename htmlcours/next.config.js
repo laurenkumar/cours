@@ -9,6 +9,9 @@ module.exports = removeImports(withBundleAnalyzer({
   eslint: {
     dirs: ['.'],
   },
+  compiler: {
+    styledComponents: true,
+  },
   poweredByHeader: false,
   trailingSlash: true,
   basePath: '',

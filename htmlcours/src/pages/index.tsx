@@ -79,11 +79,11 @@ const Index = () => {
           <ValidationError prefix="Email" field="email" errors={state.errors} />
           .
         </p>
-        <p className="mb-6">
-          <p className="text-white">J&lsquo;attends avec impatience votre retour.</p>
+        <p className="mb-6 text-white">
+          J&lsquo;attends avec impatience votre retour.
         </p>
         <p className="mb-6">
-          <p>Bonne journée,</p>
+          Bonne journée,
         </p>
         <label htmlFor="rgpd" className="checkbox mb-10">
           <input
@@ -117,7 +117,6 @@ const Index = () => {
     let parties = [];
     for (const property in curriculum) {
       parties.push(
-        <>
           <label key={`tab-multi-${property}`} className="cursor-pointer">
             <h4 className="md:text-4xl mb-4 mt-6 text-white text-left text-xl font-semibold">
               <span className="mr-4">
@@ -126,7 +125,6 @@ const Index = () => {
               {property} : {curriculum[property].titre}
             </h4>
           </label>
-        </>
       );
       for (const property2 in curriculum[property].sousparties) {
         const exerciseId = curriculum[property].sousparties[property2].ex;

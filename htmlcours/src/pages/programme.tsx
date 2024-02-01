@@ -23,7 +23,6 @@ const Programme = () => {
     let parties = [];
     for (const property in curriculum) {
       parties.push(
-        <>
           <label key={`tab-multi-${property}`} className="cursor-pointer">
             <h4 className="md:text-4xl mb-4 mt-6 text-white text-left text-xl font-semibold">
               <span className="mr-4">
@@ -32,7 +31,6 @@ const Programme = () => {
               {property} : {curriculum[property].titre}
             </h4>
           </label>
-        </>
       );
       for (const property2 in curriculum[property].sousparties) {
         const exerciseId = curriculum[property].sousparties[property2].ex;

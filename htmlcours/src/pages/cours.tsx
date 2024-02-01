@@ -19,6 +19,7 @@ const Cours = ({ course }) => {
   const {json} = router.query;
   const session = useSession();
 
+  const [isOnline, setIsOnline] = useState(false);
   const [isAccessible, setIsAccessible] = useState(true);
   const isExerciseFree = (exercise) => {
     return FREE_EXERCISES.includes(exercise);
@@ -28,17 +29,18 @@ const Cours = ({ course }) => {
     if(!json) {
       return;
     }
-    setIsAccessible(isExerciseFree(json));
-    if (isAccessible === true || session) {
-      setSidebar(curriculum);
+    if (session) {
+      setIsOnline(true);
     }
-  }, [json]);
+    setIsAccessible(isExerciseFree(json));
+    setSidebar(curriculum);
+  }, [json, session]);
 
   const SetCurriculum = (curriculum) => {
     let parties = [];
     for (const property in curriculum) {
       parties.push(
-        <>
+        <div key={property}>
           <div className="side__program__part">
             <div className="side__program__part__picto">
               ❤️
@@ -51,11 +53,11 @@ const Cours = ({ course }) => {
             <div className="side__program__chapter__num">{property}</div>
             <div className="side__program__chapter__text">{curriculum[property].titre}</div>
           </div>
-        </>
+        </div>
       );
       for (const property2 in curriculum[property].sousparties) {
         parties.push(
-          <li className="side__program__lesson" key={property2}>
+          <li className="side__program__lesson" key={`ex${(curriculum[property].sujet).substring(0,1)}${parseInt(property2)+1}`}>
             <Link
               href={{
                 pathname: '/cours',
@@ -88,12 +90,12 @@ const Cours = ({ course }) => {
               <span className="dashicons dashicons-admin-appearance">📜</span>
             </div>
             <div className="side__program__course__title">
-              <small>Formation</small><br/>
+              <div><small>Formation</small></div>
               Responsive Web Design: créer un site web sur mesure
             </div>
           </div> 
           <div>
-          {RWD}
+              {RWD}
           </div>
           <div className="side__program__part">
             <div className="side__program__part__picto">
@@ -126,7 +128,7 @@ const Cours = ({ course }) => {
         />
       }
     >
-      {isAccessible || session ? (
+      {isAccessible || isOnline ? (
         <>
           {sidebar && (<SideNav />)}
           <KodemoPlayer json={course} >
