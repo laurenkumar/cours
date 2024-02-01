@@ -6,22 +6,32 @@ export const runTests = async (ex) => {
   let isAllGood = true;
   let tests = [];
 
+  function createTestMessages(isAllGood, messages) {
+    const baseMessage = isAllGood
+      ? '🎉 Bravo ! Tu peux passer à la suite.'
+      : '🤯 Tu vas y arriver, courage !';
+
+    return [baseMessage, ...messages];
+  }
+
   function ex1() {
     assert($("#exercice").contents().find("h1").length > 0, "L'élement h1 existe");
     assert.isTrue(/Nos(\s)+aventures/gi.test($("#exercice").contents().find("h1").text()), "L'élement h1 contient le texte 'Nos aventures'");
-    tests = [isAllGood
-  ? '🎉 Bravo ! Tu peux passer à la suite.'
-  : '🤯 Tu vas y arriver, courage !', "L'élément h1 existe.", "L'élément contient le texte 'Nos aventures'."];
-    return tests;
+    
+    return createTestMessages(isAllGood, [
+      "L'élément h1 existe.",
+      "L'élément contient le texte 'Nos aventures'."
+    ]);  
   }
 
   function ex2() {
     assert($("#exercice").contents().find("h2").length > 0, "L'élement h2 existe");
     assert.isTrue(/Photos(\s)+de(\s)+nos(\s)voyages/gi.test($("#exercice").contents().find("h2").text()), "L'élement h2 contient le texte 'Photos de nos voyages'");
-    tests = [isAllGood
-  ? '🎉 Bravo ! Tu peux passer à la suite.'
-  : '🤯 Tu vas y arriver, courage !', "L'élément h2 existe.", "L'élément contient le texte 'Photos de nos voyages'."];
-    return tests;
+    
+    return createTestMessages(isAllGood, [
+      "L'élément h2 existe.",
+      "L'élément contient le texte 'Photos de nos voyages'."
+    ]);  
   }
 
   function ex3() {
