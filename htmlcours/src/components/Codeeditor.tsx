@@ -18,7 +18,6 @@ function CodeOnline({subject, ex}) {
   const [html, updateHtml] = useState(htmlVal);
   const [css, updateCss] = useState(cssVal);
   const [js, updateJs] = useState(jsVal);
-  let isMouseDown = false;
 
   const srcDoc = `
       ${css && `<style>${css}</style>`}
@@ -27,7 +26,6 @@ function CodeOnline({subject, ex}) {
       `;
 
   useEffect(() => {
-    setTimeout(() => {}, 500);
     updateHtmlStrorage(html);
     updateCssStrorage(css);
     updateJsStrorage(js);
