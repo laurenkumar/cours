@@ -4,7 +4,7 @@
     <title>Iframe Content</title>
     <script>
         window.addEventListener('message', (event) => {
-            if(event.origin === 'http://formation.lkdigital.ninja') {
+            if(event.origin === 'https://formation.lkdigital.ninja') {
                 document.body.innerHTML = event.data.html;
                 const style = document.createElement('style');
                 style.textContent = event.data.css;
