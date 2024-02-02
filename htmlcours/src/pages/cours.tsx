@@ -29,11 +29,8 @@ const Cours = ({ course }) => {
     if(!json) {
       return;
     }
-    if (session) {
-      setIsOnline(true);
-    }
-    setIsAccessible(isExerciseFree(json));
     setSidebar(curriculum);
+    setIsAccessible(isExerciseFree(json));
   }, [json, session]);
 
   const SetCurriculum = (curriculum) => {
@@ -128,7 +125,7 @@ const Cours = ({ course }) => {
         />
       }
     >
-      {isAccessible || isOnline ? (
+      {isAccessible ? (
         <>
           {sidebar && (<SideNav />)}
           <KodemoPlayer json={course} >
