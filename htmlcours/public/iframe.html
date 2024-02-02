@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Iframe Content</title>
+    <script>
+        window.addEventListener('message', (event) => {
+            if(event.origin === 'http://formation.lkdigital.ninja') {
+                document.body.innerHTML = event.data.html;
+                const style = document.createElement('style');
+                style.textContent = event.data.css;
+                document.head.appendChild(style);
+                // Handle JS similarly if needed
+            }
+        }, false);
+    </script>
+</head>
+<body>
+    <!-- Content will be dynamically inserted -->
+</body>
+</html>

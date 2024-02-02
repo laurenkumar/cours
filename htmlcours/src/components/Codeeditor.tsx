@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocalStorage } from "../Hooks/LocalStorage";
+import { useDebounceState } from "../Hooks/useDebounceState";
 import Editor, { Monaco } from "@monaco-editor/react";
 import Modal from '../components/Modal.tsx';
 
 function CodeOnline({subject, ex}) {
+  const iframeRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
   const [isMaximize, setIsMaximize] = useState(false);
 
@@ -15,20 +17,18 @@ function CodeOnline({subject, ex}) {
   const [jsVal, updateJsStrorage] = useLocalStorage("js", "");
 
   const [modalMessageTest, updateModalMessageTest] = useState("");
-  const [html, updateHtml] = useState(htmlVal);
-  const [css, updateCss] = useState(cssVal);
-  const [js, updateJs] = useState(jsVal);
-
-  const srcDoc = `
-      ${css && `<style>${css}</style>`}
-      ${html}
-      ${js && `<script src=""></script>`}
-      `;
+  const [html, updateHtml] = useDebouncedState(htmlVal, 500); // 500ms delay
+  const [css, updateCss] = useDebouncedState(cssVal, 500);
+  const [js, updateJs] = useDebouncedState(jsVal, 500);
 
   useEffect(() => {
-    updateHtmlStrorage(html);
-    updateCssStrorage(css);
-    updateJsStrorage(js);
+    if (iframeRef.current) {
+        iframeRef.current.contentWindow.postMessage({
+            html,
+            css
+            // js - handle JS with care due to security implications
+        }, '*'); // Consider narrowing from '*' to my specific domain for security
+    }
   }, [html, css, js]);
 
   return (
@@ -81,7 +81,8 @@ function CodeOnline({subject, ex}) {
                     aria-hidden="false"
                   >
                     <iframe
-                      srcDoc={srcDoc}
+                      src="iframe.html"
+                      ref={iframeRef}
                       className="output-pane h-full w-full"
                       id="exercice"
                       width="100%"
