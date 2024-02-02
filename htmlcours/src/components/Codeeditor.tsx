@@ -168,13 +168,14 @@ function CodeOnline({subject, ex}) {
                   aria-hidden="false"
                 >
                   <iframe
-                    srcDoc={srcDoc}
-                    className="output-pane"
-                    id="exercice"
-                    width="100%"
-                    height="100%"
-                   allowFullScreen
-
+                      src="iframe.html"
+                      ref={iframeRef}
+                      className="output-pane h-full w-full"
+                      id="exercice"
+                      width="100%"
+                      height="100%"
+                      allowFullScreen
+                      sandbox="allow-same-origin allow-scripts"
                   ></iframe> 
                 </div>
               </li>
