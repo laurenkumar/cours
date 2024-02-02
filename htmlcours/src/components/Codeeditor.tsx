@@ -81,7 +81,7 @@ function CodeOnline({subject, ex}) {
                     aria-hidden="false"
                   >
                     <iframe
-                      src="iframe.html"
+                      src="/iframe.html"
                       ref={iframeRef}
                       className="output-pane h-full w-full"
                       id="exercice"
@@ -168,7 +168,7 @@ function CodeOnline({subject, ex}) {
                   aria-hidden="false"
                 >
                   <iframe
-                      src="iframe.html"
+                      src="/iframe.html"
                       ref={iframeRef}
                       className="output-pane h-full w-full"
                       id="exercice"
