@@ -5,11 +5,15 @@
     <script>
         window.addEventListener('message', (event) => {
             if(event.origin === 'https://formation.lkdigital.ninja') {
-                document.body.innerHTML = event.data.html;
-                const style = document.createElement('style');
-                style.textContent = event.data.css;
-                document.head.appendChild(style);
-                // Handle JS similarly if needed
+                const data = event.data;
+                if(data.html !== undefined) {
+                    document.body.innerHTML = data.html;  // Insert HTML content
+                }
+                if(data.css !== undefined) {
+                    const style = document.createElement('style');
+                    style.textContent = data.css;         // Insert CSS content
+                    document.head.appendChild(style);
+                }
             }
         }, false);
     </script>

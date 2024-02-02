@@ -17,12 +17,12 @@ function CodeOnline({subject, ex}) {
   const [jsVal, updateJsStrorage] = useLocalStorage("js", "");
 
   const [modalMessageTest, updateModalMessageTest] = useState("");
-  const [html, updateHtml] = useDebouncedState(htmlVal, 500); // 500ms delay
-  const [css, updateCss] = useDebouncedState(cssVal, 500);
-  const [js, updateJs] = useDebouncedState(jsVal, 500);
+  const [html, updateHtml] = useDebouncedState(htmlVal || '', 500); // 500ms delay
+  const [css, updateCss] = useDebouncedState(cssVal || '', 500);
+  const [js, updateJs] = useDebouncedState(jsVal || '', 500);
 
   useEffect(() => {
-    if (iframeRef.current) {
+    if (iframeRef.current && html !== undefined && css !== undefined) {
         iframeRef.current.contentWindow.postMessage({
             html,
             css
