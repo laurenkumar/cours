@@ -2,7 +2,7 @@ import { KodemoPlayer } from '@kodemo/player';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from "next/router";
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+import { useUser, useSupabaseClient, Session } from '@supabase/auth-helpers-react'
 
 /* tslint:disable */
 import { Meta } from '@/layouts/Meta';
@@ -17,7 +17,7 @@ const Cours = ({ course }) => {
   const [sidebar, setSidebar] = useState("");
   const router = useRouter();
   const {json} = router.query;
-  const session = useSession();
+  const user = useUser()
 
   const [isOnline, setIsOnline] = useState(false);
   const [isAccessible, setIsAccessible] = useState(true);
@@ -29,12 +29,12 @@ const Cours = ({ course }) => {
     if(!json) {
       return;
     }
-    if (session) {
+    if (user) {
       setIsOnline(true);
     }
     setIsAccessible(isExerciseFree(json));
     setSidebar(curriculum);
-  }, [json]);
+  }, [json, user]);
 
   const SetCurriculum = (curriculum) => {
     let parties = [];
