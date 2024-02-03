@@ -28,11 +28,8 @@ const Cours = React.memo(({ course }) => {
     if(!json) {
       return;
     }
-    if (user) {
-      setIsOnline(true);
-    }
     setIsAccessible(isExerciseFree(json));
-    //setSidebar(curriculum);
+    setSidebar(curriculum);
   }, [json]);
 
   const SetCurriculum = (curriculum) => {
@@ -127,8 +124,9 @@ const Cours = React.memo(({ course }) => {
         />
       }
     >
-      {isAccessible || isOnline ? (
+      {isAccessible ? (
         <>
+          {sidebar && (<SideNav />)}
           <KodemoPlayer json={course} >
           </KodemoPlayer>
           { json &&
