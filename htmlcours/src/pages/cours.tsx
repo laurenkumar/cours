@@ -33,7 +33,7 @@ const Cours = React.memo(({ course }) => {
     }
     setIsAccessible(isExerciseFree(json));
     setSidebar(curriculum);
-  }, [json]);
+  }, [json, user]);
 
   const SetCurriculum = (curriculum) => {
     let parties = [];
