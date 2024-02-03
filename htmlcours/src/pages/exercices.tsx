@@ -16,6 +16,7 @@ const Exercices = () => {
     if(!subject) {
       return;
     }
+    console.log(subject);
     setExo(ex);
     setSubjectParam(subject);
   }, [subject]);
