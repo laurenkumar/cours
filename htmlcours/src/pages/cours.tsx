@@ -1,5 +1,5 @@
 import { KodemoPlayer } from '@kodemo/player';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import { useUser, useSupabaseClient, Session } from '@supabase/auth-helpers-react'
@@ -9,11 +9,10 @@ import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
 import curriculum from 'src/cours/curriculum.json';
-import React from 'react';
 
 const FREE_EXERCISES = ['exc1', 'exc2', 'exc3', 'exh1', 'exh2', 'exh3'];
 
-const Cours = ({ course }) => {
+const Cours = React.memo(({ course }) => {
   const [sidebar, setSidebar] = useState("");
   const router = useRouter();
   const {json} = router.query;
@@ -34,7 +33,7 @@ const Cours = ({ course }) => {
     }
     setIsAccessible(isExerciseFree(json));
     setSidebar(curriculum);
-  }, [json, user]);
+  }, [json]);
 
   const SetCurriculum = (curriculum) => {
     let parties = [];
@@ -167,7 +166,7 @@ const Cours = ({ course }) => {
       )}
     </Main>
   );
-};
+});
 
 export async function getServerSideProps(context) {
   const { json } = context.query;
