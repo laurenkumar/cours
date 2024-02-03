@@ -32,7 +32,7 @@ const Cours = React.memo(({ course }) => {
       setIsOnline(true);
     }
     setIsAccessible(isExerciseFree(json));
-    setSidebar(curriculum);
+    //setSidebar(curriculum);
   }, [json]);
 
   const SetCurriculum = (curriculum) => {
@@ -129,7 +129,6 @@ const Cours = React.memo(({ course }) => {
     >
       {isAccessible || isOnline ? (
         <>
-          {sidebar && (<SideNav />)}
           <KodemoPlayer json={course} >
           </KodemoPlayer>
           { json &&
