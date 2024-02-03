@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "@formspree/react": "^2.4.1",
-    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@kodemo/player": "^0.3.2",
     "@kodemo/util": "^0.3.2",
     "@monaco-editor/react": "^4.4.6",
