@@ -4,7 +4,7 @@ import { useDebouncedState } from "../Hooks/DebouncedState";
 import Editor, { Monaco } from "@monaco-editor/react";
 import Modal from '../components/Modal.tsx';
 
-function CodeOnline({subject, ex}) {
+const CodeOnline = React.memo(({subject, ex}) => {
   const iframeRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
   const [isMaximize, setIsMaximize] = useState(false);
@@ -201,6 +201,6 @@ function CodeOnline({subject, ex}) {
         <Modal test={modalMessageTest} showModal={setShowModal} seeModal={showModal}/>
     </div>
   );
-}
+});
 
 export default CodeOnline;

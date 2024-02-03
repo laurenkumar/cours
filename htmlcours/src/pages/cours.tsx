@@ -16,7 +16,7 @@ const Cours = React.memo(({ course }) => {
   const [sidebar, setSidebar] = useState("");
   const router = useRouter();
   const {json} = router.query;
-  const user = useUser()
+  const user = useUser();
 
   const [isOnline, setIsOnline] = useState(false);
   const [isAccessible, setIsAccessible] = useState(true);
@@ -27,6 +27,9 @@ const Cours = React.memo(({ course }) => {
   useEffect(() => {
     if(!json) {
       return;
+    }
+    if (user) {
+      setIsOnline(true);
     }
     setIsAccessible(isExerciseFree(json));
     setSidebar(curriculum);
@@ -124,7 +127,7 @@ const Cours = React.memo(({ course }) => {
         />
       }
     >
-      {isAccessible ? (
+      {isAccessible || isOnline ? (
         <>
           {sidebar && (<SideNav />)}
           <KodemoPlayer json={course} >
