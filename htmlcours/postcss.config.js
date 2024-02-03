@@ -9,13 +9,9 @@ module.exports = {
     ...(process.env.NODE_ENV === 'production' ? {
       cssnano: {},
       '@fullhuman/postcss-purgecss': {
-        content: [
-          './pages/**/*.{js,jsx,ts,tsx}',
-          './components/**/*.{js,jsx,ts,tsx}'
-        ],
+        content: ['./src/**/*.html', './src/**/*.vue', './src/**/*.jsx'],
         // Include any other file extensions your project uses
-        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
-        safelist: ["html", "body"]
+        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
       },
     } : {}),
   },
