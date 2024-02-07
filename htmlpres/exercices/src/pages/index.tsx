@@ -4,9 +4,9 @@ import CodeOnline from '../components/Codeeditor';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 import { useRouter } from "next/router";
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Index = () => {
+const Index = React.memo(() => {
   const router = useRouter();
   const {ex, subject} = router.query;
   const [exo, setExo] = useState("");
@@ -21,17 +21,8 @@ const Index = () => {
   }, [subject]);
 
   return (
-    <Main
-      meta={
-        <Meta
-          title="Apprendre HTML en codant des projets réalistes"
-          description="LK Digital - Apprendre à coder - Cours Web dev"
-        />
-      }
-    >
-      <CodeOnline subject={subjectParam} ex={exo}/>
-    </Main>
+    <CodeOnline subject={subjectParam} ex={exo}/>
   );
-};
+});
 
 export default Index;

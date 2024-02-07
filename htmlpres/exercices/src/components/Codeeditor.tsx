@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocalStorage } from "../Hooks/LocalStorage";
+import { useDebouncedState } from "../Hooks/DebouncedState";
 import Editor, { Monaco } from "@monaco-editor/react";
-import Modal from '../components/Modal.tsx';
+import Modal from './Modal.tsx';
 
-function CodeOnline({subject, ex}) {
+const CodeOnline = React.memo(({subject, ex}) => {
+  const iframeRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
   const [isMaximize, setIsMaximize] = useState(false);
 
@@ -16,26 +17,22 @@ function CodeOnline({subject, ex}) {
   const [jsVal, updateJsStrorage] = useLocalStorage("js", "");
 
   const [modalMessageTest, updateModalMessageTest] = useState("");
-  const [html, updateHtml] = useState(htmlVal);
-  const [css, updateCss] = useState(cssVal);
-  const [js, updateJs] = useState(jsVal);
-  let isMouseDown = false;
-
-  const srcDoc = `
-      ${css && `<style>${css}</style>`}
-      ${html}
-      ${js && `<script src=""></script>`}
-      `;
+  const [html, updateHtml] = useDebouncedState(htmlVal || '', 500); // 500ms delay
+  const [css, updateCss] = useDebouncedState(cssVal || '', 500);
+  const [js, updateJs] = useDebouncedState(jsVal || '', 500);
 
   useEffect(() => {
-    setTimeout(() => {}, 500);
-    updateHtmlStrorage(html);
-    updateCssStrorage(css);
-    updateJsStrorage(js);
+    if (iframeRef.current && html !== undefined && css !== undefined) {
+        iframeRef.current.contentWindow.postMessage({
+            html,
+            css
+            // js - handle JS with care due to security implications
+        }, 'https://exercice.lkdigital.ninja'); // Consider narrowing from '*' to my specific domain for security
+    }
   }, [html, css, js]);
 
   return (
-    <div>
+    <div className="exercice-interactif">
         { subject === "html" ?
           <>
             <ul className="tabs" role="tablist">
@@ -84,12 +81,14 @@ function CodeOnline({subject, ex}) {
                     aria-hidden="false"
                   >
                     <iframe
-                      srcDoc={srcDoc}
+                      src="/iframe.html"
+                      ref={iframeRef}
                       className="output-pane h-full w-full"
                       id="exercice"
                       width="100%"
                       height="100%"
                       allowFullScreen
+                      sandbox="allow-same-origin allow-scripts"
                     ></iframe> 
                   </div>
                 </li>
@@ -169,12 +168,14 @@ function CodeOnline({subject, ex}) {
                   aria-hidden="false"
                 >
                   <iframe
-                    srcDoc={srcDoc}
-                    className="output-pane"
-                    id="exercice"
-                    width="100%"
-                    height="100%"
-                    allowFullScreen
+                      src="/iframe.html"
+                      ref={iframeRef}
+                      className="output-pane h-full w-full"
+                      id="exercice"
+                      width="100%"
+                      height="100%"
+                      allowFullScreen
+                      sandbox="allow-same-origin allow-scripts"
                   ></iframe> 
                 </div>
               </li>
@@ -200,6 +201,6 @@ function CodeOnline({subject, ex}) {
         <Modal test={modalMessageTest} showModal={setShowModal} seeModal={showModal}/>
     </div>
   );
-}
+});
 
 export default CodeOnline;

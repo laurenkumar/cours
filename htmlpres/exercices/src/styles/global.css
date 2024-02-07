@@ -29,26 +29,26 @@ body, html {
 @tailwind utilities;
 
 
-/* code editeur */
 
-.tabs {
+.exercice-interactif .tabs {
   width: 100%;
   float: none;
   color: white;
   list-style: none;
   position: relative;
   text-align: left;
+  margin: 0;
 }
-.tabs li {
+.exercice-interactif .tabs li {
   float: left;
   display: block;
 }
-.tabs input[type="radio"] {
+.exercice-interactif .tabs input[type="radio"] {
   position: absolute;
   top: 0;
   left: -9999px;
 }
-.tabs label {
+.exercice-interactif .tabs label {
   display: block;
   padding: 14px 21px;
   font-size: 12px;
@@ -62,7 +62,7 @@ body, html {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.tabs .tab-content {
+.exercice-interactif .tabs .tab-content {
   z-index: 2;
   display: none;
   overflow: hidden;
@@ -71,19 +71,21 @@ body, html {
   line-height: 25px;
   position: absolute;
   left: 0;
+  padding: 0;
+  top: 46px;
   background: #1e2127;
 }
 
-.tabs .tab-content section, .tabs .navigateur {
+.exercice-interactif .tabs .tab-content section, .tabs .navigateur {
   height: calc(100vh - 46px) !important;
 }
-.tabs [id^="tab"]:checked + label {
+.exercice-interactif .tabs [id^="tab"]:checked + label {
   color: white;
 }
-.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+.exercice-interactif .tabs [id^="tab"]:checked ~ [id^="tab-content"] {
   display: block;
 }
-.button_test {
+.exercice-interactif .button_test {
   position: absolute;
   background-color: #ff8906;
   z-index: 9;
