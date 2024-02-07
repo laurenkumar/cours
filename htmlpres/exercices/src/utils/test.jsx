@@ -780,6 +780,24 @@ export const runTests = async (ex) => {
       ]);
   }
 
+  function exc20() {
+    let isAllGood = true;
+
+    try {
+        const text = $("#exercice").contents().find("style").text();
+        const regex = /\.(voyage\s+h1,\s*.voyage\s+h2,\s*.voyage\s+p)\s*\{[\s\S]*?font-family:\s*'Arial',\s*sans-serif;[\s\S]*?\}/i;
+        assert.isTrue(regex.test(text));
+    } catch (error) {
+        console.error(error);
+        isAllGood = false;
+    }
+
+    return createTestMessages(isAllGood, [
+        "La propriété font-family a été correctement appliquée avec 'Arial', sans-serif."
+    ]);
+  }
+
+
   try {
     switch (ex) {
       case 'ex1':
@@ -906,6 +924,9 @@ export const runTests = async (ex) => {
       break;
       case 'exc19':
       return exc19()
+      break;
+      case 'exc20':
+      return exc20()
       break;
       default:
       console.log(`Sorry, we are out of exercices.`);
