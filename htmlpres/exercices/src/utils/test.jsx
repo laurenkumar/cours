@@ -785,7 +785,7 @@ export const runTests = async (ex) => {
 
     try {
         const text = $("#exercice").contents().find("style").text();
-        const regex = /\.(voyage\s+h1,\s*.voyage\s+h2)\s*\{[\s\S]*?font-family:\s*'Arial',\s*sans-serif;[\s\S]*?\}/i;
+        const regex = /\.(voyage\s+h1,\s*.voyage\s+h2)\s*\{[\s\S]*?font-family:\s*sans-serif;[\s\S]*?\}/i;
         assert.isTrue(regex.test(text));
     } catch (error) {
         console.error(error);
@@ -793,7 +793,7 @@ export const runTests = async (ex) => {
     }
 
     return createTestMessages(isAllGood, [
-        "La propriété font-family a été correctement appliquée avec 'Arial', sans-serif."
+        "La propriété font-family a été correctement appliquée avec sans-serif."
     ]);
   }
 
