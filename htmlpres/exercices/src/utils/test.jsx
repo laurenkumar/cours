@@ -846,6 +846,24 @@ export const runTests = async (ex) => {
     ]);
   }
 
+  function exc23() {
+    let isAllGood = true;
+
+    try {
+        // Vérification CSS
+        const cssText = $("#exercice").contents().find("style").text();
+        const regex = /\.voyage\s*\{[\s\S]*?width:\s*80%;[\s\S]*?background-color:\s*coral;[\s\S]*?margin-left:\s*auto;[\s\S]*?margin-right:\s*auto;[\s\S]*?padding-top:\s*20px;[\s\S]*?padding-right:\s*20px;[\s\S]*?padding-bottom:\s*20px;[\s\S]*?padding-left:\s*20px;[\s\S]*?max-width:\s*500px;[\s\S]*?height:\s*600px;[\s\S]*?\}/i;
+        isAllGood = regex.test(cssText);
+    } catch (error) {
+        console.error(error);
+        isAllGood = false;
+    }
+
+    return createTestMessages(isAllGood, [
+        "La hauteur de l'élément .voyage a été correctement définie à 600px."
+    ]);
+  }
+
   try {
     switch (ex) {
       case 'ex1':
@@ -981,6 +999,9 @@ export const runTests = async (ex) => {
       break;
       case 'exc22':
       return exc22()
+      break;
+      case 'exc23':
+      return exc23()
       break;
       default:
       console.log(`Sorry, we are out of exercices.`);
