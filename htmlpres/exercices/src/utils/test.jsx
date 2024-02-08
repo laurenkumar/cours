@@ -797,6 +797,34 @@ export const runTests = async (ex) => {
     ]);
   }
 
+  function exc21() {
+    let isCssGood = true;
+    let isHtmlGood = true;
+
+    try {
+        // Vérification CSS
+        const cssText = $("#exercice").contents().find("style").text();
+        const cssRegex = /\.emphase-titre\s*\{[\s\S]*?font-style:\s*italic;[\s\S]*?\}/i;
+        isCssGood = cssRegex.test(cssText);
+
+        // Vérification HTML
+        const htmlContent = $("#exercice").contents().find("body").html();
+        const htmlRegex = /<h3 class=["']?emphase-titre["']?[\s\S]*?>/;
+        isHtmlGood = htmlContent.match(htmlRegex).length > 0;
+
+    } catch (error) {
+        console.error(error);
+        isCssGood = false;
+        isHtmlGood = false;
+    }
+
+    const isAllGood = isCssGood && isHtmlGood;
+
+    return createTestMessages(isAllGood, [
+        isCssGood ? "La propriété font-style: italic a été correctement appliquée à la classe 'emphase-titre'." : "La propriété font-style: italic n'a pas été correctement appliquée.",
+        isHtmlGood ? "La classe 'emphase-titre' a été correctement appliquée aux éléments <h3>." : "La classe 'emphase-titre' n'a pas été trouvée sur les éléments <h3>."
+    ]);
+  }
 
   try {
     switch (ex) {
@@ -927,6 +955,9 @@ export const runTests = async (ex) => {
       break;
       case 'exc20':
       return exc20()
+      break;
+      case 'exc21':
+      return exc21()
       break;
       default:
       console.log(`Sorry, we are out of exercices.`);
