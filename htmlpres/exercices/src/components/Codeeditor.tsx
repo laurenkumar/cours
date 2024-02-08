@@ -17,6 +17,18 @@ const CodeOnline = React.memo(({subject, ex}) => {
   const [js, setJs] = useState(jsVal);
 
   useEffect(() => {
+    setHtml(htmlVal);
+  }, [htmlVal]);
+
+  useEffect(() => {
+    setCss(cssVal);
+  }, [cssVal]);
+
+  useEffect(() => {
+    setJs(jsVal);
+  }, [jsVal]);
+
+  useEffect(() => {
     if (iframeRef.current && html !== undefined && css !== undefined) {
         iframeRef.current.contentWindow.postMessage({
             html,
