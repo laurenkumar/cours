@@ -14,14 +14,20 @@ const CodeOnline = React.memo(({subject, ex}) => {
   const [modalMessageTest, updateModalMessageTest] = useState("");
 
   const [html, setHtml] = useDebouncedState(
-    useLocalStorage("html", htmlDefault),
+    localStorage.getItem("html") || htmlDefault,
     500
   );
   const [css, setCss] = useDebouncedState(
-    useLocalStorage("css", cssDefault),
+    localStorage.getItem("css") || cssDefault,
     500
   );
-  const [js, setJs] = useDebouncedState(useLocalStorage("js", ""), 500);
+  const [js, setJs] = useDebouncedState(localStorage.getItem("js") || "", 500);
+
+  useEffect(() => {
+    localStorage.setItem("html", html);
+    localStorage.setItem("css", css);
+    localStorage.setItem("js", js);
+  }, [html, css, js]);
 
   useEffect(() => {
     if (iframeRef.current && html !== undefined && css !== undefined) {
