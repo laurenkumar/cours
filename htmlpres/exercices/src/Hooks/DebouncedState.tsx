@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocalStorage } from './useLocalStorage';
+import { useLocalStorage } from './LocalStorage';
 
 export const useDebouncedLocalStorage = (key, initialValue, delay) => {
   const [debouncedValue, setDebouncedValue] = useState(initialValue);
