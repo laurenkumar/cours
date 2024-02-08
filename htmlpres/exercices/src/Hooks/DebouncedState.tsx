@@ -6,6 +6,12 @@ export const useDebouncedLocalStorage = (key, initialValue, delay) => {
   const [storedValue, setStoredValue] = useLocalStorage(key, initialValue);
 
   useEffect(() => {
+    if (storedValue !== null && storedValue !== undefined) {
+      setDebouncedValue(storedValue); // Set the debounced value to the stored value if it exists
+    }
+  }, [storedValue]);
+
+  useEffect(() => {
     const handler = setTimeout(() => {
       setStoredValue(debouncedValue);
     }, delay);
