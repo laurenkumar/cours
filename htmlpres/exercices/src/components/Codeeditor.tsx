@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useLocalStorage } from "../Hooks/LocalStorage";
 import { useDebouncedLocalStorage } from "../Hooks/DebouncedState";
 import Editor, { Monaco } from "@monaco-editor/react";
 import Modal from './Modal.tsx';
