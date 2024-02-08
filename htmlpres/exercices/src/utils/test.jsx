@@ -826,6 +826,26 @@ export const runTests = async (ex) => {
     ]);
   }
 
+  function exc22() {
+    let isAllGood = true;
+
+    try {
+        // Vérification CSS
+        const cssText = $("#exercice").contents().find("style").text();
+        const h1Regex = /\.voyage\s+h1\s*\{[\s\S]*?font-size:\s*36px;[\s\S]*?\}/i;
+        const h2Regex = /\.voyage\s+h2\s*\{[\s\S]*?font-size:\s*24px;[\s\S]*?\}/i;
+        isAllGood = h1Regex.test(cssText) && h2Regex.test(cssText);
+    } catch (error) {
+        console.error(error);
+        isAllGood = false;
+    }
+
+    return createTestMessages(isAllGood, [
+        "La taille de police pour les titres h1 a été correctement ajustée à 36px.",
+        "La taille de police pour les titres h2 a été correctement ajustée à 24px."
+    ]);
+  }
+
   try {
     switch (ex) {
       case 'ex1':
@@ -958,6 +978,9 @@ export const runTests = async (ex) => {
       break;
       case 'exc21':
       return exc21()
+      break;
+      case 'exc2':
+      return exc22()
       break;
       default:
       console.log(`Sorry, we are out of exercices.`);
