@@ -900,6 +900,24 @@ export const runTests = async (ex) => {
     ]);
   }
 
+  function exc26() {
+    let isAllGood = true;
+
+    try {
+        // Vérification CSS
+        const cssText = $("#exercice").contents().find("style").text();
+        const regex1 = /\a:hover\s*\{[\s\S]*?color:\s*black;[\s\S]*?\}/i;
+        isAllGood = regex1.test(cssText);
+    } catch (error) {
+        console.error(error);
+        isAllGood = false;
+    }
+
+    return createTestMessages(isAllGood, [
+        "La couleur des liens a été modifiée en noire au survol."
+    ]);
+  }
+
 
   try {
     switch (ex) {
@@ -1045,6 +1063,9 @@ export const runTests = async (ex) => {
       break;
       case 'exc25':
       return exc25()
+      break;
+      case 'exc26':
+      return exc26()
       break;
       default:
       console.log(`Sorry, we are out of exercices.`);
