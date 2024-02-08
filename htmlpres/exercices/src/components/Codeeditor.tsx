@@ -7,9 +7,9 @@ const CodeOnline = React.memo(({subject, ex}) => {
   const iframeRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
 
-  const [htmlVal, setHtmlVal] = useDebouncedLocalStorage("html", "");
-  const [cssVal, setCssVal] = useDebouncedLocalStorage("css", "");
-  const [jsVal, setJsVal] = useDebouncedLocalStorage("js", "");
+  const [htmlVal, setHtmlVal] = useDebouncedLocalStorage("html");
+  const [cssVal, setCssVal] = useDebouncedLocalStorage("css");
+  const [jsVal, setJsVal] = useDebouncedLocalStorage("js");
 
   const [modalMessageTest, updateModalMessageTest] = useState("");
   const [html, setHtml] = useState(htmlVal);
