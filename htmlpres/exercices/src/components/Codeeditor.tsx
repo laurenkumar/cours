@@ -50,7 +50,10 @@ const CodeOnline = React.memo(({subject, ex}) => {
                     <Editor
                       height="90vh"
                       defaultLanguage="html"
-                      onChange={(evn) => setHtml(evn)}
+                      onChange={(evn) => {
+                        setHtmlVal(evn);
+                        setHtml(evn);
+                      }}
                       defaultValue={html}
                       value={html}
                       selectOnLineNumbers="true"
@@ -111,7 +114,10 @@ const CodeOnline = React.memo(({subject, ex}) => {
                     <Editor
                       height="90vh"
                       defaultLanguage="html"
-                      onChange={(evn) => setHtml(evn)}
+                      onChange={(evn) => {
+                        setHtmlVal(evn);
+                        setHtml(evn);
+                      }}
                       defaultValue={html}
                       value={html}
                       selectOnLineNumbers="true"
@@ -135,9 +141,10 @@ const CodeOnline = React.memo(({subject, ex}) => {
                     <Editor
                       height="90vh"
                       defaultLanguage="css"
-                      onChange={(evn) =>
-                        setCss(evn)
-                      }
+                      onChange={(evn) => {
+                        setCss(evn);
+                        setCssVal(evn);
+                      }}
                       defaultValue={css}
                       value={css}
                       selectOnLineNumbers="true"
