@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocalStorage } from "../Hooks/LocalStorage";
-import { useDebouncedState } from "../Hooks/DebouncedState";
+import { useDebouncedLocalStorage } from "../Hooks/DebouncedState";
 import Editor, { Monaco } from "@monaco-editor/react";
 import Modal from './Modal.tsx';
 
@@ -11,23 +11,14 @@ const CodeOnline = React.memo(({subject, ex}) => {
   const htmlDefault = ``;
   const cssDefault = ``;
 
+  const [htmlVal, setHtmlVal] = useDebouncedLocalStorage("html", "");
+  const [cssVal, setCssVal] = useDebouncedLocalStorage("css", "");
+  const [jsVal, setJsVal] = useDebouncedLocalStorage("js", "");
+
   const [modalMessageTest, updateModalMessageTest] = useState("");
-
-  const [html, setHtml] = useDebouncedState(
-    localStorage.getItem("html") || htmlDefault,
-    500
-  );
-  const [css, setCss] = useDebouncedState(
-    localStorage.getItem("css") || cssDefault,
-    500
-  );
-  const [js, setJs] = useDebouncedState(localStorage.getItem("js") || "", 500);
-
-  useEffect(() => {
-    localStorage.setItem("html", html);
-    localStorage.setItem("css", css);
-    localStorage.setItem("js", js);
-  }, [html, css, js]);
+  const [html, setHtml] = useState(htmlVal);
+  const [css, setCss] = useState(cssVal);
+  const [js, setJs] = useState(jsVal);
 
   useEffect(() => {
     if (iframeRef.current && html !== undefined && css !== undefined) {

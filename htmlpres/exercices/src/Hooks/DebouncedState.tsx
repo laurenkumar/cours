@@ -1,20 +1,21 @@
 import { useState, useEffect } from 'react';
+import { useLocalStorage } from './useLocalStorage';
 
-export const useDebouncedState = (initialValue, delay) => {
-  const [value, setValue] = useState(initialValue);
+export const useDebouncedLocalStorage = (key, initialValue, delay) => {
   const [debouncedValue, setDebouncedValue] = useState(initialValue);
+  const [storedValue, setStoredValue] = useLocalStorage(key, initialValue);
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      setDebouncedValue(value);
+      setStoredValue(debouncedValue);
     }, delay);
 
     return () => {
       clearTimeout(handler);
     };
-  }, [value, delay]);
+  }, [debouncedValue, delay, setStoredValue]);
 
-  return [debouncedValue, setValue];
-}
+  return [debouncedValue, setDebouncedValue];
+};
 
-export default useDebouncedState;
+export default useDebouncedLocalStorage;
