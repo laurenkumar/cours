@@ -7,19 +7,21 @@ import Modal from './Modal.tsx';
 const CodeOnline = React.memo(({subject, ex}) => {
   const iframeRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
-  const [isMaximize, setIsMaximize] = useState(false);
 
   const htmlDefault = ``;
   const cssDefault = ``;
 
-  const [htmlVal, updateHtmlStrorage] = useLocalStorage("html", htmlDefault);
-  const [cssVal, updateCssStrorage] = useLocalStorage("css", cssDefault);
-  const [jsVal, updateJsStrorage] = useLocalStorage("js", "");
-
   const [modalMessageTest, updateModalMessageTest] = useState("");
-  const [html, updateHtml] = useDebouncedState(htmlVal || '', 500); // 500ms delay
-  const [css, updateCss] = useDebouncedState(cssVal || '', 500);
-  const [js, updateJs] = useDebouncedState(jsVal || '', 500);
+
+  const [html, setHtml] = useDebouncedState(
+    useLocalStorage("html", htmlDefault),
+    500
+  );
+  const [css, setCss] = useDebouncedState(
+    useLocalStorage("css", cssDefault),
+    500
+  );
+  const [js, setJs] = useDebouncedState(useLocalStorage("js", ""), 500);
 
   useEffect(() => {
     if (iframeRef.current && html !== undefined && css !== undefined) {
