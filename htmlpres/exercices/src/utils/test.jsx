@@ -979,7 +979,7 @@ export const runTests = async (ex) => {
       case 'exc21':
       return exc21()
       break;
-      case 'exc2':
+      case 'exc22':
       return exc22()
       break;
       default:
