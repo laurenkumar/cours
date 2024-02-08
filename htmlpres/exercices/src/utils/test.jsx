@@ -888,7 +888,7 @@ export const runTests = async (ex) => {
     try {
         // Vérification CSS
         const cssText = $("#exercice").contents().find("style").text();
-        const regex = /\.voyage\s+(h1|a)\s*\{[\s\S]*?color:\s*white;[\s\S]*?\}/gi;
+        const regex = /\.(voyage\s+h1,\s*a)\s*\{[\s\S]*?color:\s*white;[\s\S]*?\}/gi;
         isAllGood = regex.test(cssText);
     } catch (error) {
         console.error(error);
