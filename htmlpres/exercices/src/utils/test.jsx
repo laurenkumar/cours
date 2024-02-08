@@ -864,6 +864,43 @@ export const runTests = async (ex) => {
     ]);
   }
 
+  function exc24() {
+    let isAllGood = true;
+
+    try {
+        // Vérification CSS
+        const cssText = $("#exercice").contents().find("style").text();
+        const regex = /\.voyage\s+img\s*\{[\s\S]*?border:\s*2px\s+solid\s+black;[\s\S]*?\}/i;
+        isAllGood = regex.test(cssText);
+    } catch (error) {
+        console.error(error);
+        isAllGood = false;
+    }
+
+    return createTestMessages(isAllGood, [
+        "Une bordure solide de couleur noire avec une épaisseur de 2px a été ajoutée à l'élément img."
+    ]);
+  }
+
+  function exc25() {
+    let isAllGood = true;
+
+    try {
+        // Vérification CSS
+        const cssText = $("#exercice").contents().find("style").text();
+        const regex = /\.voyage\s+(h1|a)\s*\{[\s\S]*?color:\s*white;[\s\S]*?\}/gi;
+        isAllGood = regex.test(cssText);
+    } catch (error) {
+        console.error(error);
+        isAllGood = false;
+    }
+
+    return createTestMessages(isAllGood, [
+        "La couleur du texte des éléments h1 et des liens a été correctement modifiée pour offrir un bon contraste avec le fond coral."
+    ]);
+  }
+
+
   try {
     switch (ex) {
       case 'ex1':
@@ -1002,6 +1039,12 @@ export const runTests = async (ex) => {
       break;
       case 'exc23':
       return exc23()
+      break;
+      case 'exc24':
+      return exc24()
+      break;
+      case 'exc25':
+      return exc25()
       break;
       default:
       console.log(`Sorry, we are out of exercices.`);
