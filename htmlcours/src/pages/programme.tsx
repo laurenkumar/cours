@@ -41,10 +41,7 @@ const Programme = () => {
           <p className="pt-3 pb-3 font-semibold text-white">
             <Link
               className={`tracking-wider ${linkClass}`}
-              href={{
-                pathname: '/cours',
-                query: { json: exerciseId },
-              }}
+              href={`/cours/${exerciseId}`}
               title={curriculum[property].sousparties[property2].titre}
             >
               {property2}<span className="hidden">{curriculum[property].sousparties[property2].titre}</span>
@@ -76,7 +73,7 @@ const Programme = () => {
         <section className="programme mx-auto items-center pres-video flex md:flex-row flex-col justify-center my-auto md:mt-16 md:mb-16 mt-16 mb-16">
           <div className="ml-4 mr-4 md:ml-28 md:mr-28 md:mt-16 md:mb-16">
             <div>
-              <h1 className="md:text-4xl mix-blend-difference mb-4 text-white text-left text-xl font-semibold">
+              <h1 className="md:text-4xl mb-4 text-white text-left text-xl font-semibold">
                 Le programme
               </h1>
               <div className="shadow-md">

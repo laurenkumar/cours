@@ -13,7 +13,6 @@ body {
   --site-header-height: 60px;
   --site-section-rounding: 20px;
   --site-section-inner-rounding: 14px;
-  
 }
 
 @media only screen and (max-width: 700px)
@@ -87,7 +86,7 @@ h1 .ko-anchor, h2 .ko-anchor, h3 .ko-anchor {
 }
 
 p, q {
-  color: #a7a9be;
+  color: #fff;
 }
 
 .home span {
@@ -355,7 +354,7 @@ code {
 
 .side {
   position: fixed;
-  z-index: -1;
+  z-index: 0;
   top: 50px;
   bottom: 0;
   left: 0;

@@ -135,10 +135,7 @@ const Index = () => {
           <p className="pt-3 pb-3 font-semibold text-white">
             <Link
               className={`tracking-wider ${linkClass}`}
-              href={{
-                pathname: '/cours',
-                query: { json: exerciseId },
-              }}
+              href={`/cours/${exerciseId}`}
               title={curriculum[property].sousparties[property2].titre}
             >
               {property2}<span className="hidden">{curriculum[property].sousparties[property2].titre}</span>
@@ -182,7 +179,7 @@ const Index = () => {
                 Lisez de courtes leçons, coder en même temps et relevez des défis directement dans votre navigateur.
               </p>
               <button className="mt-4 button_login font-semibold">
-                <Link href="/cours" title="Formation en ligne">Formation en ligne</Link>
+                <Link href="/cours/exh1" title="Formation en ligne">Formation en ligne</Link>
               </button>
             </div>
           </div>
@@ -233,7 +230,7 @@ const Index = () => {
                   Allez-y, essayez. Notre environnement d'apprentissage pratique vous permettra d'écrire du vrai code dès votre première leçon.
                 </p>
                 <button className="mt-4 button_login font-semibold">
-                    <Link href="/cours" title="La première leçon">Commencer la première leçon</Link>
+                    <Link href="/cours/exh1" title="La première leçon">Commencer la première leçon</Link>
                 </button>
               </div>
             </div>
@@ -279,7 +276,7 @@ const Index = () => {
                       <li>Des projets validés par un mentor</li>
                   </ul>
                   <button className="mt-6 button_login font-semibold">
-                    <Link href="/cours" title="La première leçon">Commencer une formation</Link>
+                    <Link href="/cours/exh1" title="La première leçon">Commencer une formation</Link>
                   </button>
                 </div>
                 <div className="card max-w-md md:w-1/2 pt-6 p-6 min-h-50">

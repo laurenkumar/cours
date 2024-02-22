@@ -215,6 +215,46 @@
             "titre":"CSS: Le padding",
             "id":"#css-le-padding",
             "ex": "exc18"
+         },
+         {
+            "titre":"CSS: La propriété max-width",
+            "id":"#css-la-proprit-max-width",
+            "ex": "exc19"
+         },
+         {
+            "titre":"La propriété font-family",
+            "id":"#la-proprit-font-family",
+            "ex": "exc20"
+         },
+         {
+            "titre":"La propriété font-style",
+            "id":"#la-proprit-font-style",
+            "ex": "exc21"
+         },
+         {
+            "titre":"La propriété font-size",
+            "id":"#la-proprit-font-size",
+            "ex": "exc22"
+         },
+         {
+            "titre":"La propriété height",
+            "id":"#la-proprit-height",
+            "ex": "exc23"
+         },
+         {
+            "titre":"La propriété border",
+            "id":"#la-proprit-border",
+            "ex": "exc24"
+         },
+         {
+            "titre":"La propriété color",
+            "id":"#la-proprit-color",
+            "ex": "exc25"
+         },
+         {
+            "titre":"Pseudo sélecteur :hover",
+            "id":"#pseudo-slecteur-hover",
+            "ex": "exc26"
          }
       ]
    }
