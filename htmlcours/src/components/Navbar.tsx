@@ -96,7 +96,7 @@ export default function Navbar({ fixed }) {
                 </li>
                 <li>
                   <Link
-                    href="tarifs"
+                    href="/tarifs"
                     title="Les tarifs - LK Digital"
                   >
                     Tarifs
