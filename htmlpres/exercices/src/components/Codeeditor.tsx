@@ -34,7 +34,7 @@ const CodeOnline = React.memo(({subject, ex}) => {
             html,
             css
             // js - handle JS with care due to security implications
-        }, 'https://exercice.lkdigital.ninja'); // Consider narrowing from '*' to my specific domain for security
+        }, '*'); // Consider narrowing from '*' to my specific domain for security
     }
   }, [html, css, js]);
 
