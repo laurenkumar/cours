@@ -5,7 +5,6 @@
     <style>html {background-color: #fff;}</style>
     <script>
         window.addEventListener('message', (event) => {
-            if(event.origin === 'https://exercice.lkdigital.ninja') {
                 const data = event.data;
                 if(data.html !== undefined) {
                     document.body.innerHTML = data.html;  // Insert HTML content
@@ -15,7 +14,6 @@
                     style.textContent = data.css;         // Insert CSS content
                     document.head.appendChild(style);
                 }
-            }
         }, false);
     </script>
 </head>
