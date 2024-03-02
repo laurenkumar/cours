@@ -248,7 +248,7 @@ const Index = () => {
           </div>
         </section>
         <section className="programme items-center pres-video flex md:flex-row flex-col justify-center my-auto md:mt-16 md:mb-16 mt-16 mb-16">
-          <div className="mx-[18.48px] w-full md:mt-16 md:mb-16">
+          <div className="px-[18.48px] w-full md:mt-16 md:mb-16">
             <div>
               <h2 className="md:text-4xl mix-blend-difference mb-4 text-white text-left text-xl font-semibold">
                 Le programme
