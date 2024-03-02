@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import Link from 'next/link';
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 
 export default function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const session = useSession()
+  const session = useSession();
 
   return (
     <>
@@ -13,11 +13,10 @@ export default function Navbar({ fixed }) {
             <div className="logo">
               <Link
                 href={`/`}
-                title="Page d'accueil - Formation - LK Digital"
+                title="Page d'accueil - Formation - idevu"
+                className="text-white font-black text-2xl"
               >
-              <svg width={50} height={30} viewBox="0 0 50 30">
-                <g id="svgGroup" strokeLinecap="round" fillRule="evenodd" fontSize="5pt" stroke="#fffffe" strokeWidth="0.5mm" fill="none"><path d="M 37.28 0 L 41.8 0 L 31.72 12.12 L 42.12 27.44 L 37.56 27.44 L 29.24 15.12 L 25.36 19.2 L 25.36 27.44 L 21.44 27.44 L 21.44 0 L 25.36 0 L 25.36 14.28 L 37.28 0 Z M 0 0 L 3.92 0 L 3.92 23.88 L 16.52 23.88 L 17.08 27.44 L 0 27.44 L 0 0 Z" vectorEffect="non-scaling-stroke"/></g> 
-              </svg>
+                idevu.
               </Link>
             </div>
             <button
@@ -32,7 +31,7 @@ export default function Navbar({ fixed }) {
                 <li className="dropdownmenu">
                   <Link
                     href="/programme"
-                    title="Tous nos cours - Formation - LK Digital"
+                    title="Tous nos cours - Formation - idevu"
                   >
                     Programme
                   </Link>
@@ -85,7 +84,7 @@ export default function Navbar({ fixed }) {
                             href="https://lkdigital.ninja/formations"
                             target="_blank"
                             className="button button--premium"
-                            title="Formation Présentiel - LK Digital"
+                            title="Formation Présentiel - idevu"
                           >
                             Formation Intra
                           </Link>
@@ -96,8 +95,8 @@ export default function Navbar({ fixed }) {
                 </li>
                 <li>
                   <Link
-                    href="tarifs"
-                    title="Les tarifs - LK Digital"
+                    href="/tarifs"
+                    title="Les tarifs - idevu"
                   >
                     Tarifs
                   </Link>
@@ -106,7 +105,7 @@ export default function Navbar({ fixed }) {
                   <Link
                     href={`https://blog.lkdigital.ninja`}
                     target="_blank"
-                    title="Le blog - LK Digital"
+                    title="Le blog - idevu"
                   >
                     Blog
                   </Link>
@@ -114,7 +113,7 @@ export default function Navbar({ fixed }) {
                 <li>
                   <Link
                     href={`/#contact`}
-                    title="Contactez nous - LK Digital"
+                    title="Contactez nous - idevu"
                   >
                     Contact
                   </Link>
@@ -124,7 +123,7 @@ export default function Navbar({ fixed }) {
             <Link
                 href="/connexion"
                 className="hidden lg:flex button_login"
-                title="Connexion - LK Digital"
+                title="Connexion - idevu"
             >
               {!session ? 'Connexion' : session.user.email}
             </Link>
@@ -139,7 +138,7 @@ export default function Navbar({ fixed }) {
               <li className="dropdownmenu mb-6">
                 <Link
                   href="/programme"
-                  title="Tous nos cours - Formation - LK Digital"
+                  title="Tous nos cours - Formation - idevu"
                 >
                   Programme
                 </Link>
@@ -192,7 +191,7 @@ export default function Navbar({ fixed }) {
                           href="https://lkdigital.ninja/formations"
                           target="_blank"
                           className="button button--premium"
-                          title="Formation Présentiel - LK Digital"
+                          title="Formation Présentiel - idevu"
                         >
                           Formation Intra
                         </Link>
@@ -204,7 +203,7 @@ export default function Navbar({ fixed }) {
               <li className="mb-6">
                 <Link
                   href="tarifs"
-                  title="Les tarifs - LK Digital"
+                  title="Les tarifs - idevu"
                 >
                   Tarifs
                 </Link>
@@ -213,7 +212,7 @@ export default function Navbar({ fixed }) {
                 <Link
                   href={`https://lkdigital.ninja/blog`}
                   target="_blank"
-                  title="Le blog - LK Digital"
+                  title="Le blog - idevu"
                 >
                   Blog
                 </Link>
@@ -222,7 +221,7 @@ export default function Navbar({ fixed }) {
                 <Link
                   href={`/#contact`}
                   target=""
-                  title="Contactez nous - LK Digital"
+                  title="Contactez nous - idevu"
                 >
                   Contact
                 </Link>
@@ -231,7 +230,7 @@ export default function Navbar({ fixed }) {
             <Link
               href="/connexion"
               className="button_login flex items-center justify-center"
-              title="Connexion - LK Digital"
+              title="Connexion - idevu"
             >
               {!session ? 'Connexion' : session.user.email}
             </Link>

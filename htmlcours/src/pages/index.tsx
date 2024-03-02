@@ -1,24 +1,15 @@
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
+import programData from '../../public/data/programData.json';
+import Accordeon from '../components/Accordeon';
 
 /* tslint:disable */
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
 import exemple from 'assets/videos/exemple.mp4';
-import curriculum from 'src/cours/curriculum.json';
-
-const FREE_EXERCISES = ['exh1', 'exh2', 'exh3', 'exc1', 'exc2', 'exc3'];
 
 const Index = () => {
-  const [sidebar, setSidebar] = useState("");
-  const session = useSession();
-
-  useEffect(() => {
-    setSidebar(curriculum);
-  }, [sidebar]);
 
   function ContactForm() {
     const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_SIMPLE_FORM_ID);//process.env.NEXT_PUBLIC_SIMPLE_FORM_ID
@@ -94,7 +85,7 @@ const Index = () => {
             data-error="accepter les conditions d'utilisation"
           />
           <p className="rgpd">
-            En cochant cette case j&lsquo;accepte que LK Digital utilise mes
+            En cochant cette case j&lsquo;accepte que idevu utilise mes
             données pour me recontacter.
           </p>
         </label>
@@ -113,58 +104,17 @@ const Index = () => {
     );
   }
 
-  const SetCurriculum = (curriculum) => {
-    let parties = [];
-    for (const property in curriculum) {
-      parties.push(
-          <label key={`tab-multi-${property}`} className="cursor-pointer">
-            <h4 className="md:text-4xl mb-4 mt-6 text-white text-left text-xl font-semibold">
-              <span className="mr-4">
-                {curriculum[property].sujet}
-              </span>
-              {property} : {curriculum[property].titre}
-            </h4>
-          </label>
-      );
-      for (const property2 in curriculum[property].sousparties) {
-        const exerciseId = curriculum[property].sousparties[property2].ex;
-        const isFree = FREE_EXERCISES.includes(exerciseId);
-        const linkClass = isFree || session ? "link-cursus-free" : "link-cursus";
-        parties.push(
-          <div key={exerciseId} className={`inline-grid border p-2 m-1 ${isFree || session ? 'bg-[#f25f4c]' : ''}`}>
-          <p className="pt-3 pb-3 font-semibold text-white">
-            <Link
-              className={`tracking-wider ${linkClass}`}
-              href={`/cours/${exerciseId}`}
-              title={curriculum[property].sousparties[property2].titre}
-            >
-              {property2}<span className="hidden">{curriculum[property].sousparties[property2].titre}</span>
-            </Link>
-          </p>
-          </div>
-        );
-      }
-    }
-    return (
-      <div className="pt-5 tab w-full">
-        {parties}
-      </div>
-    );
-  }
-  
-  const RWD = SetCurriculum(sidebar);
-
   return (
     <Main
       meta={
         <Meta
-          title="Apprendre à coder facilement depuis chez vous - LK Digital"
+          title="Apprendre à coder facilement depuis chez vous - idevu"
           description="Acquérir les compétences techniques nécessaires pour devenir développeur web."
         />
       }
     >
       <div className="home">
-        <section className="hero md:h-screen my-auto ml-4 mr-4 md:ml-16 md:mr-16 md:mt-0 mt-16 items-center flex md:flex-row flex-col justify-center">
+        <section className="hero md:h-screen my-auto mx-[18.48px] md:mt-0 mt-16 items-center flex md:flex-row flex-col justify-center">
           <div className="wrapper hero__wrapper">
             <div className="hero__content">
               <h1 className="md:font-normal md:text-4xl mb-4 text-left font-semibold text-3xl m-auto">Apprendre à coder facilement depuis chez vous !</h1>
@@ -173,13 +123,13 @@ const Index = () => {
 
             <div className="text-left max-w-xl text-l mt-10">
               <p className="text-lg">Vous voulez en apprendre plus sur le métier de développeur web ou en devenir un ?</p>
-              <p className="text-lg">Les formations LK Digital sont faites pour vous !</p>
+              <p className="text-lg">Les formations idevu sont faites pour vous !</p>
               <p className="text-lg">
                 Apprenez dans un environnement interactif.
-                Lisez de courtes leçons, coder en même temps et relevez des défis directement dans votre navigateur.
+                Lisez de courtes leçons, codez en même temps et relevez des défis directement dans votre navigateur.
               </p>
               <button className="mt-4 button_login font-semibold">
-                <Link href="/cours/exh1" title="Formation en ligne">Formation en ligne</Link>
+                <Link href="/responsive-design/exh1" title="Formation en ligne">Formation en ligne</Link>
               </button>
             </div>
           </div>
@@ -217,34 +167,34 @@ const Index = () => {
             </svg>
           </div>
         </section>
-        <section className="items-center pres-video flex md:flex-row flex-col justify-center bg-white md:h-screen my-auto md:mt-0 md:mb-0 mt-16 mb-16">
-          <div className="ml-4 mr-4 md:ml-28 md:mr-28 md:mt-10 md:mb-10 mb-16 mt-16">
-            <div className="items-center flex md:flex-row flex-col justify-center">
+        <section className="items-center pres-video flex lg:flex-row flex-col justify-center bg-white md:h-screen my-auto md:mt-0 md:mb-0 mt-16 mb-16">
+          <div className="mx-[18.48px] md:mt-10 md:mb-10 mb-16 mt-16">
+            <div className="items-center flex lg:flex-row flex-col justify-center">
               <video className="video-responsive w-full md:w-4/6" id="video" width="900" height="600" muted loop playsInline preload="none" autoPlay>
                 <source src="assets/videos/exemple.mp4" type="video/mp4" />
               </video>
-              <div className="md:ml-20 md:mt-0 mt-6 max-w-md">
+              <div className="lg:ml-20 lg:mt-0 mt-6 lg:max-w-md">
                 <span>Débutants bienvenus</span>
                 <h2 className="md:text-4xl mb-4 text-black text-left text-xl font-semibold m-auto">Commencer à apprendre le développement web rapidement.</h2>
                 <p>
                   Allez-y, essayez. Notre environnement d'apprentissage pratique vous permettra d'écrire du vrai code dès votre première leçon.
                 </p>
                 <button className="mt-4 button_login font-semibold">
-                    <Link href="/cours/exh1" title="La première leçon">Commencer la première leçon</Link>
+                    <Link href="/responsive-design/exh1" title="La première leçon">Commencer la première leçon</Link>
                 </button>
               </div>
             </div>
           </div>
         </section>
         <section className="items-center pres-video flex md:flex-row flex-col justify-center my-auto md:mt-16 md:mb-16 mt-8 mb-8">
-          <div className="w-full ml-4 mr-4 md:ml-28 md:mr-28 md:mt-16 md:mb-16">
-            <div className="md:ml-0 md:mr-0 mr-4 ml-4 items-center flex md:flex-row flex-col justify-between">
-              <h2 className="w-full leading-loose md:text-4xl mb-4 text-white text-left text-xl font-semibold">
+          <div className="w-full mx-[18.48px] md:mt-16 md:mb-16">
+            <div className="md:ml-0 md:mr-0 mr-4 ml-4 items-center flex lg:flex-row flex-col justify-between">
+              <h2 className="w-full leading-loose lg:text-4xl mb-4 text-white text-left text-xl font-semibold">
                 Apprendre le développement web<br />
                 Développer des projets concrets<br />
                 Obtenir des certifications
               </h2>
-              <div className="md:ml-20 md:mt-0 mt-6 max-w-md">
+              <div className="lg:ml-20 lg:mt-0 mt-6 lg:max-w-md">
                 <span className="text-white">Il faut pratiquer</span>
                 <p className="text-lg mb-4 mt-4"><strong>Apprenez le développement web</strong> à partir de zéro et pratiquez dans un environnement intuitif.</p>
                 <p className="text-lg mb-4">Vous lirez de courtes leçons et résoudrez des défis et des projets, une étape à la fois. Essayez le premier cours et les challenges de celui-ci <strong>gratuitement</strong>. Vous pouvez passer à un compte Pro avec un paiement unique qui vous donne accès au curriculum en entier.</p>
@@ -255,7 +205,7 @@ const Index = () => {
           </div>
         </section>
         <section className="items-center pres-video flex md:flex-row flex-col justify-center bg-white md:h-screen my-auto md:mt-0 md:mb-0 mt-16 mb-16">
-          <div className="w-full md:ml-28 md:mr-28 md:mt-10 md:mb-10 mb-16 mt-16">
+          <div className="w-full mx-[18.48px] md:mt-10 md:mb-10 mb-16 mt-16">
             <div>
               <h2 className="md:text-4xl mb-4 md:ml-0 ml-4 text-white text-left text-xl font-semibold">
                 Le concept
@@ -276,7 +226,7 @@ const Index = () => {
                       <li>Des projets validés par un mentor</li>
                   </ul>
                   <button className="mt-6 button_login font-semibold">
-                    <Link href="/cours/exh1" title="La première leçon">Commencer une formation</Link>
+                    <Link href="/responsive-design/exh1" title="La première leçon">Commencer une formation</Link>
                   </button>
                 </div>
                 <div className="card max-w-md md:w-1/2 pt-6 p-6 min-h-50">
@@ -297,8 +247,8 @@ const Index = () => {
             </div>
           </div>
         </section>
-        <section className="programme mx-auto items-center pres-video flex md:flex-row flex-col justify-center my-auto md:mt-16 md:mb-16 mt-16 mb-16">
-          <div className="ml-4 mr-4 md:ml-28 md:mr-28 md:mt-16 md:mb-16">
+        <section className="programme items-center pres-video flex md:flex-row flex-col justify-center my-auto md:mt-16 md:mb-16 mt-16 mb-16">
+          <div className="mx-[18.48px] w-full md:mt-16 md:mb-16">
             <div>
               <h2 className="md:text-4xl mix-blend-difference mb-4 text-white text-left text-xl font-semibold">
                 Le programme
@@ -312,7 +262,7 @@ const Index = () => {
                    </label>
                    <div className="tab-content overflow-scroll border-l-2 w-full leading-normal pl-5">
                       <strong className="md:text-xs mb-4 mt-6 text-white text-sm font-thin">HTML pour le contenu et CSS pour la mise en page</strong>
-                      {RWD}
+                      <Accordeon sidebarData={programData} />
                    </div>
                 </div>
                 <div className="tab w-full overflow-hidden border-t-2">
@@ -344,7 +294,7 @@ const Index = () => {
           className="items-center pres-video flex flex-col justify-center bg-white my-auto md:mt-16 md:mb-16 mt-16 mb-16"
           id="contact"
         >
-          <div className="ml-4 mr-4 md:ml-0 md:mr-0 md:mt-16 md:mb-16 mt-16 mb-16">
+          <div className="mx-[18.48px] md:mt-16 md:mb-16 mt-16 mb-16">
             <h2 className="md:text-4xl mb-4 text-black text-left text-xl font-semibold">Des questions ? Contactez nous !</h2>
             <ContactForm />
             <h3 className="mb-6 mt-4 text-black font-semibold">
@@ -373,7 +323,7 @@ const Index = () => {
           </div>
         </section>
 
-        <footer className="md:ml-2 md:mr-2 ml-4 mr-4">
+        <footer className="mx-[18.48px]">
             <div className="container">
               <div>
                 <Link
@@ -382,28 +332,7 @@ const Index = () => {
                   aria-current="page"
                   title="Aller à l'acceil"
                 >
-                    <svg
-                      width="44"
-                      height="30"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="mb-8"
-                    >
-                      <g
-                        id="svgGroup"
-                        strokeLinecap="round"
-                        fillRule="evenodd"
-                        fontSize="5pt"
-                        stroke="#ff8906"
-                        strokeWidth="0.5mm"
-                        fill="none"
-                      >
-                        <path
-                          d="M 37.28 0 L 41.8 0 L 31.72 12.12 L 42.12 27.44 L 37.56 27.44 L 29.24 15.12 L 25.36 19.2 L 25.36 27.44 L 21.44 27.44 L 21.44 0 L 25.36 0 L 25.36 14.28 L 37.28 0 Z M 0 0 L 3.92 0 L 3.92 23.88 L 16.52 23.88 L 17.08 27.44 L 0 27.44 L 0 0 Z"
-                          vectorEffect="non-scaling-stroke"
-                        ></path>
-                      </g>
-                    </svg>
-                  
+                  idevu.  
                 </Link>
                 <div className="column">
                   <Link href="mailto:lauren_d@outlook.fr" cursor-class="arrow" title="Notre mail">

@@ -1,4 +1,4 @@
-import '../styles/global.css';
+import '../styles/global.scss';
 import { useState } from 'react';
 import { supabase } from '@/utils/initSupabase';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';

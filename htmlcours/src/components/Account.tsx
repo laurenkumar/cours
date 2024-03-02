@@ -98,9 +98,6 @@ export default function Account({ session }: { session: Session }) {
           disabled
         />
       </div>
-      <div className="mt-8 flex md:flex-row flex-col justify-between items-center">
-        <label className="text-lg text-white mr-4" htmlFor="course_id">Votre niveau: 100</label>
-      </div>
       <div className="flex md:flex-row flex-col justify-between items-center">
         <div className="mt-8">
           <button

@@ -10,13 +10,13 @@ const Tarifs = () => {
     <Main
       meta={
         <Meta
-          title="Les tarifs - LK Digital"
+          title="Les tarifs - idevu"
           description="Voici les différents plans que vous pouvez choisir pour démarrer vos leçons sur le développement web."
         />
       }
     >
       <div className="tarifs">
-        <section className="hero my-auto ml-4 mr-4 md:ml-16 md:mr-16 mt-20 mb-20 flex md:flex-row flex-col ">
+        <section className="hero my-auto mx-[18.48px] mt-20 mb-20 flex md:flex-row flex-col ">
           <div className="wrapper hero__wrapper">
             <div className="hero__content">
               <h1 className="md:font-normal md:text-4xl mb-4 text-left font-semibold text-3xl m-auto">Des offres pour tous</h1>
@@ -25,7 +25,7 @@ const Tarifs = () => {
           </div>
         </section>
 
-        <section className="hero my-auto ml-4 mr-4 md:ml-16 md:mr-16 mt-20 mb-20 mt-16">
+        <section className="hero my-auto mx-[18.48px] mt-20 mb-20 mt-16">
           <div className="wrapper hero__wrapper">
             <div className="hero__content">
               <h2 className="md:font-normal md:text-4xl mb-4 text-left font-semibold text-3xl m-auto">Vous avez besoin de formations web en présentiel ?</h2>
@@ -36,7 +36,7 @@ const Tarifs = () => {
                   href="https://lkdigital.ninja/formations"
                   target="_blank"
                   className="button_login !p-4 font-semibold"
-                  title="Formation Présentiel - LK Digital"
+                  title="Formation Présentiel - idevu"
                 >
                   Formation Intra
                 </Link>
@@ -644,7 +644,7 @@ const Tarifs = () => {
 
         </section>
 
-        <footer className="md:ml-2 md:mr-2 ml-4 mr-4">
+        <footer className="mx-[18.48px]">
             <div className="container">
               <div>
                 <Link
@@ -653,28 +653,7 @@ const Tarifs = () => {
                   aria-current="page"
                   title="Aller à l'acceil"
                 >
-                    <svg
-                      width="44"
-                      height="30"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="mb-8"
-                    >
-                      <g
-                        id="svgGroup"
-                        strokeLinecap="round"
-                        fillRule="evenodd"
-                        fontSize="5pt"
-                        stroke="#ff8906"
-                        strokeWidth="0.5mm"
-                        fill="none"
-                      >
-                        <path
-                          d="M 37.28 0 L 41.8 0 L 31.72 12.12 L 42.12 27.44 L 37.56 27.44 L 29.24 15.12 L 25.36 19.2 L 25.36 27.44 L 21.44 27.44 L 21.44 0 L 25.36 0 L 25.36 14.28 L 37.28 0 Z M 0 0 L 3.92 0 L 3.92 23.88 L 16.52 23.88 L 17.08 27.44 L 0 27.44 L 0 0 Z"
-                          vectorEffect="non-scaling-stroke"
-                        ></path>
-                      </g>
-                    </svg>
-                  
+                  idevu.
                 </Link>
                 <div className="column">
                   <Link href="mailto:lauren_d@outlook.fr" cursor-classname="arrow" title="Notre mail">

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Nouveau cours</title>
+    <style>html {background-color: #fff;}</style>
+    <script>
+        window.addEventListener('message', (event) => {
+            // Si vous devez vérifier l'origine, remplacez '*' par l'origine attendue, comme 'http://localhost:3000'
+            const { html, css, js } = event.data;
+            if(html !== undefined) {
+                document.body.innerHTML = html;  // Insert HTML content
+            }
+            if(css !== undefined) {
+                const style = document.createElement('style');
+                style.textContent = css;         // Insert CSS content
+                document.head.appendChild(style);
+            }
+        }, false);
+    </script>
+</head>
+<body>
+    Un beau projet arrive
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "html": {
+    "1": [
+      {
+        "exo": "exh1",
+        "title": "Apprendre HTML en codant un site de voyage 👋",
+        "dashedName": "apprendre-html-en-codant-un-site-de-voyage"
+      },
+      {
+        "exo": "exh2",
+        "title": "Un texte structuré avec les balises de titres hn",
+        "dashedName": "un-texte-structure-avec-les-balises-de-titres-hn"
+      }
+    ]
+  }
+}

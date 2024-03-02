@@ -6,9 +6,9 @@
     "start_url": "/?source=pwa",
     "prefer_related_applications": true,
     "orientation": "portrait",
-    "name": "LK Digital",
-    "short_name": "LK",
-    "description": "LK Digital, agence digitale \u00e0 Vienne sp\u00e9cialis\u00e9e dans la cr\u00e9ation de site web vous propose ses services pour d\u00e9velopper votre projet digital ou vous former.",
+    "name": "idevu",
+    "short_name": "idevu",
+    "description": "idevu, école du développement web. Apprenez depuis votre maison.",
     "icons": [
         {
             "src": "/icon-192x192.png",

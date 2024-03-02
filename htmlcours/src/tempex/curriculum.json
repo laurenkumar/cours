@@ -257,5 +257,87 @@
             "ex": "exc26"
          }
       ]
+   },
+   "Projet 3":{
+      "sujet": "css",
+      "titre": "Apprendre le CSS en construisant un ensemble de marqueurs colorés",
+      "id":"#apprendre-le-css-en-construisant-un-ensemble-de-marqueurs-colors",
+      "sousparties":[
+         {
+            "titre": "Apprendre le CSS en construisant un ensemble de marqueurs colorés",
+            "id":"#apprendre-le-css-en-construisant-un-ensemble-de-marqueurs-colors",
+            "ex": "exc2-1"
+         },
+         {
+            "titre":"L'Élément title",
+            "id":"#llment-title",
+            "ex": "exc2-2"
+         },
+         {
+            "titre":"Cours : La Définition de l&#x27;Encodage des Caractères",
+            "id":"#cours-la-dfinition-de-lencodage-des-caractres",
+            "ex": "exc2-3"
+         },
+         {
+            "titre":"Utilisation des Éléments Meta pour la Responsivité",
+            "id":"#utilisation-des-lments-meta-pour-la-responsivit",
+            "ex": "exc2-4"
+         },
+         {
+            "titre":"Ajout de Contenu et Liaison à un Fichier CSS Externe",
+            "id":"#ajout-de-contenu-et-liaison-un-fichier-css-externe",
+            "ex": "exc2-5"
+         },
+         {
+            "titre":"Style de la Page avec CSS",
+            "id":"#style-de-la-page-avec-css",
+            "ex": "exc2-6"
+         },
+         {
+            "titre":"Ajout d'Éléments pour Style Future",
+            "id":"#ajout-dlments-pour-style-future",
+            "ex": "exc2-7"
+         },
+         {
+            "titre":"Ajout de Couleur aux Éléments",
+            "id":"#ajout-de-couleur-aux-lments",
+            "ex": "exc2-8"
+         },
+         {
+            "titre":"Définir la Taille des Éléments",
+            "id":"#dfinir-la-taille-des-lments",
+            "ex": "exc2-9"
+         },
+         {
+            "titre":"Centrer un Élément avec la Propriété Margin",
+            "id":"#centrer-un-lment-avec-la-proprit-margin",
+            "ex": "exc2-10"
+         },
+         {
+            "titre":"Ajouter Plusieurs Marqueurs et Espacer les Éléments",
+            "id":"#ajouter-plusieurs-marqueurs-et-espacer-les-lments",
+            "ex": "exc2-11"
+         },
+         {
+            "titre":"Donner des Couleurs Différentes aux Marqueurs",
+            "id":"#donner-des-couleurs-diffrentes-aux-marqueurs",
+            "ex": "exc2-12"
+         },
+         {
+            "titre":"Personnalisation des Couleurs des Marqueurs",
+            "id":"#personnalisation-des-couleurs-des-marqueurs",
+            "ex": "exc2-13"
+         },
+         {
+            "titre":"Modèles de Couleur et la Fonction CSS rgb",
+            "id":"#modles-de-couleur-et-la-fonction-css-rgb",
+            "ex": "exc2-14"
+         },
+         {
+            "titre":"Fonction CSS rgb",
+            "id":"#fonction-css-rgb",
+            "ex": "exc2-15"
+         }
+      ]
    }
 }

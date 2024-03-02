@@ -1,87 +1,35 @@
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 /* tslint:disable */
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
-
-import exemple from 'assets/videos/exemple.mp4';
-import curriculum from 'src/cours/curriculum.json';
-
-const FREE_EXERCISES = ['exh1', 'exh2', 'exh3', 'exc1', 'exc2', 'exc3'];
+import programData from '../../public/data/programData.json';
+import Accordeon from '../components/Accordeon';
 
 const Programme = () => {
-  const [sidebar, setSidebar] = useState("");
-  const session = useSession();
-
-  useEffect(() => {
-    setSidebar(curriculum);
-  }, [sidebar]);
-
-  const SetCurriculum = (curriculum) => {
-    let parties = [];
-    for (const property in curriculum) {
-      parties.push(
-          <label key={`tab-multi-${property}`} className="cursor-pointer">
-            <h4 className="md:text-4xl mb-4 mt-6 text-white text-left text-xl font-semibold">
-              <span className="mr-4">
-                {curriculum[property].sujet}
-              </span>
-              {property} : {curriculum[property].titre}
-            </h4>
-          </label>
-      );
-      for (const property2 in curriculum[property].sousparties) {
-        const exerciseId = curriculum[property].sousparties[property2].ex;
-        const isFree = FREE_EXERCISES.includes(exerciseId);
-        const linkClass = isFree || session ? "link-cursus-free" : "link-cursus";
-        parties.push(
-          <div key={exerciseId} className={`inline-grid border p-2 m-1 ${isFree || session ? 'bg-[#f25f4c]' : ''}`}>
-          <p className="pt-3 pb-3 font-semibold text-white">
-            <Link
-              className={`tracking-wider ${linkClass}`}
-              href={`/cours/${exerciseId}`}
-              title={curriculum[property].sousparties[property2].titre}
-            >
-              {property2}<span className="hidden">{curriculum[property].sousparties[property2].titre}</span>
-            </Link>
-          </p>
-          </div>
-        );
-      }
-    }
-    return (
-      <div className="pt-5 tab w-full">
-        {parties}
-      </div>
-    );
-  }
-  
-  const RWD = SetCurriculum(sidebar);
 
   return (
     <Main
       meta={
         <Meta
-          title="Le programme - LK Digital"
+          title="Le programme - idevu"
           description="Le Programme en ligne pour devenir développeur web, pédagogie par projet."
         />
       }
     >
       <div className="home">
         <section className="programme mx-auto items-center pres-video flex md:flex-row flex-col justify-center my-auto md:mt-16 md:mb-16 mt-16 mb-16">
-          <div className="ml-4 mr-4 md:ml-28 md:mr-28 md:mt-16 md:mb-16">
+          <div className="px-[18.48px] md:mt-16 md:mb-16">
             <div>
               <h1 className="md:text-4xl mb-4 text-white text-left text-xl font-semibold">
                 Le programme
               </h1>
               <div className="shadow-md">
-                <div className="tab w-full overflow-hidden">
+                <div className="tab w-full overflow-hidden" id="responsive-design">
                    <input className="absolute opacity-0 " id="tab-multi-one" type="checkbox" name="tabs" />
 
                    <label className="block mt-5 mb-5 cursor-pointer text-white" htmlFor="tab-multi-one">
-                    Responsive Web Design
+                    <h2>Responsive Web Design</h2>
                    </label>
                    <div className="tab-content overflow-scroll border-l-2 w-full leading-normal pl-5">
                       <strong className="md:text-xs mb-4 mt-6 text-white text-sm font-thin">HTML pour le contenu et CSS pour la mise en page</strong>
@@ -94,7 +42,7 @@ const Programme = () => {
                       <p className="mt-2 md:w-1/2">
                         Enfin, vous apprendrez à créer des pages web qui s'adaptent à différentes tailles d'écran en construisant une galerie de photos avec Flexbox et une mise en page d'article de magazine avec CSS Grid.
                       </p>
-                      {RWD}
+                      <Accordeon sidebarData={programData} />
                    </div>
                 </div>
                 <div className="tab w-full overflow-hidden border-t-2">
@@ -123,7 +71,7 @@ const Programme = () => {
           </div>
         </section>
 
-        <footer className="md:ml-2 md:mr-2 ml-4 mr-4">
+        <footer className="mx-[18.48px]">
             <div className="container">
               <div>
                 <Link
@@ -131,29 +79,9 @@ const Programme = () => {
                   cursor-class="arrow"
                   aria-current="page"
                   title="Aller à l'acceil"
+                  className="text-white font-black text-xl"
                 >
-                    <svg
-                      width="44"
-                      height="30"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="mb-8"
-                    >
-                      <g
-                        id="svgGroup"
-                        strokeLinecap="round"
-                        fillRule="evenodd"
-                        fontSize="5pt"
-                        stroke="#ff8906"
-                        strokeWidth="0.5mm"
-                        fill="none"
-                      >
-                        <path
-                          d="M 37.28 0 L 41.8 0 L 31.72 12.12 L 42.12 27.44 L 37.56 27.44 L 29.24 15.12 L 25.36 19.2 L 25.36 27.44 L 21.44 27.44 L 21.44 0 L 25.36 0 L 25.36 14.28 L 37.28 0 Z M 0 0 L 3.92 0 L 3.92 23.88 L 16.52 23.88 L 17.08 27.44 L 0 27.44 L 0 0 Z"
-                          vectorEffect="non-scaling-stroke"
-                        ></path>
-                      </g>
-                    </svg>
-                  
+                  idevu.
                 </Link>
                 <div className="column">
                   <Link href="mailto:lauren_d@outlook.fr" cursor-class="arrow" title="Notre mail">
