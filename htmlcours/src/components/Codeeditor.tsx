@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import Editor, { loader } from "@monaco-editor/react";
+import MonacoEditor, { loader } from "@monaco-editor/react";
 import Modal from './Modal.tsx';
 
 const assert = require('chai').assert;
@@ -141,6 +141,7 @@ const blackboardTheme = {
 const CodeOnline = ({subject, code, hints, ex}) => {
   const iframeRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const [modalMessageTest, updateModalMessageTest] = useState("");
   const [html, setHtml] = useState(code.html || "");
@@ -148,10 +149,16 @@ const CodeOnline = ({subject, code, hints, ex}) => {
   const [js, setJs] = useState(code.js);
 
   useEffect(() => {
-    loader.init().then(monaco => {
-      monaco.editor.defineTheme('blackboard', blackboardTheme);
-      monaco.editor.setTheme('blackboard');
-    });
+    async function loadMonacoEditor() {
+      let monaco = await import("monaco-editor");
+
+      loader.config({ monaco });
+      await loader.init().then(monaco => {
+        monaco.editor.defineTheme('blackboard', blackboardTheme);
+        monaco.editor.setTheme('blackboard');
+      });
+    }
+    loadMonacoEditor().then(() => setIsLoaded(true));
   }, []);
 
   useEffect(() => {
@@ -254,7 +261,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                     aria-labelledby="tab1" 
                     aria-hidden="false"
                   >
-                    <Editor
+                    <MonacoEditor
                       height="90vh"
                       defaultLanguage="html"
                       onChange={(newValue) => {
@@ -264,7 +271,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                       value={html}
                       selectOnLineNumbers="true"
                       cursorStyle="line"
-                      theme="blackboard"
+                      theme={isLoaded ? "blackboard" : "vs-dark"}
                     />
                   </div>
               </li>
@@ -319,7 +326,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                     aria-labelledby="tab1" 
                     aria-hidden="false"
                   >
-                    <Editor
+                    <MonacoEditor
                       height="90vh"
                       defaultLanguage="html"
                       onChange={setHtml}
@@ -327,7 +334,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                       value={html}
                       selectOnLineNumbers="true"
                       cursorStyle="line"
-                      theme="blackboard"
+                      theme={isLoaded ? "blackboard" : "vs-dark"}
                     />
                   </div>
               </li>
@@ -343,7 +350,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                        role="tabpanel" 
                        aria-labelledby="tab2" 
                        aria-hidden="true">
-                    <Editor
+                    <MonacoEditor
                       height="90vh"
                       defaultLanguage="css"
                       onChange={setCss}
@@ -351,7 +358,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                       value={css}
                       selectOnLineNumbers="true"
                       cursorStyle="line"
-                      theme="blackboard"
+                      theme={isLoaded ? "blackboard" : "vs-dark"}
                     />
                   </div>
               </li>
