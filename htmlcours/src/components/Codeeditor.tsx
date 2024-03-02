@@ -251,7 +251,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                     id="tab-content1" 
                     className="tab-content" 
                     role="tabpanel" 
-                    aria-labelledby="index.html" 
+                    aria-labelledby="tab1" 
                     aria-hidden="false"
                   >
                     <Editor
@@ -281,7 +281,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                     id="tab-content2" 
                     className="h-full tab-content navigateur" 
                     role="tabpanel" 
-                    aria-labelledby="Navigateur" 
+                    aria-labelledby="tab2" 
                     aria-hidden="false"
                   >
                     <iframe
@@ -316,7 +316,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                     id="tab-content1" 
                     className="tab-content" 
                     role="tabpanel" 
-                    aria-labelledby="index.html" 
+                    aria-labelledby="tab1" 
                     aria-hidden="false"
                   >
                     <Editor
@@ -341,7 +341,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                   <div id="tab-content2" 
                        className="tab-content navigateur"
                        role="tabpanel" 
-                       aria-labelledby="style.css" 
+                       aria-labelledby="tab2" 
                        aria-hidden="true">
                     <Editor
                       height="90vh"
@@ -368,7 +368,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                   id="tab-content3" 
                   className="h-full tab-content navigateur" 
                   role="tabpanel" 
-                  aria-labelledby="Navigateur" 
+                  aria-labelledby="tab3" 
                   aria-hidden="false"
                 >
                   <iframe
@@ -387,7 +387,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
           </>
         }
         <button className="button_test" id="submit" onClick={runAssertions}>Envoyer</button>
-        <button onClick={openPreviewWindow} className="text-black text-lg rounded opacity-50 left-[95%] top-[5%] preview-button hidden sm:block bg-[#ff8906] z-10 p-2 relative">
+        <button onClick={openPreviewWindow} className="text-black text-lg rounded left-[95%] top-[5%] preview-button hidden sm:block bg-[#ff8906] z-10 p-2 relative">
           🗔
         </button>
         <Modal test={modalMessageTest} showModal={setShowModal} seeModal={showModal}/>

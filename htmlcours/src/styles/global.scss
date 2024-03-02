@@ -1195,6 +1195,7 @@ footer h4 {
 }
 .exercice-interactif .tabs [id^="tab"]:checked + label, .exercice-interactif .tabs label:hover {
   background-color: #F36B59;
+  color: black;
 }
 .exercice-interactif .tabs [id^="tab"]:checked ~ [id^="tab-content"] {
   display: block;
