@@ -236,12 +236,12 @@ const CodeOnline = ({subject, code, hints, ex}) => {
         { subject === "html" ?
           <>
             <ul className="tabs" role="tablist">
-              <li>
-                  <input type="radio" name="tabs" id="tab1" defaultChecked />
+              <li role="presentation">
+                  <input type="radio" name="tabs" id="tab1" defaultChecked hidden />
                   <label htmlFor="tab1" 
                          role="tab" 
                          aria-selected="true" 
-                         aria-controls="panel1" 
+                         aria-controls="tab-content1" 
                          tabIndex="0"
                          className="firstlabel"
                   >
@@ -268,45 +268,45 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                     />
                   </div>
               </li>
-              <li>
-                  <input type="radio" name="tabs" id="tab2" />
-                  <label htmlFor="tab2" 
-                         role="tab" 
-                         aria-selected="true" 
-                         aria-controls="panel2" 
-                         tabIndex="0">
-                    Aperçu
-                  </label>
-                  <div 
-                    id="tab-content2" 
-                    className="h-full tab-content navigateur" 
-                    role="tabpanel" 
-                    aria-labelledby="tab2" 
-                    aria-hidden="false"
-                  >
-                    <iframe
-                      src="/iframe.html"
-                      ref={iframeRef}
-                      className="output-pane h-full w-full"
-                      id="exercice"
-                      width="100%"
-                      height="100%"
-                      allowFullScreen
-                      key={ex}
-                    ></iframe> 
-                  </div>
-                </li>
+              <li role="presentation">
+                <input type="radio" name="tabs" id="tab2" hidden />
+                <label htmlFor="tab2" 
+                       role="tab" 
+                       aria-selected="true" 
+                       aria-controls="tab-content2" 
+                       tabIndex="0">
+                  Aperçu
+                </label>
+                <div 
+                  id="tab-content2" 
+                  className="h-full tab-content navigateur" 
+                  role="tabpanel" 
+                  aria-labelledby="tab2" 
+                  aria-hidden="false"
+                >
+                  <iframe
+                    src="/iframe.html"
+                    ref={iframeRef}
+                    className="output-pane h-full w-full"
+                    id="exercice"
+                    width="100%"
+                    height="100%"
+                    allowFullScreen
+                    key={ex}
+                  ></iframe> 
+                </div>
+              </li>
             </ul>
           </>
         :
           <>
             <ul className="tabs" role="tablist">
-              <li>
-                  <input type="radio" name="tabs" id="tab1" defaultChecked />
+              <li role="presentation">
+                  <input type="radio" name="tabs" id="tab1" defaultChecked hidden/>
                   <label htmlFor="tab1" 
                          role="tab" 
                          aria-selected="true" 
-                         aria-controls="panel1" 
+                         aria-controls="tab-content1" 
                          tabIndex="0"
                          className="firstlabel"
                   >
@@ -331,12 +331,12 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                     />
                   </div>
               </li>
-              <li>
-                  <input type="radio" name="tabs" id="tab2" />
+              <li role="presentation">
+                  <input type="radio" name="tabs" id="tab2" hidden/>
                   <label htmlFor="tab2"
                          role="tab" 
                          aria-selected="false" 
-                         aria-controls="panel2" 
+                         aria-controls="tab-content2" 
                          tabIndex="0">style.css</label>
                   <div id="tab-content2" 
                        className="tab-content navigateur"
@@ -355,12 +355,12 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                     />
                   </div>
               </li>
-              <li>
-                <input type="radio" name="tabs" id="tab3" />
+              <li role="presentation">
+                <input type="radio" name="tabs" id="tab3" hidden/>
                 <label htmlFor="tab3" 
                        role="tab" 
                        aria-selected="true" 
-                       aria-controls="panel2" 
+                       aria-controls="tab-content3" 
                        tabIndex="0">
                   Aperçu
                 </label>

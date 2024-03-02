@@ -85,6 +85,12 @@ p, q {
   color: #fff;
 }
 
+#contact a {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
 .home span {
   background-color: #F36B59 !important;
   color: #000;
