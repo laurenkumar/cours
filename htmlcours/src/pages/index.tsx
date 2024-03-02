@@ -7,8 +7,6 @@ import Accordeon from '../components/Accordeon';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
-import exemple from 'assets/videos/exemple.mp4';
-
 const Index = () => {
 
   function ContactForm() {
@@ -171,7 +169,7 @@ const Index = () => {
           <div className="mx-[18.48px] md:mt-10 md:mb-10 mb-16 mt-16">
             <div className="items-center flex lg:flex-row flex-col justify-center">
               <video className="video-responsive w-full md:w-4/6" id="video" width="900" height="600" muted loop playsInline preload="none" autoPlay>
-                <source src="assets/videos/exemple.mp4" type="video/mp4" />
+                <source src="assets/videos/preview.webm" type="video/webm" />
               </video>
               <div className="lg:ml-20 lg:mt-0 mt-6 lg:max-w-md">
                 <span>Débutants bienvenus</span>

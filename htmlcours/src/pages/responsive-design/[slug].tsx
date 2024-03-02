@@ -22,7 +22,7 @@ function extractCode(markdownContent) {
 
   while ((match = codeBlockRegex.exec(markdownContent)) !== null) {
     if (match[1] && match[2]) {
-      code[match[1]] += match[2].trim(); // Ajoute le contenu au langage correspondant
+      code[match[1]] += match[2].trim();
     }
   }
 
@@ -30,18 +30,17 @@ function extractCode(markdownContent) {
 }
 
 const parseMarkdownSections = (filePath) => {
-  // Lire le fichier Markdown
   const fullPath = path.join(process.cwd(), filePath);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   const { data: metaData, content } = matter(fileContents);
 
-  const sections = content.split(/# --\w+--\r?\n/).slice(1); // Utilise \r?\n pour correspondre à la fois aux sauts de ligne Unix et Windows
+  const sections = content.split(/# --\w+--\r?\n/).slice(1);
 
   const [description, hints, seed] = sections;
   const code = extractCode(seed);
   return {
-    metaData: metaData || {}, // Assurez-vous que cela ne retourne jamais `undefined`
+    metaData: metaData || {},
     description: description || '',
     hints: hints || '',
     code: code || '',
@@ -69,41 +68,41 @@ const Cours = (({ title, sujet, ex, next, description, hints, code }) => {
       {isAccessible || session ? (
         showConclusion ? (
           <section className="hero my-auto ml-[18.48px] mr-[18.48px] mt-20 mb-20 flex md:flex-row flex-col">
-                <div className="wrapper hero__wrapper">
-                  <div className="hero__content">
-                    <span className="text-white">Vous savez maintenant créer un site statique</span>
-                    <h1 className="md:font-normal md:text-5xl mb-4 text-left font-semibold text-4xl m-auto">Vous avez terminé le parcours Responsive Design.</h1>
-                    <p>Allez maintenant voir la suite du cursus et devenez un développeur web complet</p>
-                    <div className="mt-12">
-                      <Link
-                        href="/programme"
-                        className="button_login !p-4 font-semibold"
-                        title="Le programme - idevu"
-                      >
-                        Suite du Programme - Le Javascript
-                      </Link>
-                    </div>
-                  </div>
+            <div className="wrapper hero__wrapper">
+              <div className="hero__content">
+                <span className="text-white">Vous savez maintenant créer un site statique</span>
+                <h1 className="md:font-normal md:text-5xl mb-4 text-left font-semibold text-4xl m-auto">Vous avez terminé le parcours Responsive Design.</h1>
+                <p>Allez maintenant voir la suite du cursus et devenez un développeur web complet</p>
+                <div className="mt-12">
+                  <Link
+                    href="/programme"
+                    className="button_login !p-4 font-semibold"
+                    title="Le programme - idevu"
+                  >
+                    Suite du Programme - Le Javascript
+                  </Link>
                 </div>
-              </section>
+              </div>
+            </div>
+          </section>
         ) : (
           <>
             <div className="ml-[18.48px] mr-[18.48px] pb-2 text-white flex block">
-                <Link
-                    href="/programme#responsive-design"
-                    className="mr-2 font-semibold block text-ellipsis whitespace-nowrap overflow-hidden max-w-full hover:text-[#f25f4c]"
-                    title="Le programme - idevu - responsive design"
-                  >
-                    Responsive Design
-                </Link>
-                ➤
-                <Link
-                    href={`/programme#${ex}`}
-                    className="ml-2 font-semibold block text-ellipsis whitespace-nowrap overflow-hidden max-w-full hover:text-[#f25f4c]"
-                    title={`Le programme - idevu - ${title}`}
-                  >
-                    {title}
-                </Link>
+              <Link
+                href="/programme#responsive-design"
+                className="mr-2 font-semibold block text-ellipsis whitespace-nowrap overflow-hidden max-w-full hover:text-[#f25f4c]"
+                title="Le programme - idevu - responsive design"
+              >
+                Responsive Design
+              </Link>
+              ➤
+              <Link
+                href={`/programme#${ex}`}
+                className="ml-2 font-semibold block text-ellipsis whitespace-nowrap overflow-hidden max-w-full hover:text-[#f25f4c]"
+                title={`Le programme - idevu - ${title}`}
+              >
+                {title}
+              </Link>
             </div>
             <div className="flex flex-col md:flex-row cours-container">
               <div className="cours-panel flex-1">

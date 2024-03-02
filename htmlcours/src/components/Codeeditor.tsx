@@ -5,7 +5,7 @@ import Modal from './Modal.tsx';
 const assert = require('chai').assert;
 
 const blackboardTheme = {
-  base: 'vs-dark', // ou 'vs' pour la base claire
+  base: 'vs-dark',
   inherit: true,
   rules: [
     {
@@ -168,10 +168,9 @@ const CodeOnline = ({subject, code, hints, ex}) => {
     sendMessage();
 
     return () => iframe.removeEventListener('load', handleLoad);
-  }, [html, css, js, ex]); // Ensure this runs on mount, and whenever html, css, js, or ex changes.
+  }, [html, css, js, ex]);
 
   function parseHints(hintsText) {
-    // Adjusted regex to account for different newline characters and optional spaces
     const regex = /(.+?)(?:\r?\n\s*```js\r?\n([\s\S]+?)```)/g;
     const hintsAndAssertions = [];
     let match;
@@ -194,7 +193,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
     hintsAndAssertions.forEach(({ hint, assertionCode }) => {
       try {
         const assertionFunction = new Function('assert', 'html', 'css', 'js', `"use strict"; ${assertionCode}`);
-        assertionFunction(assert, html, css, js); // Execute the function with necessary arguments
+        assertionFunction(assert, html, css, js);
         messages.push(`✅ ${hint}`);
       } catch (error) {
         isAllGood = false;
@@ -202,16 +201,12 @@ const CodeOnline = ({subject, code, hints, ex}) => {
       }
     });
 
-    // Ajoutez un message global basé sur le résultat de tous les tests
     const globalMessage = isAllGood ? 
       '🎉 Bravo ! Tu peux passer à la suite.' : 
       '🤯 Certains tests n\'ont pas réussi. Voici les détails :';
 
-    // Préparez les données finales à envoyer au modal
     const finalResults = [globalMessage, ...messages];
 
-    console.log(finalResults);
-    // Mise à jour de l'état pour afficher le modal avec les résultats
     updateModalMessageTest(finalResults);
     setShowModal(true);
   }
@@ -328,7 +323,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
                       height="90vh"
                       defaultLanguage="html"
                       onChange={setHtml}
-                      defaultValue={html} // Mise à jour pour utiliser code.html
+                      defaultValue={html}
                       value={html}
                       selectOnLineNumbers="true"
                       cursorStyle="line"
