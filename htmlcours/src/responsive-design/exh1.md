@@ -22,7 +22,6 @@ Les éléments HTML ont des balises ouvrantes comme `<body>` et des balises ferm
 
 Le texte d'un élément est placé entre ses balises ouvrantes et fermantes.
 
-
 ## Exercice
 
 Chaque cours contient un exercice à résoudre sur le sujet traité. Le valider vous assure la bonne maîtrise du cours.
@@ -32,7 +31,6 @@ Cependant, il n'est pas indispensable pour continuer et apprendre.
 Si vous vous sentez suffisamment prêt, passez à la suite !
 
 Créez un élément `h1` et y écrire le texte **"Nos aventures"**.
-
 
 # --hints--
 

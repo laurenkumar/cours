@@ -3,7 +3,7 @@ projet: 1
 exercice: 2
 sujet: html
 ex: exh2
-next: fin
+next: exh3
 title: Un texte structuré avec les balises de titres hn
 dashedName: un-texte-structure-avec-les-balises-de-titres-hn
 ---
