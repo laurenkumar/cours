@@ -10,6 +10,16 @@
         "exo": "exh2",
         "title": "Un texte structuré avec les balises de titres hn",
         "dashedName": "un-texte-structure-avec-les-balises-de-titres-hn"
+      },
+      {
+        "exo": "exh3",
+        "title": "Les paragraphes",
+        "dashedName": "les-paragraphes"
+      },
+      {
+        "exo": "exh4",
+        "title": "Les commentaires",
+        "dashedName": "les-commentaires"
       }
     ]
   }

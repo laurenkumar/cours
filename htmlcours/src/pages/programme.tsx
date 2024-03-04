@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useState } from "react";
 
 /* tslint:disable */
 import { Meta } from '@/layouts/Meta';
@@ -7,6 +8,23 @@ import programData from '../../public/data/programData.json';
 import Accordeon from '../components/Accordeon';
 
 const Programme = () => {
+  const [openSection, setOpenSection] = useState('responsiveDesign');
+  const [transitionState, setTransitionState] = useState({
+    responsiveDesign: true,
+    javascript: false,
+    frontEnd: false,
+    backEnd: false
+  });
+
+  const toggleSection = (section) => {
+    const isOpen = openSection === section;
+    setOpenSection(isOpen ? null : section);
+    if (!isOpen) {
+      setTransitionState(prev => ({ ...prev, [section]: true }));
+    } else {
+      setTransitionState(prev => ({ ...prev, [section]: false }));
+    }
+  };
 
   return (
     <Main
@@ -25,52 +43,96 @@ const Programme = () => {
                 Le programme
               </h1>
               <div className="shadow-md">
-                <div className="tab w-full overflow-hidden" id="responsive-design">
-                   <input className="absolute opacity-0 " id="tab-multi-one" type="checkbox" name="tabs" />
-
-                   <label className="block mt-5 mb-5 cursor-pointer text-white" htmlFor="tab-multi-one">
-                    <h2>Responsive Web Design</h2>
-                   </label>
-                   <div className="tab-content overflow-scroll border-l-2 w-full leading-normal pl-5">
-                      <strong className="md:text-xs mb-4 mt-6 text-white text-sm font-thin">HTML pour le contenu et CSS pour la mise en page</strong>
-                      <p className="mt-6 md:w-1/2">
-                        Dans cette certification Responsive Web Design, vous apprendrez les langages que les développeurs utilisent pour créer des pages web : HTML (Hypertext Markup Language) pour le contenu et CSS (Cascading Style Sheets) pour la conception.
-                      </p>
-                      <p className="mt-2 md:w-1/2">
-                        Vous commencerez par créer un site de voyages pour apprendre les bases du HTML et du CSS. 
-                      </p>
-                      <p className="mt-2 md:w-1/2">
-                        Enfin, vous apprendrez à créer des pages web qui s'adaptent à différentes tailles d'écran en construisant une galerie de photos avec Flexbox et une mise en page d'article de magazine avec CSS Grid.
-                      </p>
-                      <Accordeon sidebarData={programData} />
-                   </div>
-                </div>
-                <div className="tab w-full overflow-hidden border-t-2">
-                   <input className="absolute opacity-0" id="tab-multi-two" type="checkbox" name="tabs" />
-                   <label className="block mt-5 mb-5 cursor-pointer text-white" htmlFor="tab-multi-two">Javascript</label>
-                   <div className="tab-content overflow-scroll border-l-2 bg-gray-100 border-indigo-500 leading-normal">
-                      <p className="p-5">Ca arrive bientôt !</p>
-                    </div> 
-                </div>
-                <div className="tab w-full overflow-hidden border-t-2">
-                   <input className="absolute opacity-0" id="tab-multi-three" type="checkbox" name="tabs" />
-                   <label className="block mt-5 mb-5 cursor-pointer text-white" htmlFor="tab-multi-three">Développement Front-End</label>
-                   <div className="tab-content overflow-scroll border-l-2 bg-gray-100 border-indigo-500 leading-normal">
-                      <p className="p-5">Ca arrive bientôt !</p>
-                    </div> 
-                </div>
-                <div className="tab w-full overflow-hidden border-t-2 border-b-2">
-                   <input className="absolute opacity-0" id="tab-multi-four" type="checkbox" name="tabs" />
-                   <label className="block mt-5 mb-5 cursor-pointer text-white" htmlFor="tab-multi-four">Développement Back-End</label>
-                   <div className="tab-content overflow-scroll border-l-2 bg-gray-100 border-indigo-500 leading-normal">
-                      <p className="p-5">Ca arrive bientôt !</p>
-                    </div> 
-                </div>
+                <section aria-labelledby="responsive-design" className="border-b-[2px] border-b-[#F36B59]">
+                  <button 
+                    id="responsive-design"
+                    aria-expanded={openSection === 'responsiveDesign'} 
+                    aria-controls="responsiveDesignDetails"
+                    title="Voir les projets"
+                    className="mt-5 h-[48px] cursor-pointer w-full text-left"
+                    onClick={() => toggleSection('responsiveDesign')}
+                  >
+                    <h2>Responsive Design</h2>
+                  </button>
+                  <div 
+                    id="responsiveDesignDetails"
+                    aria-hidden={openSection !== 'responsiveDesign'}
+                    className={`mb-4 max-h-dvh details-transition ${transitionState['responsiveDesign'] ? 'details-visible' : 'details-hidden'}`}
+                  >
+                    <strong className="md:text-xs mb-4 mt-6 text-white text-sm font-thin">HTML pour le contenu et CSS pour la mise en page</strong>
+                    <p className="mt-6 md:w-1/2">
+                      Dans cette certification Responsive Web Design, vous apprendrez les langages que les développeurs utilisent pour créer des pages web : HTML (Hypertext Markup Language) pour le contenu et CSS (Cascading Style Sheets) pour la conception.
+                    </p>
+                    <p className="mt-2 md:w-1/2">
+                      Vous commencerez par créer un site de voyages pour apprendre les bases du HTML et du CSS. 
+                    </p>
+                    <p className="mt-2 md:w-1/2">
+                      Enfin, vous apprendrez à créer des pages web qui s'adaptent à différentes tailles d'écran en construisant une galerie de photos avec Flexbox et une mise en page d'article de magazine avec CSS Grid.
+                    </p>
+                    <Accordeon sidebarData={programData} />
+                  </div>
+                </section>
+                <section aria-labelledby="javascript" className="mt-5 border-b-[2px] border-b-[#F36B59]">
+                  <button 
+                    id="javascript"
+                    aria-expanded={openSection === 'javascript'} 
+                    aria-controls="javascriptDetails"
+                    title="Voir les projets"
+                    className="text-white h-[48px] cursor-pointer w-full text-left"
+                    onClick={() => toggleSection('javascript')}
+                  >
+                    <h2>Javascript</h2>
+                  </button>
+                  <div 
+                    id="javascriptDetails"
+                    aria-hidden={openSection !== 'javascript'}
+                    className={`text-white mb-4 max-h-dvh details-transition ${transitionState['javascript'] ? 'details-visible' : 'details-hidden'}`}
+                  >
+                    <p className="mt-6 md:w-1/2">Ca arrive bientôt !</p>
+                  </div>
+                </section>
+                <section aria-labelledby="front-end" className="mt-5 border-b-[2px] border-b-[#F36B59]">
+                  <button 
+                    id="front-end"
+                    aria-expanded={openSection === 'frontEnd'} 
+                    aria-controls="frontEndDetails"
+                    title="Voir les projets"
+                    className="text-white h-[48px] cursor-pointer"
+                    onClick={() => toggleSection('frontEnd')}
+                  >
+                    <h2>Front End</h2>
+                  </button>
+                  <div 
+                    id="frontEndDetails"
+                    aria-hidden={openSection !== 'frontEnd'}
+                    className={`text-white mb-4 max-h-dvh details-transition ${transitionState['frontEnd'] ? 'details-visible' : 'details-hidden'}`}
+                  >
+                    <p className="mt-6 md:w-1/2">Ca arrive bientôt !</p>
+                  </div>
+                </section>
+                <section aria-labelledby="back-end" className="mt-5 border-b-[2px] border-b-[#F36B59]">
+                  <button 
+                    id="back-end"
+                    aria-expanded={openSection === 'backEnd'} 
+                    aria-controls="backEndDetails"
+                    title="Voir les projets"
+                    className="h-[48px] text-white cursor-pointer"
+                    onClick={() => toggleSection('backEnd')}
+                  >
+                    <h2>Back End</h2>
+                  </button>
+                  <div 
+                    id="backEndDetails"
+                    aria-hidden={openSection !== 'backEnd'}
+                    className={`text-white mb-4 max-h-dvh details-transition ${transitionState['backEnd'] ? 'details-visible' : 'details-hidden'}`}
+                  >
+                    <p className="mt-6 md:w-1/2">Ca arrive bientôt !</p>
+                  </div>
+                </section>
              </div>
             </div>
           </div>
         </section>
-
         <footer className="mx-[18.48px]">
             <div className="container">
               <div>

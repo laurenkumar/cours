@@ -138,7 +138,7 @@ const blackboardTheme = {
   }
 };
 
-const CodeOnline = ({subject, code, hints, ex}) => {
+const CodeOnline = ({subject, code, hints, ex, next}) => {
   const iframeRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
 
@@ -390,7 +390,7 @@ const CodeOnline = ({subject, code, hints, ex}) => {
         <button onClick={openPreviewWindow} className="text-black text-lg rounded left-[95%] top-[5%] preview-button hidden sm:block bg-[#ff8906] z-10 p-2 relative">
           🗔
         </button>
-        <Modal test={modalMessageTest} showModal={setShowModal} seeModal={showModal}/>
+        <Modal test={modalMessageTest} next={next} showModal={setShowModal} seeModal={showModal}/>
     </div>
   );
 };

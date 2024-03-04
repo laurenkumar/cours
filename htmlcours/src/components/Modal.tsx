@@ -1,4 +1,7 @@
-export default function Modal({ test, showModal, seeModal }) {
+import Link from 'next/link';
+
+export default function Modal({ test, showModal, seeModal, next }) {
+  console.log(test[0])
   return (
     <>
       {seeModal ? (
@@ -14,8 +17,26 @@ export default function Modal({ test, showModal, seeModal }) {
                   ))}
                 </div>
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                  {next !== 'fin' && (
+                    <Link
+                      className="text-white text-red-500 background-transparent font-bold uppercase px-6 text-sm outline-none focus:outline-none ease-linear transition-all duration-150"
+                      href={next}
+                      title="Exercice suivant"
+                    >
+                      Exo suivant
+                    </Link>
+                  )}
+                  {next === 'fin' && (
+                    <button
+                      className="text-white text-red-500 background-transparent font-bold uppercase px-6 text-sm outline-none focus:outline-none ease-linear transition-all duration-150"
+                      title="La conclusion"
+                      onClick={() => setShowConclusion(true)}
+                    >
+                      La conclusion
+                    </button>
+                  )}
                   <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    className="text-red-500 background-transparent font-bold uppercase px-6 text-sm outline-none focus:outline-none ease-linear transition-all duration-150"
                     type="button"
                     onClick={() => showModal(false)}
                   >

@@ -108,7 +108,7 @@ const Cours = (({ title, sujet, ex, next, description, hints, code }) => {
               <div className="cours-panel flex-1">
                 <Markdown>{description}</Markdown>
               </div>
-              <CodeOnline key={ex} ex={ex} subject={sujet} code={code} hints={hints} />
+              <CodeOnline key={ex} ex={ex} next={next} subject={sujet} code={code} hints={hints} />
             </div>
             {next !== 'fin' && (
               <Link

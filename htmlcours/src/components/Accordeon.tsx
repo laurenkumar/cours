@@ -29,14 +29,14 @@ const Accordeon = ({ sidebarData }) => {
             <div key={numeroProjet}>
               {exercices.length > 0 && (
                 <div className="flex items-center">
-                  <span className="p-2 mr-4">{sujet}</span>
                   <button onClick={() => toggleOuvert(numeroProjet)} className="flex items-center text-white w-full justify-between">
+                    <span className="p-2 mr-4">{sujet}</span>
                     <h3 className="text-lg hover:text-[#f25f4c]">{exercices[0].title}</h3>🠟
                   </button>
                 </div>
               )}
               {ouvert === numeroProjet && (
-                <ul className="ml-4 mt-4">  
+                <ul className="ml-4 mt-4 mb-4">  
                   {exercices.map((exercice, index) => (
                     <li key={index} className={isAccessible(exercice.exo) ? "text-white" : "text-gray-500"}>
                       {isAccessible(exercice.exo) ? (
