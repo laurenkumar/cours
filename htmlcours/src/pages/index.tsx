@@ -192,7 +192,7 @@ const Index = () => {
               </video>
               <div className="lg:ml-20 lg:mt-0 mt-6 lg:max-w-md">
                 <span>Débutants bienvenus</span>
-                <h2 className="md:text-4xl mt-2 mb-4 text-black text-left text-xl font-semibold m-auto">Commencer à apprendre le développement web rapidement.</h2>
+                <h2 className="md:text-4xl mt-4 mb-4 text-black text-left text-xl font-semibold m-auto">Commencer à apprendre le développement web rapidement.</h2>
                 <p>
                   Allez-y, essayez. Notre environnement d'apprentissage pratique vous permettra d'écrire du vrai code dès votre première leçon.
                 </p>
