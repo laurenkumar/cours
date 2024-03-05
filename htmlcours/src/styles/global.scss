@@ -126,6 +126,10 @@ code {
     margin-top: 0px;
   }
 
+  li {
+    color: white;
+  }
+
   h1, h2, h3, h4, h5, h6, p, div, ul, ol, blockquote {
     margin: 1em 0px 0px;
   }
@@ -284,200 +288,6 @@ code {
 .menu_subblock_content .button:hover {
   color: #fffffe;
   background-color: #ff8906;
-}
-
-.side {
-  position: fixed;
-  z-index: 0;
-  top: 50px;
-  bottom: 0;
-  left: 0;
-  width: 56px;
-  background: #ff8906;
-  color: #0f0e17;
-  transition: all .2s;
-  overflow: hidden;
-}
-
-.side:hover {
-  z-index: 5;
-}
-
-.side__program {
-  width: 500px;
-  padding: 12px 12px 40px 0;
-  overflow-y: scroll;
-  height: 100%;
-}
-
-.side__program__course {
-  display: flex;
-}
-
-.side__program__course__icon {
-  position: relative;
-  width: 32px;
-  height: 32px;
-  padding-top: 4px;
-  text-align: center;
-  margin: 12px 12px 0;
-  border: 2px solid #2e2f3e;
-  border-radius: 50%;
-}
-
-.side__program__course__icon:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 32px;
-  left: 13px;
-  height: 19px;
-  border: 1px dashed #2e2f3e;
-}
-
-.dashicons, .dashicons-before:before {
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  text-align: center;
-}
-
-.side__program__course__title {
-  padding-bottom: 4px;
-  line-height: 1.2;
-  border-bottom: 2px solid black;
-}
-
-.side__program__course small {
-  font-size: .85em;
-  color: #2e2f3e;
-}
-
-.side__program__part {
-  display: flex;
-  margin: 30px 0 12px;
-  font-size: .8em;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.side__program__part__picto {
-  position: relative;
-  width: 56px;
-  padding: 0 12px;
-  text-align: center;
-}
-
-.side__program__part__picto:before {
-  left: 8px;
-}
-
-.side__program__part__picto:before, .side__program__part__picto:after {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 10px;
-  height: 2px;
-  background: #2e2f3e;
-  top: 7px;
-  border-radius: 2px;
-}
-
-.side__program__part__picto:after {
-  right: 8px;
-}
-
-.side__program__part__picto:before, .side__program__part__picto:after {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 10px;
-  height: 2px;
-  background: #2e2f3e;
-  top: 7px;
-  border-radius: 2px;
-}
-
-.side__program__part__title {
-  color: #0f0e17;
-  font-weight: bold;
-}
-
-.side__program__part__title span {
-  color: #2e2f3e;
-}
-
-.side__program__chapter {
-  display: flex;
-  margin: 15px 0;
-  font-size: .7em;
-}
-
-.side__program__chapter__num {
-  text-transform: uppercase;
-  width: fitcontent;
-  margin: 0 12px;
-  padding: 0 4px;
-  background: #1e2127;
-  border-left: 3px solid #e53170;
-  text-align: center;
-  color: white;
-}
-
-.side__program__chapter__text {
-  text-transform: uppercase;
-  font-size: 1.2em;
-  color: #0f0e17;
-}
-
-.side__program__lesson {
-  position: relative;
-  padding: 5px 12px 5px 56px;
-  font-weight: 100;
-  font-size: .9em;
-  list-style: none;
-}
-
-.side__program__lesson:before {
-  content: '';
-  position: absolute;
-  left: 21px;
-  top: 8px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid #2e2f3e;
-}
-
-.side__program__lesson a {
-  color: #1C1C21;
-  font-weight: 400;
-}
-
-.side__program__lesson--current:before {
-  z-index: 1;
-  border-color: #ffc334;
-  background-color: #d79700;
-  animation-name: pulse;
-  animation-duration: 10s;
-  animation-iteration-count: 5;
-}
-
-.side__program__lesson--current:after {
-  background-color: #ffc334;
-}
-
-.side__program__lesson:after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 26px;
-  width: 2px;
-  height: 18px;
-  background: #2e2f3e;
 }
 
 /* code editeur */
@@ -1147,7 +957,7 @@ footer h4 {
 }
 
 .exercice-interactif .tabs .tab-content section, .tabs .navigateur {
-  height: calc(100vh - 46px) !important;
+  height: calc(100vh - 127.8px) !important;
 }
 .exercice-interactif .tabs [id^="tab"]:checked + label, .exercice-interactif .tabs label:hover {
   background-color: #F36B59;

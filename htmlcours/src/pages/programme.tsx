@@ -52,7 +52,7 @@ const Programme = () => {
                     className="mt-5 h-[48px] cursor-pointer w-full text-left"
                     onClick={() => toggleSection('responsiveDesign')}
                   >
-                    <h2>Responsive Design</h2>
+                    <h2 className="text-[#ff8906] hover:text-[#F36B59]">Responsive Design</h2>
                   </button>
                   <div 
                     id="responsiveDesignDetails"
@@ -81,7 +81,7 @@ const Programme = () => {
                     className="text-white h-[48px] cursor-pointer w-full text-left"
                     onClick={() => toggleSection('javascript')}
                   >
-                    <h2>Javascript</h2>
+                    <h2 className="text-[#ff8906] hover:text-[#F36B59]">Javascript</h2>
                   </button>
                   <div 
                     id="javascriptDetails"
@@ -100,7 +100,7 @@ const Programme = () => {
                     className="text-white h-[48px] cursor-pointer"
                     onClick={() => toggleSection('frontEnd')}
                   >
-                    <h2>Front End</h2>
+                    <h2 className="text-[#ff8906] hover:text-[#F36B59]">Front End</h2>
                   </button>
                   <div 
                     id="frontEndDetails"
@@ -119,7 +119,7 @@ const Programme = () => {
                     className="h-[48px] text-white cursor-pointer"
                     onClick={() => toggleSection('backEnd')}
                   >
-                    <h2>Back End</h2>
+                    <h2 className="text-[#ff8906] hover:text-[#F36B59]">Back End</h2>
                   </button>
                   <div 
                     id="backEndDetails"

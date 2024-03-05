@@ -5,6 +5,7 @@ import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 const Accordeon = ({ sidebarData }) => {
   const [ouvert, setOuvert] = useState(null);
   const session = useSession();
+  console.log(sidebarData);
 
   const FREE_EXERCISES = ['exh1', 'exh2', 'exh3', 'exc1', 'exc2', 'exc3'];
 
@@ -31,7 +32,7 @@ const Accordeon = ({ sidebarData }) => {
                 <div className="flex items-center">
                   <button onClick={() => toggleOuvert(numeroProjet)} className="flex items-center text-white w-full justify-between">
                     <span className="p-2 mr-4">{sujet}</span>
-                    <h3 className="text-lg hover:text-[#f25f4c]">{exercices[0].title}</h3>🠟
+                    <h3 className="text-lg hover:text-[#f25f4c]" id={exercices[0].exo}>{exercices[0].title}</h3>🠟
                   </button>
                 </div>
               )}

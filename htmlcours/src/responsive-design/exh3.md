@@ -41,7 +41,7 @@ assert(html.replace(/\s+/g, ' ').match(/<p>Plus de photos dans notre galerie\.<\
 Votre élément p doit se situer en dessous de l'élément h2.
 
 ```js
-assert(!html.match(/<h2>.*<p>.*<\/p>.*<\/h2>/s) && html.match(/<p>.*<\/p>/s));
+assert(html.indexOf('<h2>') < html.indexOf('<p>'));
 ```
 
 # --seed--
