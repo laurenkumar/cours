@@ -5,7 +5,6 @@ import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 const Accordeon = ({ sidebarData }) => {
   const [ouvert, setOuvert] = useState(null);
   const session = useSession();
-  console.log(sidebarData);
 
   const FREE_EXERCISES = ['exh1', 'exh2', 'exh3', 'exc1', 'exc2', 'exc3'];
 
