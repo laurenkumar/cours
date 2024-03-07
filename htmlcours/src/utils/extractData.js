@@ -11,7 +11,14 @@ function convertMdToJson() {
     fs.mkdirSync(outputDirectory, { recursive: true });
   }
 
-  const files = fs.readdirSync(markdownDirectory);
+  let files = fs.readdirSync(markdownDirectory);
+
+  // Trier les fichiers numériquement en se basant sur une expression régulière qui extrait le numéro de l'exercice
+  files.sort((a, b) => {
+    const numA = parseInt(a.match(/exh(\d+)/)[1], 10);
+    const numB = parseInt(b.match(/exh(\d+)/)[1], 10);
+    return numA - numB;
+  });
 
   const programData = files.reduce((acc, file) => {
     const fullPath = path.join(markdownDirectory, file);
@@ -27,7 +34,7 @@ function convertMdToJson() {
     }
 
     acc[data.sujet][data.projet].push({
-      exo: file.replace(/\.md$/, ''), // Utiliser le nom du fichier sans l'extension .md comme identifiant
+      exo: file.replace(/\.md$/, ''),
       title: data.title,
       dashedName: data.dashedName,
     });
@@ -35,7 +42,7 @@ function convertMdToJson() {
     return acc;
   }, {});
 
-  fs.writeFileSync(outputFile, JSON.stringify(programData, null, 2)); // Indentation pour une meilleure lisibilité
+  fs.writeFileSync(outputFile, JSON.stringify(programData, null, 2));
 }
 
 convertMdToJson();

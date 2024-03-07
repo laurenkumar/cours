@@ -20,6 +20,36 @@
         "exo": "exh4",
         "title": "Les commentaires",
         "dashedName": "les-commentaires"
+      },
+      {
+        "exo": "exh5",
+        "title": "Le contenu le plus important",
+        "dashedName": "le-contenu-le-plus-important"
+      },
+      {
+        "exo": "exh6",
+        "title": "L'imbrication et l'indentation",
+        "dashedName": "limbrication-et-lindentation"
+      },
+      {
+        "exo": "exh7",
+        "title": "Les liens en HTML (ancre)",
+        "dashedName": "les-liens-en-html-ancre"
+      },
+      {
+        "exo": "exh8",
+        "title": "L'élément section",
+        "dashedName": "lelement-section"
+      },
+      {
+        "exo": "exh9",
+        "title": "Les listes",
+        "dashedName": "les-listes"
+      },
+      {
+        "exo": "exh10",
+        "title": "Les éléments figure et figcaption",
+        "dashedName": "les-elements-figure-et-figcaption"
       }
     ]
   }
