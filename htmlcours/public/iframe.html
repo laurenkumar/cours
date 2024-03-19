@@ -5,7 +5,6 @@
     <style>html {background-color: #fff;}</style>
     <script>
         window.addEventListener('message', (event) => {
-            // Si vous devez vérifier l'origine, remplacez '*' par l'origine attendue, comme 'http://localhost:3000'
             const { html, css, js } = event.data;
             if(html !== undefined) {
                 document.body.innerHTML = html;  // Insert HTML content
