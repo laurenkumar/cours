@@ -157,7 +157,7 @@ const CodeOnline = ({subject, code, hints, ex, next}) => {
   useEffect(() => {
     const sendMessage = () => {
       if (iframeRef.current) {
-        iframeRef.current.contentWindow.postMessage({ html, css, js }, 'https://formation.lkdigital.ninja'); // Consider specifying the target origin for better security
+        iframeRef.current.contentWindow.postMessage({ html, css, js }, 'https://idevu.fr'); // Consider specifying the target origin for better security
       }
     };
 
