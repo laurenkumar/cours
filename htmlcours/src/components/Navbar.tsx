@@ -93,14 +93,14 @@ export default function Navbar({ fixed }) {
                     </div>
                   </div>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="/tarifs"
                     title="Les tarifs - idevu"
                   >
                     Tarifs
                   </Link>
-                </li>
+                </li>*/}
                 <li>
                   <Link
                     href={`https://blog.lkdigital.ninja`}
